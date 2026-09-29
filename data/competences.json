@@ -9,7 +9,7 @@
     "objectif": "Aider les élèves à identifier leurs émotions, leurs forces et leurs limites.",
     "outils": [
       "Roue des émotions affichée en classe",
-      "Fiche « mes forces »",
+      "Fiche « mes forces »",
       "Pause de 10 secondes avant de réagir"
     ],
     "groupes": [
@@ -26,8 +26,8 @@
             "consigne": "Chacun positionne son pouce pour montrer où il en est en énergie, de 0 (fatigué) à 10 (super en forme).",
             "variante": "Se déplacer dans la salle selon son niveau d'énergie.",
             "reflexion": [
-              "Comment se sent la classe aujourd'hui dans l'ensemble ?",
-              "Que peut-on faire si beaucoup d'élèves sont fatigués ?"
+              "Comment se sent la classe aujourd'hui dans l'ensemble ?",
+              "Que peut-on faire si beaucoup d'élèves sont fatigués ?"
             ]
           }
         ]
@@ -36,7 +36,7 @@
         "titre": "Langage des émotions",
         "acts": [
           {
-            "titre": "Roue des émotions : identification personnelle",
+            "titre": "Roue des émotions : identification personnelle",
             "img": "supports/roue-emotions.jpg",
             "duree": "3–4 min",
             "min": 4,
@@ -46,18 +46,18 @@
             "reflexion": []
           },
           {
-            "titre": "Roue des émotions : situation fictive",
+            "titre": "Roue des émotions : situation fictive",
             "img": "supports/roue-emotions-vide.jpg",
             "duree": "5 min",
             "min": 5,
             "objectif": "Comprendre le lien déclencheur → émotion → sensation → besoin.",
-            "materiel": "Roue des émotions (version à compléter) ; situations : ton équipe perd un match, tu réussis une évaluation, un ami t'oublie à une fête…",
+            "materiel": "Roue des émotions (version à compléter) ; situations : ton équipe perd un match, tu réussis une évaluation, un ami t'oublie à une fête…",
             "consigne": "En groupe, choisissez l'émotion la plus probable dans la situation proposée, puis associez-lui une sensation corporelle et un besoin.",
             "variante": "Comparer collectivement plusieurs réponses possibles.",
             "reflexion": [
-              "Dans cette situation, quelles émotions différentes peuvent apparaître ?",
-              "Quel besoin se cache derrière la colère ou la joie ?",
-              "Quelle est l'émotion la plus fréquente aujourd'hui ?"
+              "Dans cette situation, quelles émotions différentes peuvent apparaître ?",
+              "Quel besoin se cache derrière la colère ou la joie ?",
+              "Quelle est l'émotion la plus fréquente aujourd'hui ?"
             ]
           },
           {
@@ -69,15 +69,15 @@
             "materiel": "Questions préparées.",
             "consigne": "Avant de répondre, respire calmement et compte 10 secondes dans ta tête. Cela t'aide à réfléchir avant de réagir.",
             "exemples": [
-              "Quelle est la première étape pour résoudre ce problème ?",
-              "Que ressentaient les personnes qui ont vécu cet événement ?",
-              "Que veut dire cette phrase dans mes propres mots ?",
-              "Quelle est la meilleure façon de commencer ?",
-              "Qu'est-ce que je pourrais vérifier avant de répondre ?"
+              "Quelle est la première étape pour résoudre ce problème ?",
+              "Que ressentaient les personnes qui ont vécu cet événement ?",
+              "Que veut dire cette phrase dans mes propres mots ?",
+              "Quelle est la meilleure façon de commencer ?",
+              "Qu'est-ce que je pourrais vérifier avant de répondre ?"
             ],
             "reflexion": [
-              "Qu'est-ce qui change quand on prend 10 secondes avant de répondre ?",
-              "Est-ce plus facile de répondre calmement ?"
+              "Qu'est-ce qui change quand on prend 10 secondes avant de répondre ?",
+              "Est-ce plus facile de répondre calmement ?"
             ]
           }
         ]
@@ -95,27 +95,27 @@
             "consigne": "Choisis le numéro d'une force que tu reconnais en toi aujourd'hui, écris-le et lève ton papier en même temps que les autres.",
             "variante": "Créer un mur des forces avec des post-its affichés en classe.",
             "reflexion": [
-              "Quelles forces apparaissent le plus souvent dans la classe ?",
-              "Y a-t-il des forces différentes mais complémentaires ?"
+              "Quelles forces apparaissent le plus souvent dans la classe ?",
+              "Y a-t-il des forces différentes mais complémentaires ?"
             ]
           },
           {
-            "titre": "Limite ou moteur ?",
+            "titre": "Limite ou moteur ?",
             "img": "supports/limite-moteur.jpg",
             "duree": "4–5 min",
             "min": 5,
             "objectif": "Prendre conscience de ce qui motive ou bloque chacun.",
-            "materiel": "Aucun, ou pictos 💪 🤔 😬 projetés ; liste de situations.",
+            "materiel": "Aucun, ou pictos 💪 🤔 😬 projetés ; liste de situations.",
             "consigne": "Je donne une situation. Si c'est un moteur pour toi, montre 💪. Si ça dépend, montre 🤔. Si c'est une limite, montre 😬.",
             "exemples": [
-              "Scolaire : présenter devant la classe, travailler en groupe, être interrogé par surprise, demander de l'aide",
-              "Social : dire ce que je pense quand les autres ne sont pas d'accord, défendre un camarade critiqué, faire un compliment",
-              "Personnel : essayer quelque chose de nouveau, recommencer après un échec, recevoir une critique, être filmé",
-              "Quotidien : jouer un match ou un spectacle, voyager dans un lieu inconnu, rencontrer quelqu'un, 1 h sans téléphone"
+              "Scolaire : présenter devant la classe, travailler en groupe, être interrogé par surprise, demander de l'aide",
+              "Social : dire ce que je pense quand les autres ne sont pas d'accord, défendre un camarade critiqué, faire un compliment",
+              "Personnel : essayer quelque chose de nouveau, recommencer après un échec, recevoir une critique, être filmé",
+              "Quotidien : jouer un match ou un spectacle, voyager dans un lieu inconnu, rencontrer quelqu'un, 1 h sans téléphone"
             ],
             "reflexion": [
-              "Quelle situation est un moteur pour la majorité ?",
-              "Y a-t-il des situations vues comme « limite » par beaucoup d'élèves ?"
+              "Quelle situation est un moteur pour la majorité ?",
+              "Y a-t-il des situations vues comme « limite » par beaucoup d'élèves ?"
             ]
           }
         ]
@@ -128,13 +128,13 @@
             "img": "supports/carte-personnelle.jpg",
             "duree": "10–15 min",
             "min": 15,
-            "objectif": "Représenter visuellement son rapport à une matière : forces, limites, émotions.",
+            "objectif": "Représenter visuellement son rapport à une matière : forces, limites, émotions.",
             "materiel": "Feuilles, crayons de couleur, pictogrammes.",
-            "consigne": "Au centre, écris ou dessine « Moi et… [la matière] ». Autour, place tes forces 💪, tes limites ou difficultés ❌, les émotions que tu ressens dans cette matière 😊, ce qui t'aide, ce qui te motive, tes objectifs.",
+            "consigne": "Au centre, écris ou dessine « Moi et… [la matière] ». Autour, place tes forces 💪, tes limites ou difficultés ❌, les émotions que tu ressens dans cette matière 😊, ce qui t'aide, ce qui te motive, tes objectifs.",
             "variante": "Chaque élève partage un seul élément de sa carte (par ex. une force).",
             "reflexion": [
-              "Quelles forces apparaissent souvent dans la classe ?",
-              "Y a-t-il des émotions qui reviennent fréquemment ?"
+              "Quelles forces apparaissent souvent dans la classe ?",
+              "Y a-t-il des émotions qui reviennent fréquemment ?"
             ]
           }
         ]
@@ -159,7 +159,7 @@
       ],
       [
         "Journal de gratitude et de fierté",
-        "Une semaine : 3 choses reconnaissantes + 1 fierté par jour."
+        "Une semaine : 3 choses reconnaissantes + 1 fierté par jour."
       ],
       [
         "Lettre à mon futur moi",
@@ -174,7 +174,7 @@
       "claims": [
         [
           "solid",
-          "Nommer une émotion en diminue l'intensité physiologique (affect labeling). C'est le fondement le plus solide de la roue des émotions (Lieberman et al., 2007 ; Torre & Lieberman, 2018)."
+          "Nommer une émotion en diminue l'intensité physiologique (affect labeling). C'est le fondement le plus solide de la roue des émotions (Lieberman et al., 2007 ; Torre & Lieberman, 2018)."
         ],
         [
           "solid",
@@ -182,15 +182,15 @@
         ],
         [
           "nuance",
-          "La liste des 14 forces s'inspire de la classification VIA (24 forces de caractère, Peterson & Seligman, 2004) sans la reprendre. Ça convient pour la discussion en classe ; éviter d'en parler comme d'un outil validé."
+          "La liste des 14 forces s'inspire de la classification VIA (24 forces de caractère, Peterson & Seligman, 2004) sans la reprendre. Ça convient pour la discussion en classe ; éviter d'en parler comme d'un outil validé."
         ],
         [
           "nuance",
-          "« Pause de 10 secondes » : l'intérêt vient surtout de la répétition du rituel. L'effet d'un délai isolé sur l'impulsivité n'est pas établi à cette durée précise."
+          "« Pause de 10 secondes » : l'intérêt vient surtout de la répétition du rituel. L'effet d'un délai isolé sur l'impulsivité n'est pas établi à cette durée précise."
         ],
         [
           "flou",
-          "Les « pistes à explorer » (arbre, timeline, lettre…) sont des idées d'animation sans évaluation publiée. La constellation des relations et la timeline peuvent réactiver des vécus difficiles chez des élèves en rupture : prévoir un cadre (droit de passer, pas de partage obligatoire)."
+          "Les « pistes à explorer » (arbre, timeline, lettre…) sont des idées d'animation sans évaluation publiée. La constellation des relations et la timeline peuvent réactiver des vécus difficiles chez des élèves en rupture : prévoir un cadre (droit de passer, pas de partage obligatoire)."
         ]
       ],
       "refs": [
@@ -210,10 +210,10 @@
     "img": "supports/titre-communication.jpg",
     "objectif": "Poser les bases de l'écoute active et de l'expression claire.",
     "outils": [
-      "Les 3A de l'écoute : attention, attente, ajustement",
-      "Les 3C : clair, court, concret",
-      "Formule « Moi + Toi + Nous »",
-      "Question ouverte ou fermée ?"
+      "Les 3A de l'écoute : attention, attente, ajustement",
+      "Les 3C : clair, court, concret",
+      "Formule « Moi + Toi + Nous »",
+      "Question ouverte ou fermée ?"
     ],
     "essentiel": {
       "img": "supports/principes-communication.jpg",
@@ -221,23 +221,23 @@
       "items": [
         [
           "1. Écouter vraiment",
-          "Regarder la personne qui parle, ne pas couper la parole, reformuler pour vérifier (« Tu veux dire que… ? »). Outil : les 3A = Attention, Attente (laisser finir), Ajustement."
+          "Regarder la personne qui parle, ne pas couper la parole, reformuler pour vérifier (« Tu veux dire que… ? »). Outil : les 3A = Attention, Attente (laisser finir), Ajustement."
         ],
         [
           "2. Parler clairement et simplement",
-          "Aller droit au but, utiliser des mots précis, une seule idée à la fois. Outil : les 3C = Clair, Court, Concret."
+          "Aller droit au but, utiliser des mots précis, une seule idée à la fois. Outil : les 3C = Clair, Court, Concret."
         ],
         [
           "3. Utiliser le non-verbal",
-          "Regard, posture, gestes et ton de voix transmettent beaucoup. Sourire = message ouvert ; bras croisés ou tête tournée = message fermé, parfois involontaire."
+          "Regard, posture, gestes et ton de voix transmettent beaucoup. Sourire = message ouvert ; bras croisés ou tête tournée = message fermé, parfois involontaire."
         ],
         [
           "4. Poser de bonnes questions",
-          "Ouvertes pour inviter à développer (« Qu'est-ce que tu en penses ? »), fermées pour vérifier une info. Se demander : est-ce que je cherche une info rapide ou à mieux comprendre ?"
+          "Ouvertes pour inviter à développer (« Qu'est-ce que tu en penses ? »), fermées pour vérifier une info. Se demander : est-ce que je cherche une info rapide ou à mieux comprendre ?"
         ],
         [
           "5. Se respecter mutuellement",
-          "Dire « je » plutôt que « tu » pour ne pas accuser, accueillir les autres avis sans se moquer, chercher un terrain commun. Outil : « Moi + Toi + Nous » → Je pense… → Je reconnais que tu penses… → On pourrait peut-être…"
+          "Dire « je » plutôt que « tu » pour ne pas accuser, accueillir les autres avis sans se moquer, chercher un terrain commun. Outil : « Moi + Toi + Nous » → Je pense… → Je reconnais que tu penses… → On pourrait peut-être…"
         ]
       ]
     },
@@ -252,12 +252,12 @@
             "duree": "5–8 min",
             "min": 8,
             "objectif": "Prendre conscience de l'importance de l'attention et de la reformulation.",
-            "materiel": "Petites phrases sur cartes (définitions, faits historiques, notions vues en cours) : annexe 2.",
-            "consigne": "L'enseignant donne une phrase à A. A la dit à l'oreille de B. B reformule (« Tu veux dire que… ? ») ; A confirme ou infirme, sans corriger. Puis B la transmet à C, etc. La dernière personne dit la phrase à voix haute et on la compare avec l'originale.",
+            "materiel": "Petites phrases sur cartes (définitions, faits historiques, notions vues en cours) : annexe 2.",
+            "consigne": "L'enseignant donne une phrase à A. A la dit à l'oreille de B. B reformule (« Tu veux dire que… ? ») ; A confirme ou infirme, sans corriger. Puis B la transmet à C, etc. La dernière personne dit la phrase à voix haute et on la compare avec l'originale.",
             "reflexion": [
-              "À quel moment le message a-t-il changé ? Pourquoi ?",
-              "Qu'est-ce qui aide à retenir et transmettre fidèlement ?",
-              "Qu'as-tu ressenti en écoutant sans couper ?"
+              "À quel moment le message a-t-il changé ? Pourquoi ?",
+              "Qu'est-ce qui aide à retenir et transmettre fidèlement ?",
+              "Qu'as-tu ressenti en écoutant sans couper ?"
             ]
           },
           {
@@ -266,19 +266,19 @@
             "principes": "1, 2 et 5",
             "duree": "5–10 min",
             "min": 10,
-            "objectif": "Exprimer un désaccord sans agressivité avec les 3A, les 3C et « Moi + Toi + Nous ».",
-            "materiel": "Questions simples et motivantes (annexe 3) ; slide des règles 3A, 3C, MTN.",
-            "consigne": "Débat entre 4 à 6 élèves désignés : une partie pour, l'autre contre. Chacun s'exprime à tour de rôle. Les autres observent, puis on tourne.",
+            "objectif": "Exprimer un désaccord sans agressivité avec les 3A, les 3C et « Moi + Toi + Nous ».",
+            "materiel": "Questions simples et motivantes (annexe 3) ; slide des règles 3A, 3C, MTN.",
+            "consigne": "Débat entre 4 à 6 élèves désignés : une partie pour, l'autre contre. Chacun s'exprime à tour de rôle. Les autres observent, puis on tourne.",
             "exemples": [
-              "Faut-il plus de sport à l'école ?",
-              "Est-ce que les notes motivent vraiment les élèves ?",
-              "Les jeux vidéo rendent-ils plus créatifs ?",
-              "Vaut-il mieux peu d'amis très proches ou beaucoup de connaissances ?",
-              "Vaut-il mieux apprendre seul ou en groupe ?"
+              "Faut-il plus de sport à l'école ?",
+              "Est-ce que les notes motivent vraiment les élèves ?",
+              "Les jeux vidéo rendent-ils plus créatifs ?",
+              "Vaut-il mieux peu d'amis très proches ou beaucoup de connaissances ?",
+              "Vaut-il mieux apprendre seul ou en groupe ?"
             ],
             "reflexion": [
-              "Comment t'es-tu senti en étant écouté sans interruption ?",
-              "Qu'est-ce qui est plus facile ou plus difficile avec ces règles ?"
+              "Comment t'es-tu senti en étant écouté sans interruption ?",
+              "Qu'est-ce qui est plus facile ou plus difficile avec ces règles ?"
             ]
           },
           {
@@ -289,11 +289,11 @@
             "min": 4,
             "objectif": "Prendre conscience de l'importance du non-verbal.",
             "materiel": "Petits papiers avec des mots-clés du cours précédent (vocabulaire de langue, personnages historiques, termes scientifiques, notions de maths).",
-            "consigne": "Tire un mot-clé. Par deux ou en petit groupe, explique-le sans parler ni écrire : seulement par gestes, postures et mimiques. Une fois trouvé, on change de rôle.",
-            "variante": "En classe entière : un élève mime devant tout le monde. Astuce : garder une boîte de mots-clés par thème pour lancer l'activité en 30 secondes comme rituel de réactivation ; les élèves peuvent écrire eux-mêmes les mots à mimer.",
+            "consigne": "Tire un mot-clé. Par deux ou en petit groupe, explique-le sans parler ni écrire : seulement par gestes, postures et mimiques. Une fois trouvé, on change de rôle.",
+            "variante": "En classe entière : un élève mime devant tout le monde. Astuce : garder une boîte de mots-clés par thème pour lancer l'activité en 30 secondes comme rituel de réactivation ; les élèves peuvent écrire eux-mêmes les mots à mimer.",
             "reflexion": [
-              "Qu'est-ce qui a aidé à comprendre : gestes, regard, posture ?",
-              "Était-ce plus facile avec certains mots (un verbe d'action, une notion abstraite) ?"
+              "Qu'est-ce qui a aidé à comprendre : gestes, regard, posture ?",
+              "Était-ce plus facile avec certains mots (un verbe d'action, une notion abstraite) ?"
             ]
           },
           {
@@ -303,7 +303,7 @@
             "duree": "4–5 min par situation",
             "min": 5,
             "objectif": "Préparer et exprimer un message difficile de façon claire, respectueuse et constructive.",
-            "materiel": "Cartes de situations délicates : annexe 4.",
+            "materiel": "Cartes de situations délicates : annexe 4.",
             "consigne": "Trouvez en 2 minutes la meilleure manière de communiquer dans cette situation. Attention aux mots, au ton, à l'attitude et à la posture.",
             "exemples": [
               "Annoncer une mauvaise note à tes parents.",
@@ -317,29 +317,29 @@
               "Exprimer ton besoin de calme quand les autres parlent trop fort."
             ],
             "reflexion": [
-              "Qu'est-ce qui a fait que certaines solutions fonctionnaient mieux ?",
-              "Qu'est-ce qui a été le plus difficile : trouver les mots, ou oser les dire ?"
+              "Qu'est-ce qui a fait que certaines solutions fonctionnaient mieux ?",
+              "Qu'est-ce qui a été le plus difficile : trouver les mots, ou oser les dire ?"
             ]
           },
           {
-            "titre": "Clair ou pas clair ?",
+            "titre": "Clair ou pas clair ?",
             "img": "supports/clair-pas-clair.jpg",
             "principes": "1, 2 et 4",
             "duree": "4–5 min par version",
             "min": 5,
             "objectif": "Repérer le manque de clarté, demander des précisions et reformuler.",
-            "materiel": "Version 1 : consignes floues. Version 2 : mots à préciser et mots interdits (annexe 5).",
-            "consigne": "Version 1 : je lis une phrase volontairement floue ; posez des questions ouvertes ou fermées pour la clarifier, puis reformulez-la. Version 2 : pioche un mot et explique-le en 15 secondes sans les mots interdits. Le groupe vote : clair 👍 ou pas clair 👎.",
+            "materiel": "Version 1 : consignes floues. Version 2 : mots à préciser et mots interdits (annexe 5).",
+            "consigne": "Version 1 : je lis une phrase volontairement floue ; posez des questions ouvertes ou fermées pour la clarifier, puis reformulez-la. Version 2 : pioche un mot et explique-le en 15 secondes sans les mots interdits. Le groupe vote : clair 👍 ou pas clair 👎.",
             "exemples": [
-              "Consignes floues : « Mets ça là-bas. » « Fais-le bien. » « Dépêche-toi un peu. » « Prends le bon. »",
-              "Mots à préciser : montagne, arbre, chaise, téléphone, chanson, film…",
-              "Mots interdits : grand, petit, beau, nul, truc, machin, ça, vite, beaucoup…"
+              "Consignes floues : « Mets ça là-bas. » « Fais-le bien. » « Dépêche-toi un peu. » « Prends le bon. »",
+              "Mots à préciser : montagne, arbre, chaise, téléphone, chanson, film…",
+              "Mots interdits : grand, petit, beau, nul, truc, machin, ça, vite, beaucoup…"
             ],
-            "variante": "En binôme : l'un donne une consigne floue, l'autre l'exécute (mal), demande des précisions, puis on reformule. En compétition : 2 équipes, 1 point par reformulation claire ou mot bien expliqué.",
+            "variante": "En binôme : l'un donne une consigne floue, l'autre l'exécute (mal), demande des précisions, puis on reformule. En compétition : 2 équipes, 1 point par reformulation claire ou mot bien expliqué.",
             "reflexion": [
-              "Que peut-il arriver si je donne une explication trop vague, à l'école, en famille, entre amis ?",
-              "Quels gestes, mots ou exemples rendent mon message plus clair ?",
-              "Qu'est-ce qui rend une explication difficile à suivre ?"
+              "Que peut-il arriver si je donne une explication trop vague, à l'école, en famille, entre amis ?",
+              "Quels gestes, mots ou exemples rendent mon message plus clair ?",
+              "Qu'est-ce qui rend une explication difficile à suivre ?"
             ]
           },
           {
@@ -349,16 +349,16 @@
             "duree": "5–7 min",
             "min": 7,
             "objectif": "Exprimer son opinion à la première personne et accueillir des avis différents sans juger.",
-            "materiel": "Questions simples et ouvertes : annexe 6.",
-            "consigne": "Je pose une question neutre et ludique. À tour de rôle, chacun commence par « Moi, je pense que… ». Un autre élève accueille l'avis (« Je reconnais que tu penses… », « Même si je ne pense pas pareil, je comprends ton idée »), puis donne le sien.",
+            "materiel": "Questions simples et ouvertes : annexe 6.",
+            "consigne": "Je pose une question neutre et ludique. À tour de rôle, chacun commence par « Moi, je pense que… ». Un autre élève accueille l'avis (« Je reconnais que tu penses… », « Même si je ne pense pas pareil, je comprends ton idée »), puis donne le sien.",
             "exemples": [
-              "Légères : pizza ou pâtes ? mer ou montagne ? lire un livre ou regarder un film ?",
-              "Plus marquées : les devoirs sont-ils utiles ? mieux vaut être rapide ou précis ? dire la vérité ou éviter de blesser ?"
+              "Légères : pizza ou pâtes ? mer ou montagne ? lire un livre ou regarder un film ?",
+              "Plus marquées : les devoirs sont-ils utiles ? mieux vaut être rapide ou précis ? dire la vérité ou éviter de blesser ?"
             ],
-            "variante": "Noter les avis au tableau, puis chercher un point commun (« On n'aime pas tous le même sport, mais on aime tous bouger »).",
+            "variante": "Noter les avis au tableau, puis chercher un point commun (« On n'aime pas tous le même sport, mais on aime tous bouger »).",
             "reflexion": [
-              "Qu'est-ce que ça change de dire « je pense… » plutôt que « tu as tort » ?",
-              "Comment je me sens quand mon avis est reconnu, même si on n'est pas d'accord ?"
+              "Qu'est-ce que ça change de dire « je pense… » plutôt que « tu as tort » ?",
+              "Comment je me sens quand mon avis est reconnu, même si on n'est pas d'accord ?"
             ]
           }
         ]
@@ -368,11 +368,11 @@
       "claims": [
         [
           "flou",
-          "La « formule 7–38–55 » (7 % mots, 38 % voix, 55 % corps) est présentée comme un outil dans le padlet et sur la carte des principes. Elle vient de deux expériences de Mehrabian (1967) sur des mots isolés exprimant une attitude, quand voix et visage se contredisaient. Mehrabian précise lui-même qu'elle ne s'applique pas à la communication en général. Suggestion : retirer les chiffres et garder « le corps et la voix comptent, surtout pour les émotions »."
+          "La « formule 7–38–55 » (7 % mots, 38 % voix, 55 % corps) est présentée comme un outil dans le padlet et sur la carte des principes. Elle vient de deux expériences de Mehrabian (1967) sur des mots isolés exprimant une attitude, quand voix et visage se contredisaient. Mehrabian précise lui-même qu'elle ne s'applique pas à la communication en général. Suggestion : retirer les chiffres et garder « le corps et la voix comptent, surtout pour les émotions »."
         ],
         [
           "todo",
-          "Règle retenue : 3C = Clair, Court, Concret (version du padlet). Deux supports disent encore autre chose et sont à corriger : le programme annuel (« Clair, Concis, Courtois ») et la slide du débat respectueux (« Concis : exemples concrets »)."
+          "Règle retenue : 3C = Clair, Court, Concret (version du padlet). Deux supports disent encore autre chose et sont à corriger : le programme annuel (« Clair, Concis, Courtois ») et la slide du débat respectueux (« Concis : exemples concrets »)."
         ],
         [
           "solid",
@@ -380,15 +380,15 @@
         ],
         [
           "nuance",
-          "Le message en « je » réduit l'hostilité perçue par rapport au message en « tu », mais l'effet dépend du ton et de la relation (Kubany et al., 1992)."
+          "Le message en « je » réduit l'hostilité perçue par rapport au message en « tu », mais l'effet dépend du ton et de la relation (Kubany et al., 1992)."
         ],
         [
           "nuance",
-          "« Bras croisés = message fermé » : l'interprétation des postures isolées est peu fiable sans contexte. Le padlet le nuance déjà (« parfois involontaire ») ; c'est ce point qu'il faut faire passer."
+          "« Bras croisés = message fermé » : l'interprétation des postures isolées est peu fiable sans contexte. Le padlet le nuance déjà (« parfois involontaire ») ; c'est ce point qu'il faut faire passer."
         ],
         [
           "nuance",
-          "Les acronymes 3A, 3C et MTN sont des outils pédagogiques maison : utiles comme repères mnémotechniques, sans validation propre."
+          "Les acronymes 3A, 3C et MTN sont des outils pédagogiques maison : utiles comme repères mnémotechniques, sans validation propre."
         ]
       ],
       "refs": [
@@ -409,7 +409,7 @@
     "objectif": "Développer la capacité à se mettre à la place de l'autre.",
     "outils": [
       "Reformulation bienveillante",
-      "Question clé : « Comment tu le vois ? Comment tu te sens ? »",
+      "Question clé : « Comment tu le vois ? Comment tu te sens ? »",
       "On critique l'action, pas la personne"
     ],
     "essentiel": {
@@ -418,7 +418,7 @@
       "items": [
         [
           "1. Observer sans juger",
-          "Regarder les signes : une attitude, un regard, un silence. Tu ne sais pas tout de l'histoire que tu vois."
+          "Regarder les signes : une attitude, un regard, un silence. Tu ne sais pas tout de l'histoire que tu vois."
         ],
         [
           "2. Écouter pour comprendre",
@@ -430,7 +430,7 @@
         ],
         [
           "4. Répondre avec respect et justesse",
-          "Accueillir sans exagérer ni minimiser : pas « ça va passer », mais « je comprends que ce soit difficile »."
+          "Accueillir sans exagérer ni minimiser : pas « ça va passer », mais « je comprends que ce soit difficile »."
         ],
         [
           "5. Agir avec bienveillance",
@@ -452,30 +452,30 @@
             "materiel": "Situations d'exemple.",
             "consigne": "Lecture d'une situation. Trouvez 2 émotions possibles et 1 besoin probable, et dites sur quels indices vous vous basez.",
             "exemples": [
-              "Paul arrive sans son matériel, bras croisés, et dit « ça va ». → honte, frustration · besoin de soutien",
+              "Paul arrive sans son matériel, bras croisés, et dit « ça va ». → honte, frustration · besoin de soutien",
               "Karim n'a pas été choisi pour le match, il s'éloigne. → tristesse, rejet · besoin d'appartenance",
               "Sarah soupire devant sa feuille et lève les yeux au plafond. → découragement, stress · besoin de soutien, de repos"
             ],
-            "variante": "Quiz express : les élèves lèvent une carte joie / peur / colère / tristesse / surprise / honte.",
+            "variante": "Quiz express : les élèves lèvent une carte joie / peur / colère / tristesse / surprise / honte.",
             "reflexion": [
-              "Comment savoir si notre interprétation est juste ?"
+              "Comment savoir si notre interprétation est juste ?"
             ]
           },
           {
-            "titre": "Et toi, à sa place ?",
+            "titre": "Et toi, à sa place ?",
             "img": "supports/a-sa-place.jpg",
             "duree": "5–6 min",
             "min": 6,
             "objectif": "Adopter le point de vue d'autrui, même sans ressentir la même chose.",
             "consigne": "Lecture d'une situation. Identifiez la pensée, l'émotion, le besoin et l'attente probables du personnage.",
             "exemples": [
-              "Alex présente son exposé, certains rigolent au fond. « Ils se moquent de moi. » → honte, colère · besoin de respect",
-              "Noah ne parle pas quand le prof pose une question. « Si je me trompe, on va se moquer. » → peur · besoin de sécurité"
+              "Alex présente son exposé, certains rigolent au fond. « Ils se moquent de moi. » → honte, colère · besoin de respect",
+              "Noah ne parle pas quand le prof pose une question. « Si je me trompe, on va se moquer. » → peur · besoin de sécurité"
             ],
-            "variante": "À deux voix : l'un joue le personnage, l'autre répond « Si j'étais toi, je penserais que… »",
+            "variante": "À deux voix : l'un joue le personnage, l'autre répond « Si j'étais toi, je penserais que… »",
             "reflexion": [
-              "Qu'est-ce que ça change d'essayer de comprendre au lieu de juger ?",
-              "Peut-on comprendre quelqu'un sans être d'accord avec lui ?"
+              "Qu'est-ce que ça change d'essayer de comprendre au lieu de juger ?",
+              "Peut-on comprendre quelqu'un sans être d'accord avec lui ?"
             ]
           }
         ]
@@ -492,18 +492,18 @@
             "materiel": "Liste de phrases blessantes courantes.",
             "consigne": "J'écris une phrase blessante au tableau. Proposez une version empathique, puis comparons l'effet des deux.",
             "exemples": [
-              "« Franchement, t'es nul. » → « Je vois que c'est difficile, tu veux qu'on revoie ensemble ? »",
-              "« Arrête de pleurnicher. » → « Tu sembles triste, tu veux m'en parler ? »",
-              "« Tu ne changes jamais. » → « C'est encore difficile, mais tu as déjà progressé. »"
+              "« Franchement, t'es nul. » → « Je vois que c'est difficile, tu veux qu'on revoie ensemble ? »",
+              "« Arrête de pleurnicher. » → « Tu sembles triste, tu veux m'en parler ? »",
+              "« Tu ne changes jamais. » → « C'est encore difficile, mais tu as déjà progressé. »"
             ],
             "variante": "Par deux, réécrire une phrase blessante déjà entendue (sans nom).",
             "reflexion": [
-              "Est-ce que je fais attention à l'effet de mes mots ?",
-              "Qu'est-ce que ça changerait dans la classe si on parlait plus souvent avec empathie ?"
+              "Est-ce que je fais attention à l'effet de mes mots ?",
+              "Qu'est-ce que ça changerait dans la classe si on parlait plus souvent avec empathie ?"
             ]
           },
           {
-            "titre": "Empathie, pas empathie ?",
+            "titre": "Empathie, pas empathie ?",
             "img": "supports/empathie-pas-empathie.jpg",
             "duree": "5 min",
             "min": 5,
@@ -511,14 +511,14 @@
             "materiel": "Phrases-réponses à afficher.",
             "consigne": "Je lis une réponse. Votez E, S ou J avec le signe correspondant.",
             "exemples": [
-              "Un camarade a raté un test. « Je comprends que tu sois frustré. » → E",
-              "« T'inquiète, moi aussi j'ai déjà tout raté ! » → S",
-              "« C'est pas si grave, tu feras mieux la prochaine fois. » → J"
+              "Un camarade a raté un test. « Je comprends que tu sois frustré. » → E",
+              "« T'inquiète, moi aussi j'ai déjà tout raté ! » → S",
+              "« C'est pas si grave, tu feras mieux la prochaine fois. » → J"
             ],
             "variante": "Par deux, inventer une situation et écrire les trois types de réponse.",
             "reflexion": [
-              "Que ressens-tu quand on te répond comme ça ?",
-              "L'empathie ne cherche pas à consoler, corriger ou comparer : elle reconnaît."
+              "Que ressens-tu quand on te répond comme ça ?",
+              "L'empathie ne cherche pas à consoler, corriger ou comparer : elle reconnaît."
             ]
           }
         ]
@@ -533,11 +533,11 @@
             "min": 5,
             "objectif": "Traduire l'empathie en gestes concrets qui améliorent le climat de classe.",
             "materiel": "Tableau, post-its.",
-            "consigne": "Quels petits gestes pourraient rendre la journée de quelqu'un plus agréable ? Toutes les propositions sont notées, sans jugement.",
-            "variante": "Bingo de la gentillesse sur une semaine : grille de 9 à 16 défis (tenir la porte, féliciter un effort, inviter un élève seul à la pause…).",
+            "consigne": "Quels petits gestes pourraient rendre la journée de quelqu'un plus agréable ? Toutes les propositions sont notées, sans jugement.",
+            "variante": "Bingo de la gentillesse sur une semaine : grille de 9 à 16 défis (tenir la porte, féliciter un effort, inviter un élève seul à la pause…).",
             "reflexion": [
-              "Qu'est-ce que ça fait d'agir avec bienveillance ?",
-              "Comment les autres réagissent-ils ?"
+              "Qu'est-ce que ça fait d'agir avec bienveillance ?",
+              "Comment les autres réagissent-ils ?"
             ]
           },
           {
@@ -546,15 +546,15 @@
             "duree": "5 min",
             "min": 5,
             "objectif": "Traduire une intention empathique en paroles et en actes.",
-            "consigne": "Je lis une situation. Complétez à tour de rôle avec une parole (« Je comprends que tu sois triste ») ou une action (« Je reste un moment avec lui »).",
+            "consigne": "Je lis une situation. Complétez à tour de rôle avec une parole (« Je comprends que tu sois triste ») ou une action (« Je reste un moment avec lui »).",
             "exemples": [
               "Si un camarade est stressé avant une évaluation…",
               "Si un élève est nouveau dans la classe…",
               "Si quelqu'un fait une erreur en public…"
             ],
-            "variante": "Relais oral en cercle : « Si un camarade tombe dans la cour, je peux… » Celui qui n'a plus d'idée passe.",
+            "variante": "Relais oral en cercle : « Si un camarade tombe dans la cour, je peux… » Celui qui n'a plus d'idée passe.",
             "reflexion": [
-              "Qu'est-ce qui est plus facile : dire quelque chose de gentil ou agir ?"
+              "Qu'est-ce qui est plus facile : dire quelque chose de gentil ou agir ?"
             ]
           }
         ]
@@ -569,16 +569,16 @@
             "min": 6,
             "objectif": "Repérer des exemples concrets d'empathie dans la vie réelle ou la fiction.",
             "materiel": "Extraits courts (texte, vidéo, anecdote).",
-            "consigne": "Après l'extrait : quelles émotions vois-tu ? Quels gestes ou paroles montrent l'empathie ? Qu'est-ce qui rend cette action touchante ?",
+            "consigne": "Après l'extrait : quelles émotions vois-tu ? Quels gestes ou paroles montrent l'empathie ? Qu'est-ce qui rend cette action touchante ?",
             "exemples": [
               "Pendant la pause, un élève s'assied à côté d'un camarade souvent seul, sans rien dire.",
               "Un élève défend calmement un camarade moqué."
             ],
             "variante": "Les élèves apportent leurs propres histoires (réelles ou tirées d'un film, d'un livre, d'une série).",
             "reflexion": [
-              "Quelles formes d'empathie passent souvent inaperçues ?",
-              "Est-ce que l'empathie, c'est forcément spectaculaire ?",
-              "Ai-je déjà vu un geste d'empathie en classe ?"
+              "Quelles formes d'empathie passent souvent inaperçues ?",
+              "Est-ce que l'empathie, c'est forcément spectaculaire ?",
+              "Ai-je déjà vu un geste d'empathie en classe ?"
             ]
           },
           {
@@ -588,17 +588,17 @@
             "min": 6,
             "objectif": "Voir que l'empathie est universelle mais s'exprime différemment selon les cultures.",
             "materiel": "2–3 anecdotes de différents pays.",
-            "consigne": "Pour chaque exemple : qu'est-ce que cette personne fait ou dit pour montrer son empathie ?",
+            "consigne": "Pour chaque exemple : qu'est-ce que cette personne fait ou dit pour montrer son empathie ?",
             "exemples": [
-              "Sénégal : partager un repas avec un voisin malade ou isolé.",
-              "Finlande : apprendre tôt à reconnaître les émotions et à en parler.",
-              "Suisse : une classe organise une collecte pour un camarade dont la famille a tout perdu."
+              "Sénégal : partager un repas avec un voisin malade ou isolé.",
+              "Finlande : apprendre tôt à reconnaître les émotions et à en parler.",
+              "Suisse : une classe organise une collecte pour un camarade dont la famille a tout perdu."
             ],
             "variante": "Chaque élève partage un exemple vécu ou recherché qui l'interpelle.",
             "reflexion": [
-              "L'empathie est-elle une langue universelle ?",
-              "Même si on ne parle pas la même langue, comment comprendre les émotions d'un autre ?",
-              "Qu'est-ce que ça nous apprend sur le vivre-ensemble ?"
+              "L'empathie est-elle une langue universelle ?",
+              "Même si on ne parle pas la même langue, comment comprendre les émotions d'un autre ?",
+              "Qu'est-ce que ça nous apprend sur le vivre-ensemble ?"
             ]
           }
         ]
@@ -608,19 +608,19 @@
       "claims": [
         [
           "solid",
-          "L'empathie a une composante cognitive (comprendre le point de vue) et une composante affective (être touché) ; les activités « Et toi, à sa place ? » visent surtout la première (Davis, 1983 ; Decety & Jackson, 2004)."
+          "L'empathie a une composante cognitive (comprendre le point de vue) et une composante affective (être touché) ; les activités « Et toi, à sa place ? » visent surtout la première (Davis, 1983 ; Decety & Jackson, 2004)."
         ],
         [
           "nuance",
-          "La distinction empathie / sympathie telle qu'elle est présentée vient surtout de la vulgarisation. Dans la littérature, « sympathy » désigne souvent la sollicitude empathique, jugée positive. Présenter S comme « moins ajusté » plutôt que « mauvais »."
+          "La distinction empathie / sympathie telle qu'elle est présentée vient surtout de la vulgarisation. Dans la littérature, « sympathy » désigne souvent la sollicitude empathique, jugée positive. Présenter S comme « moins ajusté » plutôt que « mauvais »."
         ],
         [
           "nuance",
-          "« Le radar à vibes » infère des émotions à partir d'indices : les travaux récents montrent que les expressions faciales sont peu fiables sans contexte (Barrett et al., 2019). La question de réflexion « Comment savoir si notre interprétation est juste ? » est essentielle, à garder."
+          "« Le radar à vibes » infère des émotions à partir d'indices : les travaux récents montrent que les expressions faciales sont peu fiables sans contexte (Barrett et al., 2019). La question de réflexion « Comment savoir si notre interprétation est juste ? » est essentielle, à garder."
         ],
         [
           "flou",
-          "Dans le tableau des personnalités : le drapeau chinois pour le Tibet et Mère Teresa (pratiques de soin critiquées) peuvent ouvrir des débats. À choisir en connaissance de cause, ou à remplacer."
+          "Dans le tableau des personnalités : le drapeau chinois pour le Tibet et Mère Teresa (pratiques de soin critiquées) peuvent ouvrir des débats. À choisir en connaissance de cause, ou à remplacer."
         ]
       ],
       "refs": [
@@ -637,7 +637,7 @@
     "sous": "S'apaiser pour s'épanouir",
     "hue": "--h-green",
     "img": "supports/stress-1.jpg",
-    "objectif": "Donner des stratégies concrètes pour rester calme et concentré. Ce mois, on installe des routines : c'est la répétition qui fonctionne.",
+    "objectif": "Donner des stratégies concrètes pour rester calme et concentré. Ce mois, on installe des routines : c'est la répétition qui fonctionne.",
     "outils": [
       "Respiration carrée 4-4-4-4",
       "Ancrage pieds / sol",
@@ -657,11 +657,11 @@
         ],
         [
           "Apaiser",
-          "Calmer le corps pour calmer l'esprit : respiration, visualisation, ancrage, tension / relâchement."
+          "Calmer le corps pour calmer l'esprit : respiration, visualisation, ancrage, tension / relâchement."
         ],
         [
           "Pourquoi à l'adolescence",
-          "Le système des émotions est très réactif alors que le cortex préfrontal (planification, recul) mûrit encore. Un élève stressé n'est pas un élève « qui ne veut pas » : son cerveau est momentanément moins disponible pour apprendre."
+          "Le système des émotions est très réactif alors que le cortex préfrontal (planification, recul) mûrit encore. Un élève stressé n'est pas un élève « qui ne veut pas » : son cerveau est momentanément moins disponible pour apprendre."
         ]
       ]
     },
@@ -678,7 +678,7 @@
             "objectif": "Retour au calme.",
             "consigne": "Inspire 4 s → retiens 4 s → expire 4 s → retiens 4 s. Répète 4 à 6 cycles.",
             "reflexion": [
-              "Qu'est-ce que tu remarques dans ton corps après une minute ?"
+              "Qu'est-ce que tu remarques dans ton corps après une minute ?"
             ]
           },
           {
@@ -691,12 +691,12 @@
             "reflexion": []
           },
           {
-            "titre": "Visualisation : ton endroit sécurisant",
+            "titre": "Visualisation : ton endroit sécurisant",
             "img": "supports/stress-4.jpg",
             "duree": "1 min",
             "min": 1,
             "objectif": "Apaiser l'anxiété avant une évaluation ou un moment important.",
-            "consigne": "Ferme les yeux. Imagine un endroit où tu te sens totalement calme. Concentre-toi sur 3 détails : un son, une couleur, une sensation. Reste une minute dans cet espace intérieur.",
+            "consigne": "Ferme les yeux. Imagine un endroit où tu te sens totalement calme. Concentre-toi sur 3 détails : un son, une couleur, une sensation. Reste une minute dans cet espace intérieur.",
             "reflexion": []
           },
           {
@@ -707,7 +707,7 @@
             "objectif": "Relâcher les tensions physiques, se préparer à un moment stressant.",
             "consigne": "1. Choisis un groupe musculaire. 2. Serre-le fort 5 secondes. 3. Relâche d'un coup en expirant, 10 secondes. 4. Répète 2 à 3 fois.",
             "reflexion": [
-              "Sens-tu la différence entre tension et relâchement ?"
+              "Sens-tu la différence entre tension et relâchement ?"
             ]
           }
         ]
@@ -720,9 +720,9 @@
             "duree": "5 min",
             "min": 5,
             "objectif": "Identifier son niveau de stress.",
-            "consigne": "Sur une échelle de 1 à 10, où se trouve ton stress aujourd'hui ?",
+            "consigne": "Sur une échelle de 1 à 10, où se trouve ton stress aujourd'hui ?",
             "reflexion": [
-              "Que faire pour baisser d'un point ?"
+              "Que faire pour baisser d'un point ?"
             ]
           },
           {
@@ -740,9 +740,9 @@
             "duree": "5–10 min",
             "min": 8,
             "objectif": "Prioriser pour réduire la surcharge.",
-            "consigne": "Classons ensemble 5 tâches d'un élève fictif (devoir, réviser un test, soirée, sport, ménage) : urgent, important ou secondaire.",
+            "consigne": "Classons ensemble 5 tâches d'un élève fictif (devoir, réviser un test, soirée, sport, ménage) : urgent, important ou secondaire.",
             "reflexion": [
-              "Pourquoi ceci est-il stressant ?"
+              "Pourquoi ceci est-il stressant ?"
             ]
           },
           {
@@ -750,9 +750,9 @@
             "duree": "5–10 min",
             "min": 8,
             "objectif": "Montrer l'effet du découpage d'une tâche.",
-            "consigne": "Découpons une grosse tâche (préparer un exposé) en micro-étapes : choix du sujet, plan, recherche, rédaction, relecture, répétition.",
+            "consigne": "Découpons une grosse tâche (préparer un exposé) en micro-étapes : choix du sujet, plan, recherche, rédaction, relecture, répétition.",
             "reflexion": [
-              "La tâche paraît-elle toujours aussi grosse ?"
+              "La tâche paraît-elle toujours aussi grosse ?"
             ]
           },
           {
@@ -760,9 +760,9 @@
             "duree": "5–10 min",
             "min": 8,
             "objectif": "Réduire le stress d'impuissance.",
-            "consigne": "Trois cercles : ce que je contrôle, ce que je peux influencer, ce qui ne dépend pas de moi. Plaçons 4 ou 5 exemples.",
+            "consigne": "Trois cercles : ce que je contrôle, ce que je peux influencer, ce qui ne dépend pas de moi. Plaçons 4 ou 5 exemples.",
             "reflexion": [
-              "Où mettre son énergie ?"
+              "Où mettre son énergie ?"
             ]
           }
         ]
@@ -771,11 +771,11 @@
     "pistes": [
       [
         "Planification express du soir",
-        "3 minutes : mes 3 priorités de demain."
+        "3 minutes : mes 3 priorités de demain."
       ],
       [
         "Si… alors…",
-        "« Si c'est mardi à 17 h, alors je révise 20 min de maths dans ma chambre. »"
+        "« Si c'est mardi à 17 h, alors je révise 20 min de maths dans ma chambre. »"
       ],
       [
         "Méthode 20-5-20",
@@ -791,14 +791,14 @@
       ],
       [
         "Self-talk",
-        "« Une tâche à la fois. » « J'ai déjà réussi des moments difficiles. »"
+        "« Une tâche à la fois. » « J'ai déjà réussi des moments difficiles. »"
       ]
     ],
     "reperes": {
       "claims": [
         [
           "solid",
-          "Les intentions de mise en œuvre (« si… alors… ») ont un effet robuste sur le passage à l'action : d = 0,65 dans la méta-analyse de Gollwitzer et Sheeran (2006)."
+          "Les intentions de mise en œuvre (« si… alors… ») ont un effet robuste sur le passage à l'action : d = 0,65 dans la méta-analyse de Gollwitzer et Sheeran (2006)."
         ],
         [
           "solid",
@@ -810,15 +810,15 @@
         ],
         [
           "nuance",
-          "Dans un essai randomisé, le soupir cyclique (double inspiration, longue expiration) a amélioré l'humeur davantage que la respiration carrée (Balban et al., 2023). La respiration carrée reste utile ; ce n'est pas la seule option."
+          "Dans un essai randomisé, le soupir cyclique (double inspiration, longue expiration) a amélioré l'humeur davantage que la respiration carrée (Balban et al., 2023). La respiration carrée reste utile ; ce n'est pas la seule option."
         ],
         [
           "nuance",
-          "Le modèle « système émotionnel rapide / cortex préfrontal lent » (Casey et al., 2008) est une simplification utile mais discutée : à présenter comme une image, pas comme un mécanisme exact."
+          "Le modèle « système émotionnel rapide / cortex préfrontal lent » (Casey et al., 2008) est une simplification utile mais discutée : à présenter comme une image, pas comme un mécanisme exact."
         ],
         [
           "flou",
-          "« Le cerveau réagit comme si la situation était réelle » (visualisation) est exagéré. L'imagerie active des réseaux proches de la perception, sans équivalence. Mieux : « imaginer un lieu calme aide le corps à se détendre »."
+          "« Le cerveau réagit comme si la situation était réelle » (visualisation) est exagéré. L'imagerie active des réseaux proches de la perception, sans équivalence. Mieux : « imaginer un lieu calme aide le corps à se détendre »."
         ],
         [
           "flou",
@@ -857,7 +857,7 @@
     "hue": "--h-plum",
     "objectif": "Apprendre des méthodes constructives de résolution.",
     "outils": [
-      "Méthode DESC : décrire, exprimer, suggérer, conclure",
+      "Méthode DESC : décrire, exprimer, suggérer, conclure",
       "Chercher 3 solutions avant de trancher",
       "Pause avant de répondre"
     ],
@@ -891,7 +891,7 @@
     "outils": [
       "Tableau avantages / inconvénients",
       "Règle des 2 minutes en petit groupe",
-      "Est-ce utile ? faisable ? positif ?"
+      "Est-ce utile ? faisable ? positif ?"
     ],
     "idees": [
       "Choisir collectivement un arrangement ou un tempo",
@@ -905,7 +905,7 @@
     "hue": "--h-green",
     "objectif": "Prendre du recul sur les informations et les influences.",
     "outils": [
-      "Grille : Qui ? Quoi ? Pourquoi ?",
+      "Grille : Qui ? Quoi ? Pourquoi ?",
       "Chercher 2 sources différentes",
       "Repérer faits et opinions"
     ],
@@ -921,7 +921,7 @@
     "hue": "--h-pink",
     "objectif": "Rebondir après un échec et persévérer.",
     "outils": [
-      "« Encore une fois, et mieux »",
+      "« Encore une fois, et mieux »",
       "1 chose apprise après un échec",
       "Citation de fin de cours"
     ],
