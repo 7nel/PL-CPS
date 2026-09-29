@@ -34,13 +34,27 @@ Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espa
 Aucune installation ni compte n'est nécessaire, et aucune donnée n'est collectée. Seul le choix du thème clair ou sombre est gardé dans le navigateur.
 
 - **En ligne** : activer GitHub Pages sur ce dépôt (Settings → Pages → Deploy from branch → `main` → `/root`). Adresse : `https://7nel.github.io/PL-CPS/` (respecter les majuscules).
-- **En local** : télécharger le dépôt (Code → Download ZIP), le décompresser et ouvrir `index.html`. Le dossier `supports/` doit rester à côté d'`index.html`.
+- **En local** : le contenu est chargé depuis `data/competences.json`, ce que les navigateurs bloquent quand on ouvre `index.html` par double-clic. Pour travailler hors ligne, lancer un petit serveur dans le dossier (par exemple `python3 -m http.server`) puis ouvrir `http://localhost:8000`.
 
 Chaque compétence a sa propre adresse, par exemple `…/PL-CPS/#stress` ou `…/PL-CPS/#communication`.
 
-## Ajouter un mois
+## Structure
 
-Les contenus sont regroupés dans le tableau `DATA` au début du script d'`index.html`. Pour remplir un mois « à construire », ajouter à son entrée un champ `groupes` sur le modèle des mois déjà remplis, et placer les images dans `supports/` au format 16:9.
+- `index.html` : la page (mise en page, navigation, projection, minuteur). Elle lit le contenu au chargement.
+- `data/competences.json` : tout le contenu des mois, un objet par compétence.
+- `supports/` : les diapositives à projeter, en JPG 16:9.
+
+## Mettre à jour le contenu
+
+Pas besoin de toucher `index.html` : on modifie `data/competences.json` et on pousse le commit. Le site se met à jour tout seul (chargement avec contournement du cache).
+
+Champs d'une compétence : `id`, `mois`, `nom`, `sous`, `hue` (`--h-orange`, `--h-green`, `--h-yellow`, `--h-pink`, `--h-blue`, `--h-plum`), `img`, `objectif`, `outils`, et selon l'avancement `essentiel`, `groupes`, `pistes`, `reperes`, ou `idees` pour un mois à construire.
+
+Champs d'une activité (dans `groupes[].acts`) : `titre`, `img`, `duree` (texte affiché), `min` (durée du minuteur, en minutes), `objectif`, `materiel`, `consigne`, `exemples`, `variante`, `reflexion`, et en option `principes`, `source: "doc"` ou `guide: "breath"`.
+
+Niveaux des `reperes.claims` : `solid`, `nuance`, `flou`, `todo`.
+
+Un mois « à construire » devient complet dès qu'on lui ajoute un champ `groupes`.
 
 ## Licence
 
