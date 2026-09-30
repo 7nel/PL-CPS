@@ -43,6 +43,7 @@ Chaque compétence a sa propre adresse, par exemple `…/PL-CPS/#stress` ou `…
 - `index.html` : la page (mise en page, navigation, projection, minuteur). Elle lit le contenu au chargement.
 - `data/competences.json` : tout le contenu des mois, un objet par compétence.
 - `supports/` : les diapositives à projeter, en JPG 16:9.
+- `icon-*.png`, `manifest.json` : icône et métadonnées pour l'écran d'accueil (tablette, téléphone, ordinateur).
 
 ## Mettre à jour le contenu
 
