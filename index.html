@@ -6,7 +6,8 @@
 <meta name="description" content="Programme annuel des compétences psychosociales pour le Cycle d’orientation (9e–11e) : une compétence par mois, activités courtes, supports à projeter.">
 <meta name="author" content="Pauline Lentes, Melody Ehrensperger">
 <link rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">
-<meta name="theme-color" content="#2f6f63">
+<meta name="theme-color" content="#2f6f63" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#182422" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="PL-CPS’">
@@ -62,7 +63,7 @@ h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
 /* ---- en-tête (identique PL-lect’ / PL-planif’) ---- */
 .top{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
 .brand{margin-right:auto;min-width:0}
-.eyebrow{font:700 .9rem/1 var(--ui);color:var(--ink-2);margin:0 0 6px}
+.eyebrow{font:700 1rem/1 var(--ui);color:var(--ink-2);margin:0 0 6px}
 .brand .t1{margin:0;font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:700;line-height:1.2}
 .brand .t1 button{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:44px}
 .brand .t1 button:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:6px}
@@ -72,19 +73,19 @@ h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
 .ib[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:transparent}
 .ib svg{width:24px;height:24px}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow)}
-.btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;border:1px solid var(--edge);background:var(--surface-2);padding:8px 15px;border-radius:999px;cursor:pointer;font-weight:700;font-size:.9rem;white-space:nowrap;text-decoration:none;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;border:1px solid var(--edge);background:var(--surface-2);padding:8px 15px;border-radius:999px;cursor:pointer;font-weight:700;font-size:1rem;white-space:nowrap;text-decoration:none;color:var(--ink)}
 .btn:hover{border-color:var(--ink-2)}
 .btn[disabled]{opacity:.45;cursor:not-allowed}
 .btn[aria-pressed="true"]{background:var(--accent);border-color:transparent;color:var(--accent-ink)}
 .btn.pri{background:var(--accent);border-color:transparent;color:var(--accent-ink)}
 .btn svg{width:18px;height:18px}
-.hint{font-size:.9rem;color:var(--ink-2)}
+.hint{font-size:1rem;color:var(--ink-2)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 /* ---- aide ---- */
 .help{padding:18px 22px;display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.help p{margin:0;font-size:.95rem}
-kbd{font:700 .9rem var(--num);background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.help p{margin:0;font-size:1rem}
+kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
 
 /* ---- vue année ---- */
 .intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px;align-items:stretch}
@@ -99,18 +100,19 @@ kbd{font:700 .9rem var(--num);background:var(--surface-2);border:1px solid var(-
 .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 
 .sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.sec-h h2{font-size:1.25rem}
+.sec-h h2{font-size:1.5rem}
 .months{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
 .mcard{--c:var(--accent);position:relative;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--edge);border-radius:var(--r-panel);padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;transition:transform .15s ease,border-color .15s}
 .mcard:hover{transform:translateY(-2px);border-color:var(--c)}
 .mcard::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;border-radius:var(--r-panel) 0 0 var(--r-panel);background:var(--c)}
-.mcard .m{font:600 .9rem/1 var(--num);color:var(--ink-2);display:flex;justify-content:space-between;gap:8px}
-.mcard h3{font-size:1.08rem}
-.mcard p{margin:0;font-size:.9rem;color:var(--ink-2)}
+.mcard .m{font:600 1rem/1 var(--num);color:var(--ink-2);display:flex;justify-content:space-between;gap:8px}
+.mcard h3{font-size:1.2rem}
+.mcard p{margin:0;font-size:1rem;color:var(--ink-2)}
 .mcard.soon{background:transparent;border-style:dashed;box-shadow:none}
 .mcard.soon h3{color:var(--ink-2)}
-.mcard.cur{outline:3px solid color-mix(in srgb,var(--c) 70%,var(--ink));outline-offset:2px}
-.pill{font:700 .9rem/1 var(--ui);letter-spacing:.04em;padding:5px 9px;border-radius:999px;white-space:nowrap}
+.soonrow{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.soonrow .mcard{padding:12px 14px}
+.pill{font:700 1rem/1 var(--ui);letter-spacing:.04em;padding:5px 9px;border-radius:999px;white-space:nowrap}
 .pill.ok{background:color-mix(in srgb,var(--c) 22%,var(--surface));color:var(--ink)}
 .pill.no{background:var(--surface-2);color:var(--ink-2)}
 .pill.cur{background:color-mix(in srgb,var(--c) 55%,#000);color:#fff}
@@ -127,76 +129,78 @@ kbd{font:700 .9rem var(--num);background:var(--surface-2);border:1px solid var(-
 .chero h1{font-size:clamp(1.5rem,2.6vw,2rem)}
 .chero .sub{margin:0;color:var(--ink-2);font-weight:700}
 .chero .obj{margin:0}
-.chero .obj b{display:block;font-size:.9rem;color:var(--ink-2)}
+.chero .obj b{display:block;font-size:1rem;color:var(--ink-2)}
 .chero.noimg{grid-template-columns:1fr}
 .chero.noimg .txt{border-left:0;border-top:8px solid var(--c)}
-.outils{margin-top:2px}
-.outils .obj{margin:0 0 10px}
 .outils summary{cursor:pointer;font-weight:700;color:var(--ink-2);min-height:44px;display:flex;align-items:center}
+.outils .tools{margin-top:4px}
 .tools{display:flex;flex-wrap:wrap;gap:8px}
-.tools span{font-size:.9rem;padding:6px 11px;border-radius:999px;border:1px dashed color-mix(in srgb,var(--c) 70%,var(--line));background:color-mix(in srgb,var(--c) 9%,var(--surface))}
+.tools span{font-size:1rem;padding:6px 11px;border-radius:999px;border:1px dashed color-mix(in srgb,var(--c) 70%,var(--line));background:color-mix(in srgb,var(--c) 9%,var(--surface))}
 
 .tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:0}
 .tab{border:0;background:none;min-height:44px;padding:10px 14px;font-weight:700;color:var(--ink-2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
 .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--c,var(--accent))}
-.tab .n{font:600 .9rem var(--num);color:var(--ink-2);margin-left:4px}
+.tab .n{font:600 1rem var(--num);color:var(--ink-2);margin-left:4px}
 
 .group{display:flex;flex-direction:column;gap:12px}
 .group+.group{margin-top:10px}
-.group h2{font-size:1.02rem;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:2;background:var(--bg);padding:8px 0}
+.group h2{font-size:1.5rem;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:2;background:var(--bg);padding:8px 0}
 .group h2::before{content:"";width:18px;height:3px;border-radius:2px;background:color-mix(in srgb,var(--c) 70%,var(--ink))}
 .acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .act{display:flex;flex-direction:column;overflow:hidden;border-radius:var(--r-panel);background:var(--surface);border:1px solid var(--line)}
 .act .thumb{position:relative;display:block;border:0;padding:0;cursor:zoom-in;background:var(--surface-2)}
 .act .thumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 .act .inner{padding:14px 16px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
-.act h3{font-size:1.25rem}
-.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:.9rem}
+.act h3{font-size:1.2rem}
+.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:1rem}
 .meta span{display:inline-flex;gap:5px;align-items:center;color:var(--ink-2)}
 .act .row{align-items:center;justify-content:space-between}
+.act .head{display:block}
+.act .head .dur{display:none}
 .dur{display:inline-flex;gap:6px;align-items:center;font-size:1.1rem;font-weight:700;color:var(--ink)}
 .dur svg{width:18px;height:18px}
 .filt{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .filt .hint{margin-left:4px}
 .meta svg{width:18px;height:18px}
-.act p{margin:0;font-size:.95rem}
+.act p{margin:0;font-size:1rem}
 .act .cons{font-size:1.15rem;font-weight:700}
-.flag{align-self:flex-start;font-size:.9rem;font-weight:700;color:var(--warn);background:var(--warn-soft);border-radius:999px;padding:3px 9px}
+.flag{align-self:flex-start;font-size:1rem;font-weight:700;color:var(--warn);background:var(--warn-soft);border-radius:999px;padding:3px 9px}
 .act .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
-details.more{font-size:.93rem}
+details.more{font-size:1rem}
 details.more summary{cursor:pointer;font-weight:700;color:var(--ink-2);min-height:44px;display:flex;align-items:center}
 details.more ul,details.more ol{margin:.4em 0 0;padding-left:1.2em}
 details.more li{margin:.15em 0}
 .bigthumb{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
 .bigthumb img{width:100%;display:block;border-bottom:1px solid var(--line)}
-.lbl{display:block;font-size:.9rem;color:var(--ink-2);font-weight:700;margin-top:8px}
+.lbl{display:block;font-size:1rem;color:var(--ink-2);font-weight:700;margin-top:8px}
 
 .prose{padding:22px 26px;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.prose section h2{font-size:1rem;margin-bottom:6px}
-.prose p,.prose ul{margin:0;font-size:.95rem;max-width:62ch}
+.prose section h2{font-size:1.2rem;margin-bottom:6px}
+.prose p,.prose ul{margin:0;font-size:1rem;max-width:62ch}
 .prose ul{padding-left:1.1em}
 .prose li{margin:.2em 0}
 .ideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
 .idea{padding:14px 16px;border-radius:var(--r-panel);border:1px dashed var(--line-strong);background:transparent}
-.idea h2{font-size:.98rem;margin-bottom:4px}
-.idea p{margin:0;font-size:.9rem;color:var(--ink-2)}
+.idea h2{font-size:1.2rem;margin-bottom:4px}
+.idea p{margin:0;font-size:1rem;color:var(--ink-2)}
 
 .sci{padding:22px 26px;display:flex;flex-direction:column;gap:16px}
-.sci h2,.sci h3{font-size:1rem}
+.sci h2{font-size:1.3rem}
+.sci h3{font-size:1.1rem}
 .claims{display:grid;gap:10px}
-.claim{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;font-size:.95rem}
-.claim .v{font:700 .9rem/1 var(--ui);padding:5px 8px;border-radius:999px;white-space:nowrap;text-align:center;min-width:92px}
+.claim{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;font-size:1rem}
+.claim .v{font:700 1rem/1 var(--ui);padding:5px 8px;border-radius:999px;white-space:nowrap;text-align:center;min-width:92px}
 .v.solid{background:color-mix(in srgb,var(--h-green) 26%,var(--surface))}
 .v.nuance{background:color-mix(in srgb,var(--h-yellow) 30%,var(--surface))}
 .v.flou{background:color-mix(in srgb,var(--h-orange) 28%,var(--surface))}
 .v.todo{background:color-mix(in srgb,var(--h-blue) 26%,var(--surface))}
 .claim p{margin:0;max-width:75ch}
-.refs{font-size:.9rem;color:var(--ink-2);padding-left:1.6em;text-indent:-1.6em;margin:0;display:grid;gap:6px;list-style:none}
+.refs{/* exception assumée : références APA à 16,2 px */font-size:.9rem;max-width:75ch;color:var(--ink-2);padding-left:1.6em;text-indent:-1.6em;margin:0;display:grid;gap:6px;list-style:none}
 .refs i{font-style:italic}
 .refs li{overflow-wrap:anywhere}
 
 footer.about a{display:inline-flex;align-items:center;min-height:44px}
-footer.about{font-size:.9rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}
+footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}
 
 /* ---- projection ---- */
 .proj{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;grid-template-rows:auto 1fr;padding:calc(env(safe-area-inset-top,0px) + 14px) clamp(16px,2.5vw,36px) calc(env(safe-area-inset-bottom,0px) + 16px)}
@@ -227,25 +231,26 @@ footer.about{font-size:.9rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:
 
 /* guide respiration carrée */
 .breath{display:grid;place-items:center;gap:18px;padding:18px;width:100%;height:100%}
-.sq{position:relative;width:max(160px,min(calc(100cqh - 200px),90cqw));aspect-ratio:1;border:6px solid color-mix(in srgb,var(--c) 70%,var(--ink));border-radius:18px}
+.sq{position:relative;width:max(140px,min(calc(100cqh - 280px),90cqw));aspect-ratio:1;border:6px solid color-mix(in srgb,var(--c) 70%,var(--ink));border-radius:18px}
 .sq i{position:absolute;width:34px;height:34px;margin:-17px;border-radius:50%;background:color-mix(in srgb,var(--c) 70%,var(--ink));box-shadow:0 0 0 10px color-mix(in srgb,var(--c) 22%,transparent);left:0;top:100%}
 .sq .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
 .sq .ph b{font:600 clamp(1.6rem,4vw,2.8rem)/1.1 var(--num);display:block}
 .sq .ph span{font:600 clamp(2.6rem,7vw,5rem)/1 var(--num);color:color-mix(in srgb,var(--c) 45%,var(--ink))}
-.breath .hint{font-size:1.2rem}
+.breath .hint{font-size:1.5rem;font-weight:700;color:var(--ink)}
+.cyc .btn{min-height:56px;font-size:1.1rem;padding-inline:20px}
 .cyc{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center}
 
 
 .cadre{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
 .cadre .panel{padding:20px 22px;display:flex;flex-direction:column;gap:10px}
-.cadre h2{font-size:1.05rem}
-.cadre p,.cadre ul,.cadre ol{margin:0;font-size:.95rem;max-width:62ch}
+.cadre h2{font-size:1.3rem}
+.cadre p,.cadre ul,.cadre ol{margin:0;font-size:1rem;max-width:62ch}
 .cadre ul,.cadre ol{padding-left:1.15em}.cadre li{margin:.2em 0}
-.quote{font-size:1.15rem;line-height:1.5;border-left:4px solid var(--accent);padding-left:14px}
+.quote{max-width:62ch;font-size:1.15rem;line-height:1.5;border-left:4px solid var(--accent);padding-left:14px}
 .cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
 .cat{border-radius:var(--r-panel);padding:14px 16px;background:color-mix(in srgb,var(--c) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--c) 40%,var(--line))}
 .cat b{display:block;margin-bottom:6px;color:var(--ink)}
-.cat ul{margin:0;padding-left:1.1em;font-size:.92rem}
+.cat ul{margin:0;padding-left:1.1em;font-size:1rem}
 .wide{grid-column:1/-1}
 @media (min-width:1000px){.span2{grid-column:span 2}}
 @media (max-width:900px){
@@ -255,6 +260,15 @@ footer.about{font-size:.9rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:
   .chero .txt{padding:16px 18px;gap:8px;border-top:8px solid var(--c)}
 }
 @media (max-width:700px){
+  .act{display:grid;grid-template-columns:96px minmax(0,1fr);align-items:start}
+  .act .thumb{grid-column:1;margin:12px 0 0 12px;width:84px;border-radius:10px;overflow:hidden}
+  .act .thumb img{aspect-ratio:1;height:84px}
+  .act .inner{grid-column:2;padding:12px 14px 14px 12px}
+  .act .inner:first-child{grid-column:1/-1;padding-left:16px}
+  .act .head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .act .head .dur{display:inline-flex;white-space:nowrap}
+  .act .row .dur{display:none}
+  .act .row{justify-content:flex-start}
   .proj{overflow:auto}
   .proj-body{grid-template-columns:1fr}
   .stage{height:56vh}
@@ -345,20 +359,23 @@ function renderYear(){
       </button>
       <div class="panel lead">
         <h2>Une compétence par mois</h2>
-        <p>Activités courtes (2 à 15 minutes), supports à projeter et outils que les élèves réutilisent dans tout l’établissement.</p>
-        <p class="hint">Les mois sans activités affichent l’objectif et les outils prévus.</p>
+        <p>Activités courtes, supports à projeter et outils réutilisables dans tout l’établissement.</p>
         <button class="btn" data-go="cadre" style="align-self:flex-start;margin-top:auto">Pourquoi les CPS à l’école&#8239;?</button>
       </div>
     </div>
     <div class="sec-h"><h2>L’année</h2><span class="hint">de septembre à juin</span></div>
     <div class="months">
-      ${DATA.map((c,i) => `
-      <button class="mcard ${ready(c)?"":"soon"} ${i===curIdx?"cur":""}" style="--c:var(${c.hue})" data-go="${c.id}">
-        <span class="m"><span>${c.mois}</span>${i===curIdx?'<i class="pill cur">Ce mois</i>':ready(c)?`<i class="pill ok">${actsOf(c).length} activités</i>`:'<i class="pill no">À construire</i>'}</span>
+      ${DATA.map((c,i) => (ready(c)||i===curIdx) ? `
+      <button class="mcard ${ready(c)?"":"soon"}" style="--c:var(${c.hue})" data-go="${c.id}">
+        <span class="m"><span>${c.mois}</span>${i===curIdx?'<i class="pill cur">Ce mois</i>':`<i class="pill ok">${actsOf(c).length} activités</i>`}</span>
         <h3>${esc(c.nom)}</h3>
         <p>${esc(c.objectif.split(". ")[0].replace(/\.$/,""))}.</p>
-      </button>`).join("")}
+      </button>` : "").join("")}
     </div>
+    ${DATA.some((c,i)=>!ready(c)&&i!==curIdx) ? `<div class="sec-h"><h2>Bientôt</h2><span class="hint">objectif et outils déjà prévus</span></div>
+    <div class="months soonrow">
+      ${DATA.map((c,i) => (!ready(c)&&i!==curIdx) ? `<button class="mcard soon" style="--c:var(${c.hue})" data-go="${c.id}"><span class="m"><span>${c.mois}</span></span><h3>${esc(c.nom)}</h3></button>` : "").join("")}
+    </div>` : ""}
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
 }
@@ -384,8 +401,8 @@ function renderComp(c, tab){
     <div class="crumbs">
       <button class="btn" data-go="">${ico.back} L’année</button>
       <span class="pn" role="group" aria-label="Mois voisins">
-        ${prev?`<button class="btn ico" data-go="${prev.id}" aria-label="Mois précédent : ${prev.mois}, ${esc(prev.nom)}" title="${prev.mois} · ${esc(prev.nom)}">${ico.back}</button>`:""}
-        ${next?`<button class="btn ico" data-go="${next.id}" aria-label="Mois suivant : ${next.mois}, ${esc(next.nom)}" title="${next.mois} · ${esc(next.nom)}"><span style="display:inline-flex;transform:scaleX(-1)">${ico.back}</span></button>`:""}
+        ${prev?`<button class="btn ico" data-go="${prev.id}" aria-label="Mois précédent&#8239;: ${prev.mois}, ${esc(prev.nom)}" title="${prev.mois} · ${esc(prev.nom)}">${ico.back}</button>`:""}
+        ${next?`<button class="btn ico" data-go="${next.id}" aria-label="Mois suivant&#8239;: ${next.mois}, ${esc(next.nom)}" title="${next.mois} · ${esc(next.nom)}"><span style="display:inline-flex;transform:scaleX(-1)">${ico.back}</span></button>`:""}
       </span>
     </div>
     <section class="panel chero ${c.img?"":"noimg"}" style="--c:var(${c.hue})">
@@ -394,17 +411,17 @@ function renderComp(c, tab){
         <span class="m">${c.mois}</span>
         <h1>${esc(c.nom)}</h1>
         ${c.sous?`<p class="sub">${esc(c.sous)}</p>`:""}
-        <details class="outils"><summary>Objectif et outils à réutiliser</summary>
         <p class="obj"><b>Objectif</b>${esc(c.objectif)}</p>
+        <details class="outils" ${matchMedia("(max-width:700px)").matches?"":"open"}><summary>Outils à réutiliser dans l’établissement</summary>
         <div class="tools">${c.outils.map(o=>`<span>${esc(o)}</span>`).join("")}</div></details>
       </div>
     </section>
     ${ready(c) ? `
       <div class="tabs" role="tablist" aria-label="Contenus de la compétence">${tabs.map(t=>`<button class="tab" role="tab" id="tab-${t[0]}" aria-controls="tabBody" aria-selected="${t[0]===curTab}" tabindex="${t[0]===curTab?0:-1}" data-tab="${t[0]}">${t[1]}${t[2]?`<span class="n">${t[2]}</span>`:""}</button>`).join("")}</div>
       <div id="tabBody" role="tabpanel" aria-labelledby="tab-${curTab}" tabindex="0"></div>`
-    : `<section class="panel prose">
-         <section><h2>Idées d’activités du programme</h2><ul>${c.idees.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>
-         <section><h2>À construire</h2><p>Les activités de ce mois ne sont pas encore rédigées. Elles seront ajoutées prochainement.</p>${(()=>{const r=DATA.map((d,n)=>[d,Math.abs(n-i)]).filter(([d])=>ready(d)).sort((x,y)=>x[1]-y[1])[0]?.[0]; return r?`<p><button class="btn wrap" data-go="${r.id}">Voir les activités de ${r.mois} : ${esc(r.nom)}</button></p>`:""})()}</section>
+    : `<section class="panel prose" style="grid-template-columns:1fr">
+         <section><h2>Idées d’activités du programme</h2><ul>${c.idees.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+         <p style="margin-top:12px"><b>À construire.</b> Les activités de ce mois ne sont pas encore rédigées. Elles seront ajoutées prochainement.</p>${(()=>{const r=DATA.map((d,n)=>[d,Math.abs(n-i)]).filter(([d])=>ready(d)).sort((x,y)=>x[1]-y[1])[0]?.[0]; return r?`<p><button class="btn wrap" data-go="${r.id}">Voir les activités de ${r.mois} : ${esc(r.nom)}</button></p>`:""})()}</section>
        </section>`}
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
@@ -420,6 +437,7 @@ function renderComp(c, tab){
   if(ready(c)) renderTab(c);
 }
 
+const durTxt = a => a.guide==="breath" ? "1 à 1,5 min" : a.duree;
 function actCard(a, k){
   const infos = [
     a.principes ? `Principe${a.principes.length>1?"s":""} ${esc(a.principes)}` : "",
@@ -429,7 +447,7 @@ function actCard(a, k){
   return `<article class="act" data-min="${a.min??5}">
     ${a.img?`<button class="thumb" data-proj="${k}" tabindex="-1" aria-hidden="true"><img src="${a.img}" alt="" loading="lazy"></button>`:""}
     <div class="inner">
-      <h3>${esc(a.titre)}</h3>
+      <div class="head"><h3>${esc(a.titre)}</h3><span class="dur">${ico.time}${esc(durTxt(a))}</span></div>
       <p class="cons">${esc(a.consigne)}</p>
       <details class="more"><summary>Objectif et détails</summary>
         <p><b>Objectif&#8239;:</b> ${esc(a.objectif)}</p>
@@ -441,7 +459,7 @@ function actCard(a, k){
         ${a.variante?`<span class="lbl">Variante</span><p>${esc(a.variante)}</p>`:""}
         ${a.reflexion?.length?`<span class="lbl">Moment de réflexion</span><ul>${a.reflexion.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
       </details>
-      <div class="row"><span class="dur">${ico.time}${esc(a.duree)}</span><button class="btn pri" data-proj="${k}">${ico.proj} Projeter</button></div>
+      <div class="row"><span class="dur">${ico.time}${esc(durTxt(a))}</span><button class="btn pri" data-proj="${k}">${ico.proj} Projeter</button></div>
     </div>
   </article>`;
 }

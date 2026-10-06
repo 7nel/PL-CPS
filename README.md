@@ -31,6 +31,10 @@ Pour la respiration carrée, on choisit 4, 5 ou 6 cycles et un seul bouton lance
 
 Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espace` démarrer ou mettre en pause le minuteur (quel que soit le bouton sélectionné), `F` plein écran, `Échap` fermer. Le focus clavier reste dans la projection et revient sur le bouton « Projeter » à la fermeture.
 
+## Lisibilité
+
+Tout le texte courant fait 18 px au minimum. Seule exception assumée : la liste des références APA, à 16 px. Les mois sans activités sont rangés dans la rangée « Bientôt » de la vue de l’année, avec leur objectif et leurs outils sur la page du mois.
+
 ## Trouver une activité
 
 Sur la page d’une compétence, trois boutons filtrent les activités par durée : 3 min ou moins, 4 à 6 min, 7 min et plus. Chaque carte montre la durée et l’objectif ; la consigne complète est dans « Consigne et détails ».
