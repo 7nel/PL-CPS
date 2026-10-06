@@ -51,7 +51,7 @@ Tout le texte courant fait 18 px au minimum. Seule exception assumée : la liste
 
 ## Trouver une activité
 
-Sur la page d’une compétence, trois boutons filtrent les activités par durée : 3 min ou moins, 4 à 6 min, 7 min et plus. Chaque carte montre la durée et l’objectif ; la consigne complète est dans « Consigne et détails ».
+La vue de l’année affiche les dix mois en frise (passé, en cours, à venir), puis les mois dont les activités sont prêtes. Sur la page d’une compétence, quatre boutons placés à droite des onglets filtrent les activités par durée : 3 min ou moins, 4 à 6 min, 7 min et plus. Chaque carte montre la durée et l’objectif ; la consigne complète est dans « Consigne et détails ».
 
 ## Mise en ligne
 
