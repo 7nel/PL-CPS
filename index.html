@@ -84,6 +84,7 @@ h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
 .btn.pri{background:var(--accent);border-color:transparent;color:var(--accent-ink)}
 .btn svg{width:18px;height:18px}
 .hint{font-size:1rem;color:var(--ink-2)}
+.sec-h .hint{color:var(--ink)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 /* ---- aide ---- */
@@ -105,28 +106,19 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 
 .sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .sec-h h2{font-size:1.5rem}
-.months{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
 .frise{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-.fr{--c:var(--accent);width:100%;min-height:68px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px 12px;border:1px solid var(--edge);border-radius:var(--r-ctl);background:var(--surface);cursor:pointer;text-align:left;position:relative;overflow:hidden;color:var(--ink)}
-.fr::after{content:"";position:absolute;top:10px;right:10px;width:12px;height:12px;border-radius:50%;background:var(--cb)}
+.fr{--c:var(--accent);width:100%;min-height:96px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px 12px;border:1px solid var(--edge);border-radius:var(--r-ctl);background:var(--surface);cursor:pointer;text-align:left;position:relative;overflow:hidden;color:var(--ink)}
+.fr::after{content:"";position:absolute;top:10px;right:10px;width:16px;height:16px;border-radius:50%;background:var(--cb)}
 .fr .fm{font-weight:700}
-.fr .fs{color:var(--ink-2)}
+.fr .fn{font-size:1.05rem;line-height:1.25;padding-right:20px}
+.fr .fs{color:var(--ink);font-weight:700;margin-top:auto}
 .fr.soon{border-style:dashed;background:transparent}
 .fr.soon::after{opacity:.5}
 .fr.cur{background:var(--accent);border-color:transparent;color:var(--accent-ink)}
-.fr.cur .fs{color:inherit}
-.mcard{--c:var(--accent);position:relative;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--edge);border-radius:var(--r-panel);padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;transition:transform .15s ease,border-color .15s}
+.fr.cur .fs,.fr.cur .fn{color:inherit}
 :root{--k-cons:var(--h-blue);--k-ex:var(--h-yellow);--k-ref:var(--h-pink)}
-.mcard,.chero,.group,.proj,.fr{--cb:color-mix(in srgb,var(--c) 65%,var(--ink))}
-.mcard:hover{transform:translateY(-2px);border-color:var(--c)}
-.mcard::before{content:"";position:absolute;top:14px;right:14px;width:14px;height:14px;border-radius:50%;background:var(--cb)}
-.mcard .m{font:600 1rem/1 var(--num);color:var(--ink-2);display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-.mcard h3{font-size:1.2rem}
-.mcard p{margin:0;font-size:1rem;color:var(--ink-2)}
-.mcard.soon{background:transparent;border-style:dashed;box-shadow:none}
-.mcard.soon h3{color:var(--ink-2)}
 .soonline{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.pill{font:700 1rem/1 var(--ui);letter-spacing:.04em;padding:5px 9px;border-radius:999px;white-space:nowrap}
+.pill{font:700 1.05rem/1 var(--ui);letter-spacing:.02em;padding:6px 11px;border-radius:999px;white-space:nowrap}
 .pill.ok{background:color-mix(in srgb,var(--c) 22%,var(--surface));color:var(--ink)}
 .pill.no{background:var(--surface-2);color:var(--ink-2)}
 .pill.cur{background:color-mix(in srgb,var(--c) 55%,var(--shade));color:var(--shade-ink)}
@@ -136,11 +128,11 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .pn{display:inline-flex;gap:8px}
 .btn.ico{width:44px;padding:0;justify-content:center}
 .btn.wrap{white-space:normal;text-align:left;border-radius:var(--r-ctl);max-width:100%}
-.chero{--c:var(--accent);display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);overflow:hidden;align-items:center}
+.chero{--c:var(--accent);display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);overflow:hidden;align-items:center}
 .chero img{width:100%;object-fit:cover;aspect-ratio:16/9;display:block}
-.chero .txt{padding:18px 22px;display:flex;flex-direction:column;gap:8px;border-left:1px solid var(--line)}
+.chero .txt{padding:14px 20px;display:flex;flex-direction:column;gap:6px;border-left:1px solid var(--line)}
 .chero .m{font:600 1rem/1 var(--num);color:color-mix(in srgb,var(--c) 45%,var(--ink))}
-.chero h1{font-size:clamp(1.9rem,3vw,2.3rem)}
+.chero h1{font-size:clamp(1.7rem,2.6vw,2.1rem)}
 .chero .sub{margin:0;color:var(--ink-2);font-weight:700}
 .chero .obj{margin:0}
 .chero .obj b{display:block;font-size:1rem;color:var(--ink-2)}
@@ -172,7 +164,6 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .meta span{display:inline-flex;gap:5px;align-items:center;color:var(--ink-2)}
 .act .head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .act .head .dur{display:inline-flex;white-space:nowrap}
-.act .row .dur{display:none}
 .dur{display:inline-flex;gap:6px;align-items:center;font-size:1.1rem;font-weight:700;color:var(--ink)}
 .dur svg{width:18px;height:18px}
 .filt{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
@@ -181,7 +172,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .act p{margin:0;font-size:1rem}
 .act .cons{font-size:1.05rem;font-weight:400;line-height:1.45;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--k-cons) 14%,var(--surface))}
 .flag{align-self:flex-start;font-size:1rem;font-weight:700;color:var(--warn);background:var(--warn-soft);border-radius:999px;padding:3px 9px}
-.act .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.act .row{display:flex;gap:8px;flex-wrap:wrap}
 details.more{font-size:1rem}
 details.more summary{cursor:pointer;font-weight:700;color:var(--ink-2);min-height:44px;display:flex;align-items:center}
 details.more ul,details.more ol{margin:.4em 0 0;padding-left:1.2em}
@@ -255,7 +246,8 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .pzoom img{width:100%;height:100%;object-fit:contain;display:block}
 
 /* explications : trois blocs, une couleur chacun, masquables séparément */
-.exp{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:12px;font-size:clamp(1.15rem,1.5vw,1.7rem)}
+.exp{position:relative;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:12px;font-size:clamp(1.15rem,1.5vw,1.7rem)}
+.exp>.part{flex:none}
 .part{border-radius:var(--r-panel);padding:12px 18px 16px;background:color-mix(in srgb,var(--k) 14%,var(--surface));border:1px solid color-mix(in srgb,var(--k) 30%,var(--line))}
 .part .ph{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:2px}
 .part .lbl{margin:0;font-size:clamp(1rem,1.1vw,1.2rem);letter-spacing:0;text-transform:none;font-weight:700;color:color-mix(in srgb,var(--k) 42%,var(--ink))}
@@ -263,17 +255,19 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .part .cons{font-size:clamp(1.25rem,1.75vw,1.95rem);font-weight:400;line-height:1.4}
 .part .q{margin:0;padding-left:1.1em}
 .part .q li{margin:.3em 0}
-.hideb{width:36px;height:36px;margin:-4px -8px -4px 0;display:grid;place-items:center;border:0;border-radius:10px;background:transparent;color:color-mix(in srgb,var(--k) 42%,var(--ink));cursor:pointer;flex:none}
+.hideb{width:44px;height:44px;margin:-8px -12px -8px 0;display:grid;place-items:center;border:0;border-radius:10px;background:transparent;color:color-mix(in srgb,var(--k) 42%,var(--ink));cursor:pointer;flex:none}
 .hideb:hover{background:color-mix(in srgb,var(--k) 24%,var(--surface))}
 .hideb svg{width:20px;height:20px}
+.sc{position:sticky;z-index:2;bottom:0;align-self:stretch;flex:none;margin-top:-64px;height:64px;display:flex;align-items:flex-end;justify-content:center;padding:0 0 4px;border:0;background:linear-gradient(transparent,var(--bg) 70%);cursor:pointer;color:var(--ink);font:700 1rem var(--ui)}
+.sc span{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 18px;border-radius:999px;border:1px solid var(--edge);background:var(--surface)}
+.sc[hidden]{display:none}
+.sc svg{width:18px;height:18px;transform:rotate(-90deg)}
 
 /* chrono : un bloc qui se remplit, comme dans PL-planif’ */
 .chrono{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:6px;padding:14px 18px 16px 22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
 .chrono>*{position:relative;z-index:1}
-.cfill{position:absolute!important;inset:0;width:0%;z-index:0!important;background:color-mix(in srgb,var(--accent) 34%,transparent);transition:width .95s linear}
+.cfill{position:absolute!important;inset:0;z-index:0!important;background:color-mix(in srgb,var(--accent) 34%,transparent);clip-path:inset(0 100% 0 0);transition:clip-path .95s linear}
 .cfill.nt{transition:none}
-.cfill::after{content:"";position:absolute;top:0;bottom:0;right:0;width:5px;background:linear-gradient(to bottom,var(--accent) 0 12px,color-mix(in srgb,var(--accent) 28%,transparent) 12px calc(100% - 12px),var(--accent) calc(100% - 12px) 100%)}
-.cfill.z::after{display:none}
 .proj-body.no-exp .chrono{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 24px}
 .proj-body:not(.no-chr) #gGo{display:none}
 .timer{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
@@ -287,6 +281,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .kh{display:flex;align-items:center;gap:10px;margin:10px 0 0;font-size:1rem;color:var(--ink-2)}
 .kh span{margin-right:auto}
 .kh kbd{font-size:1em}
+.kh .btn{min-height:44px;flex:none}
 
 /* guide respiration carrée */
 .breath{display:grid;place-items:center;gap:18px;padding:18px;width:100%;height:100%}
@@ -357,9 +352,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .notice{padding:22px 24px}.notice-grid{display:grid;gap:12px;justify-items:start}
 .flip{display:inline-flex;transform:scaleX(-1)}
 @media (prefers-reduced-motion:reduce){
-  .mcard,.ib{transition:none}
-  .mcard:hover,.ib:hover,.ib:active{transform:none}
-  .timer.done output{animation:none}
+      .timer.done output{animation:none}
 }
 </style>
 
@@ -457,20 +450,12 @@ function renderYear(){
         <button class="btn self-start" data-go="cadre">Pourquoi les CPS à l’école&#8239;?</button>
       </div>
     </div>
-    <div class="sec-h"><h2>L’année</h2><span class="hint">de septembre à juin</span></div>
+    <div class="sec-h"><h2>L’année</h2><span class="hint">de septembre à juin, une compétence par mois</span></div>
     <ol class="frise">
-      ${DATA.map((c,i) => { const st = i===curIdx ? "cur" : (curIdx!==undefined && i<curIdx) ? "past" : "next"; const lab = {cur:"En cours",past:"Passé",next:"À venir"}[st];
-        return `<li><button class="fr ${st} ${ready(c)?"ok":"soon"}" style="--c:var(${c.hue})" data-go="${c.id}" ${st==="cur"?'aria-current="true"':""}><span class="fm">${c.mois}</span><span class="fs">${lab}<span class="sr">${ready(c)?", activités prêtes":", à construire"}</span></span></button></li>`; }).join("")}
+      ${DATA.map((c,i) => { const st = i===curIdx ? "cur" : (curIdx!==undefined && i<curIdx) ? "past" : "next"; const n = ready(c) ? actsOf(c).length : 0;
+        const lab = st==="cur" ? (n ? `En cours · ${n} activités` : "En cours · à construire") : n ? `${n} activités` : "À construire";
+        return `<li><button class="fr ${st} ${n?"ok":"soon"}" style="--c:var(${c.hue})" data-go="${c.id}" ${st==="cur"?'aria-current="true"':""}><span class="fm">${c.mois}</span><span class="fn">${esc(c.nom)}</span><span class="fs">${lab}${st==="past"?'<span class="sr">, mois passé</span>':""}</span></button></li>`; }).join("")}
     </ol>
-    ${DATA.some((c,i)=>ready(c)&&i!==curIdx) ? `<div class="sec-h"><h2>Activités prêtes</h2><span class="hint">mois déjà rédigés</span></div>
-    <div class="months">
-      ${DATA.map((c,i) => (ready(c)&&i!==curIdx) ? `
-      <button class="mcard" style="--c:var(${c.hue})" data-go="${c.id}">
-        <span class="m"><span>${c.mois}</span><i class="pill ok">${actsOf(c).length} activités</i></span>
-        <h3>${esc(c.nom)}</h3>
-        <p>${esc(c.objectif.split(". ")[0].replace(/\.$/,""))}.</p>
-      </button>` : "").join("")}
-    </div>` : ""}
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
 }
@@ -542,6 +527,7 @@ function actCard(a, k){
     ${a.img?`<button class="thumb" data-proj="${k}" tabindex="-1" aria-hidden="true"><img src="${a.img}" alt="" loading="lazy" width="1600" height="900"></button>`:""}
     <div class="inner">
       <div class="head"><h3>${esc(a.titre)}</h3><span class="dur">${ico.time}${esc(durTxt(a))}</span></div>
+      <div class="row"><button class="btn pri" data-proj="${k}">${ico.proj} Projeter</button></div>
       <p class="cons">${esc(a.consigne)}</p>
       <details class="more"><summary>Objectif et détails</summary>
         <p><b>Objectif&#8239;:</b> ${esc(a.objectif)}</p>
@@ -553,7 +539,6 @@ function actCard(a, k){
         ${a.variante?`<span class="lbl">Variante</span><p>${esc(a.variante)}</p>`:""}
         ${a.reflexion?.length?`<span class="lbl">Moment de réflexion</span><ul>${a.reflexion.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
       </details>
-      <div class="row"><span class="dur">${ico.time}${esc(durTxt(a))}</span><button class="btn pri" data-proj="${k}">${ico.proj} Projeter</button></div>
     </div>
   </article>`;
 }
@@ -633,13 +618,14 @@ function openProj(c, i, img){
             <div class="cyc" role="group" aria-label="Nombre de cycles">${[4,5,6].map(n=>`<button class="btn" data-cy="${n}" aria-pressed="${n===P.cy}">${n} cycles</button>`).join("")}<button class="btn" id="bImg">Voir le support</button><button class="btn pri" id="gGo">Démarrer</button></div>
             <p class="hint" id="brCount"></p></div></div>`
           : a.img ? `<div class="stage">${zoomable(a.img, "Support de l’activité\u202f: "+a.titre)}</div>` : ""}
-        <div class="exp" id="pExp">
+        <div class="exp" id="pExp" tabindex="0" role="region" aria-label="Consigne et questions">
           ${part("cons", `<p class="cons">${esc(a.consigne)}</p>`)}
           ${a.exemples ? part("ex", `<ul class="q">${a.exemples.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`) : ""}
           ${a.reflexion?.length ? part("ref", `<ul class="q">${a.reflexion.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`) : ""}
+          <button class="sc" id="pMore" hidden aria-label="Voir la suite"><span>${ico.back} Suite</span></button>
         </div>
         <div class="chrono" id="pChr" data-k="chr">
-          <div class="cfill z ${P.guide?"nt":""}" id="tFill" style="width:0%"></div>
+          <div class="cfill z ${P.guide?"nt":""}" id="tFill"></div>
           <div class="timer" id="tm"><output id="tOut">${fmt(P.left)}</output>
             <button class="btn pri" id="tGo">Démarrer</button>
             <button class="pi" id="tReset">${ico.reset}</button>
@@ -647,7 +633,7 @@ function openProj(c, i, img){
           <p class="end" id="tEnd" role="status"></p>
         </div>
       </div>
-      ${khHidden() ? "" : `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquer ou afficher · <kbd>F</kbd> plein écran</span><button class="pi" id="khx" aria-label="Masquer ce rappel" title="Masquer ce rappel">${ico.x}</button></p>`}`;
+      ${khHidden() ? "" : `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquer ou afficher · <kbd>F</kbd> plein écran</span><button class="btn" id="khx">Compris</button></p>`}`;
     el.querySelectorAll("[data-hide]").forEach(x => x.onclick = () => toggleShow(x.dataset.hide, true));
     $("#gGo")?.addEventListener("click", toggleTimer);
     $("#tGo").onclick = toggleTimer; $("#tReset").onclick = resetTimer;
@@ -668,7 +654,7 @@ function openProj(c, i, img){
   }
   $("#pClose").onclick = closeProj; bindZoom();
   $("#pFs").onclick = () => { const r = document.fullscreenElement ? document.exitFullscreen() : el.requestFullscreen?.(); r?.catch?.(()=>{}); };
-  el.hidden = false; document.body.style.overflow = "hidden"; $("#pClose").focus();
+  el.hidden = false; document.body.style.overflow = "hidden"; $("#pClose").focus(); requestAnimationFrame(() => { syncMore(); setTimeout(syncMore, 250); }); document.fonts?.ready.then(syncMore);
 }
 /* support seul : l’image occupe tout l’écran (vrai plein écran quand le navigateur le permet) ; un clic ou Échap revient */
 function bindZoom(){ const b = $("#pZoomBtn"); if(b) b.onclick = () => openZoom(b.dataset.src); }
@@ -705,7 +691,15 @@ function applyShow(){
   const h = $("#pHid");
   h.innerHTML = P.parts.filter(k => !s[k]).map(k => `<button class="chip" data-show="${k}" data-k="${k}" title="Afficher ${PART[k][1]} (touche ${PART[k][2]})">${ico.plus}${PART[k][0]}</button>`).join("");
   h.querySelectorAll("[data-show]").forEach(x => x.onclick = () => toggleShow(x.dataset.show, true));
+  const ex = $("#pExp"); if(ex){ ex.onscroll = syncMore; $("#pMore").onclick = () => ex.scrollBy({top: ex.clientHeight*.8, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); requestAnimationFrame(syncMore); }
 }
+/* indice « Suite » quand la consigne dépasse la zone visible */
+function syncMore(){
+  const x = $("#pExp"), m = $("#pMore"); if(!x || !m) return;
+  const more = !x.hidden && x.scrollHeight - x.clientHeight - x.scrollTop > 24;
+  x.classList.toggle("more", more); m.hidden = !more;
+}
+addEventListener("resize", () => syncMore());
 function toggleShow(k, focus){
   if(!P.show || !P.parts?.includes(k)) return;
   P.show[k] = !P.show[k]; applyShow();
@@ -715,7 +709,7 @@ function toggleShow(k, focus){
 function syncGo(){ const t = P.run ? "Pause" : P.left<=0 ? "Terminé" : P.left<P.total ? "Reprendre" : "Démarrer"; ["#tGo","#gGo"].forEach(q => { const g=$(q); if(g) g.textContent = t; }); }
 function paintTimer(){
   const o=$("#tOut"); if(!o) return;
-  o.textContent = fmt(P.left); const pc = P.left>=P.total ? 0 : Math.min(100, 100*(1-P.left/P.total)), fl = $("#tFill"); fl.style.width = pc.toFixed(2) + "%"; fl.classList.toggle("z", pc===0);
+  o.textContent = fmt(P.left); const pc = P.left>=P.total ? 0 : Math.min(100, 100*(1-P.left/P.total)), fl = $("#tFill"); fl.style.clipPath = `inset(0 ${(100-pc).toFixed(2)}% 0 0)`; fl.classList.toggle("z", pc===0);
   $("#tm").classList.toggle("done", P.left<=0);
   $("#tEnd").textContent = P.left<=0 ? "C’est terminé. Prenez un instant." : "";
   const r = $("#tReset"), lab = "Remettre à " + fmt(P.total); r.setAttribute("aria-label", lab); r.title = lab;
