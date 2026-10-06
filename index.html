@@ -84,6 +84,8 @@ h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
 .btn[disabled]{opacity:.45;cursor:not-allowed}
 .btn[aria-pressed="true"]{background:var(--accent);border-color:transparent;color:var(--accent-ink)}
 .btn.pri{background:var(--accent);border-color:transparent;color:var(--accent-ink)}
+.act .btn.pri{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.act .btn.pri:hover{background:var(--accent);color:var(--accent-ink)}
 .btn svg{width:18px;height:18px}
 .hint{font-size:1rem;color:var(--ink-2)}
 .sec-h .hint{color:var(--ink)}
@@ -159,7 +161,8 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 
 .group{display:flex;flex-direction:column;gap:12px}
 .group+.group{margin-top:10px}
-.group h2{font-size:1.5rem;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:2;background:var(--bg);padding:8px 0}
+.group h2{font-size:1.5rem;display:flex;gap:10px;align-items:center;padding:8px 0}
+@media (min-height:800px){.group h2{position:sticky;top:0;z-index:2;background:var(--bg)}}
 .group h2::before{content:"";width:18px;height:3px;border-radius:2px;background:var(--cb)}
 .acts.one{grid-template-columns:minmax(0,760px)}
 .acts.one .act{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:stretch}
