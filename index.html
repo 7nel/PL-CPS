@@ -72,6 +72,8 @@ h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
 .brand .t1 button{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:44px}
 .brand .t1 button:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:6px}
 .icons{display:flex;gap:8px}
+.ib.lab{width:auto;padding:0 14px;gap:8px;display:inline-flex;align-items:center;justify-content:center}
+.ibl{font-weight:700;font-size:1rem}
 .ib{width:48px;height:48px;display:grid;place-items:center;border-radius:var(--r-ctl);border:1px solid var(--edge);background:var(--surface);cursor:pointer;color:var(--ink);transition:transform .15s ease}
 .ib:hover{transform:translateY(-1px)}
 .ib[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:transparent}
@@ -99,7 +101,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .now .body{padding:16px 22px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .now .body div{margin-right:auto}
 .now h2{font-size:1.5rem}
-.lead{padding:22px 24px;display:flex;flex-direction:column;gap:12px}
+.lead{box-shadow:none;background:transparent;border-color:var(--line);padding:22px 24px;display:flex;flex-direction:column;gap:12px}
 .lead h2{font-size:1.5rem}
 .lead p{margin:0;max-width:62ch}
 .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
@@ -113,6 +115,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .fr .fn{font-size:1.05rem;line-height:1.25;padding-right:20px}
 .fr .fs{color:var(--ink);font-weight:700;margin-top:auto}
 .fr.soon{border-style:dashed;background:transparent}
+.fr.soon .fn,.fr.soon .fs{color:var(--ink-2)}
 .fr.soon::after{opacity:.5}
 .fr.cur{background:var(--accent);border-color:transparent;color:var(--accent-ink)}
 .fr.cur .fs,.fr.cur .fn{color:inherit}
@@ -130,12 +133,13 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .btn.wrap{white-space:normal;text-align:left;border-radius:var(--r-ctl);max-width:100%}
 .chero{--c:var(--accent);display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);overflow:hidden;align-items:center}
 .chero img{width:100%;object-fit:cover;aspect-ratio:16/9;display:block}
-.chero .txt{padding:14px 20px;display:flex;flex-direction:column;gap:6px;border-left:1px solid var(--line)}
+.chero .txt{padding:12px 20px 4px;display:flex;flex-direction:column;gap:4px;border-left:1px solid var(--line)}
 .chero .m{font:600 1rem/1 var(--num);color:color-mix(in srgb,var(--c) 45%,var(--ink))}
 .chero h1{font-size:clamp(1.7rem,2.6vw,2.1rem)}
 .chero .sub{margin:0;color:var(--ink-2);font-weight:700}
 .chero .obj{margin:0}
-.chero .obj b{display:block;font-size:1rem;color:var(--ink-2)}
+.obj-rest{margin:0 0 10px;max-width:68ch}
+.chero .obj b{display:inline;margin-right:8px;font-size:1rem;color:var(--ink-2)}
 .chero.noimg{grid-template-columns:1fr}
 .chero.noimg .txt{border-left:0;border-top:8px solid var(--cb)}
 .outils summary{cursor:pointer;font-weight:700;color:var(--ink-2);min-height:44px;display:flex;align-items:center}
@@ -144,8 +148,11 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .tools span{font-size:1rem;padding:6px 11px;border-radius:999px;border:1px dashed color-mix(in srgb,var(--c) 70%,var(--line));background:color-mix(in srgb,var(--c) 9%,var(--surface))}
 
 .tabrow{display:flex;gap:6px 16px;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--line)}
-.tabs{display:flex;gap:6px;flex-wrap:wrap}
-.filtslot{padding-bottom:4px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;align-items:flex-end;flex:1}
+.tsep{margin-left:auto;align-self:center;padding:0 6px 0 18px;font-size:1rem;font-weight:700;color:var(--ink-2);border-left:1px solid var(--line-strong)}
+.tab.team{font-weight:400}
+.tab.team[aria-selected="true"]{font-weight:700}
+.filtslot:empty{display:none}
 .tab{border:0;background:none;min-height:44px;padding:10px 14px;font-weight:700;color:var(--ink-2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
 .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:color-mix(in srgb,var(--c,var(--accent)) 65%,var(--ink))}
 .tab .n{font:600 1rem var(--num);color:var(--ink-2);margin-left:4px}
@@ -154,6 +161,10 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .group+.group{margin-top:10px}
 .group h2{font-size:1.5rem;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:2;background:var(--bg);padding:8px 0}
 .group h2::before{content:"";width:18px;height:3px;border-radius:2px;background:var(--cb)}
+.acts.one{grid-template-columns:minmax(0,760px)}
+.acts.one .act{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:stretch}
+.acts.one .act .thumb{display:grid;align-items:center}
+.acts.one .act .thumb img{height:auto;aspect-ratio:16/9;object-fit:contain}
 .acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .act{display:flex;flex-direction:column;overflow:hidden;border-radius:var(--r-panel);background:var(--surface);border:1px solid var(--line)}
 .act .thumb{position:relative;display:block;border:0;padding:0;cursor:zoom-in;background:var(--surface-2)}
@@ -162,7 +173,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .act h3{font-size:1.2rem}
 .meta{display:flex;gap:8px;flex-wrap:wrap;font-size:1rem}
 .meta span{display:inline-flex;gap:5px;align-items:center;color:var(--ink-2)}
-.act .head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.act .head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 10px}
 .act .head .dur{display:inline-flex;white-space:nowrap}
 .dur{display:inline-flex;gap:6px;align-items:center;font-size:1.1rem;font-weight:700;color:var(--ink)}
 .dur svg{width:18px;height:18px}
@@ -174,7 +185,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .flag{align-self:flex-start;font-size:1rem;font-weight:700;color:var(--warn);background:var(--warn-soft);border-radius:999px;padding:3px 9px}
 .act .row{display:flex;gap:8px;flex-wrap:wrap}
 details.more{font-size:1rem}
-details.more summary{cursor:pointer;font-weight:700;color:var(--ink-2);min-height:44px;display:flex;align-items:center}
+details.more summary{cursor:pointer;font-weight:700;color:var(--ink);min-height:44px;display:flex;align-items:center}
 details.more ul,details.more ol{margin:.4em 0 0;padding-left:1.2em}
 details.more li{margin:.15em 0}
 .bigthumb{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
@@ -227,7 +238,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .chip:hover{border-style:solid}
 [data-k="cons"]{--k:var(--k-cons)}[data-k="ex"]{--k:var(--k-ex)}[data-k="ref"]{--k:var(--k-ref)}[data-k="chr"]{--k:var(--accent)}
 
-.proj-body{display:grid;gap:16px;min-height:0;grid-template-columns:minmax(0,1.6fr) minmax(340px,1fr);grid-template-rows:minmax(0,1fr) auto;grid-template-areas:"stage exp" "stage chr"}
+.proj-body{display:grid;gap:16px;min-height:0;grid-template-columns:minmax(0,1.3fr) minmax(360px,1fr);grid-template-rows:minmax(0,1fr) auto;grid-template-areas:"stage exp" "stage chr"}
 .proj-body>.stage{grid-area:stage}
 .exp{grid-area:exp}
 .chrono{grid-area:chr}
@@ -246,13 +257,13 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .pzoom img{width:100%;height:100%;object-fit:contain;display:block}
 
 /* explications : trois blocs, une couleur chacun, masquables séparément */
-.exp{position:relative;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:12px;font-size:clamp(1.15rem,1.5vw,1.7rem)}
+.exp{position:relative;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:12px;font-size:clamp(1.3rem,1.75vw,2rem)}
 .exp>.part{flex:none}
 .part{border-radius:var(--r-panel);padding:12px 18px 16px;background:color-mix(in srgb,var(--k) 14%,var(--surface));border:1px solid color-mix(in srgb,var(--k) 30%,var(--line))}
 .part .ph{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:2px}
-.part .lbl{margin:0;font-size:clamp(1rem,1.1vw,1.2rem);letter-spacing:0;text-transform:none;font-weight:700;color:color-mix(in srgb,var(--k) 42%,var(--ink))}
+.part .lbl{margin:0;font-size:clamp(1.1rem,1.25vw,1.4rem);letter-spacing:0;text-transform:none;font-weight:700;color:color-mix(in srgb,var(--k) 42%,var(--ink))}
 .part p{margin:0}
-.part .cons{font-size:clamp(1.25rem,1.75vw,1.95rem);font-weight:400;line-height:1.4}
+.part .cons{font-size:clamp(1.35rem,1.9vw,2.1rem);font-weight:400;line-height:1.4}
 .part .q{margin:0;padding-left:1.1em}
 .part .q li{margin:.3em 0}
 .hideb{width:44px;height:44px;margin:-8px -12px -8px 0;display:grid;place-items:center;border:0;border-radius:10px;background:transparent;color:color-mix(in srgb,var(--k) 42%,var(--ink));cursor:pointer;flex:none}
@@ -278,7 +289,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 @keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
 .end{font-weight:700;margin:0}
 .end:empty{display:none}
-.kh{display:flex;align-items:center;gap:10px;margin:10px 0 0;font-size:1rem;color:var(--ink-2)}
+.kh{display:flex;align-items:center;gap:10px;margin:10px 0 0;font-size:clamp(1rem,1.15vw,1.25rem);color:var(--ink-2)}
 .kh span{margin-right:auto}
 .kh kbd{font-size:1em}
 .kh .btn{min-height:44px;flex:none}
@@ -327,6 +338,11 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
   .chip{min-height:44px}
 }
 @media (max-width:700px){
+  .ibl{display:none}
+  .ib.lab{width:48px;padding:0}
+  .tsep{margin-left:0}
+}
+@media (max-width:700px){
   .proj-top .t{flex:1 1 0}
   .proj-top .t small{font-size:1rem}
   .proj-top .gn{display:none}
@@ -366,7 +382,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
     </div>
     <nav class="icons" aria-label="Actions">
       <button class="ib" id="bHelp" title="Aide" aria-label="Aide" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M9.3 9.2a2.8 2.8 0 015.4 1c0 1.9-2.7 2.4-2.7 4"/><circle cx="12" cy="17.3" r=".6" fill="currentColor"/></svg></button>
-      <button class="ib" id="bTheme" title="Thème clair / sombre" aria-label="Thème sombre" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M12 2.5a9.5 9.5 0 000 19z" fill="currentColor"/></svg></button>
+      <button class="ib lab" id="bTheme" title="Thème clair / sombre" aria-label="Thème sombre" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M12 2.5a9.5 9.5 0 000 19z" fill="currentColor"/></svg><span class="ibl">Thème</span></button>
       <button class="ib" id="bYear" title="L’année" aria-label="Vue de l’année"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M8 2.8v3.4M16 2.8v3.4"/><path d="M7.5 13h2M11 13h2M14.5 13h2M7.5 16.5h2M11 16.5h2" stroke-linecap="round"/></svg></button>
     </nav>
   </header>
@@ -445,7 +461,7 @@ function renderYear(){
         </div>
       </button>
       <div class="panel lead">
-        <h2>Une compétence par mois</h2>
+        <h2>Une compétence psychosociale (CPS) par mois</h2>
         <p>Activités courtes, supports à projeter et outils réutilisables dans tout l’établissement.</p>
         <button class="btn self-start" data-go="cadre">Pourquoi les CPS à l’école&#8239;?</button>
       </div>
@@ -470,11 +486,12 @@ function renderComp(c, tab){
   const tabs = ready(c) ? [
     ["acts","Activités",acts.length],
     c.essentiel && ["ess","L’essentiel",c.essentiel.items.length],
-    c.pistes && ["pistes", c.id==="stress"?"Guide élève":"Pistes", c.pistes.length],
-    c.reperes && ["sci","Repères",c.reperes.claims.length]
+    c.pistes && ["pistes", c.id==="stress"?"Guide élève":"Pistes", c.pistes.length, c.id!=="stress"],
+    c.reperes && ["sci","Repères",c.reperes.claims.length, true]
   ].filter(Boolean) : [];
   if(!tabs.find(t=>t[0]===curTab)) curTab = "acts";
   const i = DATA.indexOf(c), prev = DATA[i-1], next = DATA[i+1];
+  const sentences = c.objectif.split(/(?<=[.!?])\s+/), objShort = sentences[0], objRest = sentences.slice(1).join(" ");
   $("#view").innerHTML = `
   <div style="display:flex;flex-direction:column;gap:18px;--c:var(${c.hue})">
     <div class="crumbs">
@@ -490,13 +507,15 @@ function renderComp(c, tab){
         <span class="m">${c.mois}</span>
         <h1>${esc(c.nom)}</h1>
         ${c.sous?`<p class="sub">${esc(c.sous)}</p>`:""}
-        <p class="obj"><b>Objectif</b>${esc(c.objectif)}</p>
-        <details class="outils"><summary>Outils à réutiliser dans l’établissement</summary>
+        <p class="obj"><b>Objectif</b>${esc(objShort)}</p>
+        <details class="outils"><summary>${objRest?"Objectif complet et outils":"Outils à réutiliser dans l’établissement"}</summary>
+        ${objRest?`<p class="obj-rest">${esc(objRest)}</p>`:""}
         <div class="tools">${c.outils.map(o=>`<span>${esc(o)}</span>`).join("")}</div></details>
       </div>
     </section>
     ${ready(c) ? `
-      <div class="tabrow"><div class="tabs" role="tablist" aria-label="Contenus de la compétence">${tabs.map(t=>`<button class="tab" role="tab" id="tab-${t[0]}" aria-controls="tabBody" aria-selected="${t[0]===curTab}" tabindex="${t[0]===curTab?0:-1}" data-tab="${t[0]}">${t[1]}${t[2]?`<span class="n">${t[2]}</span>`:""}</button>`).join("")}</div><div class="filtslot" id="filtSlot"></div></div>
+      <div class="tabrow"><div class="tabs" role="tablist" aria-label="Contenus de la compétence">${tabs.map((t,n)=>`${t[3]&&!tabs.slice(0,n).some(u=>u[3])?'<span class="tsep" aria-hidden="true">Pour l’équipe</span>':""}<button class="tab${t[3]?" team":""}" role="tab" id="tab-${t[0]}" aria-controls="tabBody" aria-selected="${t[0]===curTab}" tabindex="${t[0]===curTab?0:-1}" data-tab="${t[0]}">${t[1]}${t[2]?`<span class="n">${t[2]}</span>`:""}</button>`).join("")}</div></div>
+      <div class="filtslot" id="filtSlot"></div>
       <div id="tabBody" role="tabpanel" aria-labelledby="tab-${curTab}" tabindex="0"></div>`
     : `<section class="panel prose" style="grid-template-columns:1fr">
          <section><h2>Idées d’activités du programme</h2><ul>${c.idees.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
@@ -548,7 +567,7 @@ function renderTab(c){
   $("#filtSlot").innerHTML = "";
   if(curTab==="acts"){
     $("#filtSlot").innerHTML = `<div class="filt" role="group" aria-label="Filtrer par durée">${FILT.map(f=>`<button class="btn" data-f="${f[0]}" aria-pressed="${f[0]===curFilt}">${f[1]}</button>`).join("")}<span class="hint" id="fCount" role="status"></span></div>`;
-    b.innerHTML = c.groupes.map(g=>`<div class="group"><h2>${esc(g.titre)}</h2><div class="acts">${g.acts.map(a=>actCard(a,k++)).join("")}</div></div>`).join("");
+    b.innerHTML = c.groupes.map(g=>`<div class="group"><h2>${esc(g.titre)}</h2><div class="acts${g.acts.length===1?" one":""}">${g.acts.map(a=>actCard(a,k++)).join("")}</div></div>`).join("");
     const applyFilt = () => {
       const ok = FILT.find(f=>f[0]===curFilt)[2]; let n = 0;
       b.querySelectorAll(".act").forEach(x => { const v = ok(+x.dataset.min); x.hidden = !v; if(v) n++; });
@@ -633,7 +652,7 @@ function openProj(c, i, img){
           <p class="end" id="tEnd" role="status"></p>
         </div>
       </div>
-      ${khHidden() ? "" : `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquer ou afficher · <kbd>F</kbd> plein écran</span><button class="btn" id="khx">Compris</button></p>`}`;
+      ${khHidden() ? "" : `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquer ou afficher · <kbd>F</kbd> plein écran</span><button class="btn" id="khx">Masquer ce rappel</button></p>`}`;
     el.querySelectorAll("[data-hide]").forEach(x => x.onclick = () => toggleShow(x.dataset.hide, true));
     $("#gGo")?.addEventListener("click", toggleTimer);
     $("#tGo").onclick = toggleTimer; $("#tReset").onclick = resetTimer;
