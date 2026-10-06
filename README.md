@@ -23,13 +23,27 @@ Pour chaque compétence :
 
 La page **« Pourquoi les CPS à l'école ? »** présente le cadre (définition de l'OMS, lien entre émotions et apprentissage, recommandations de mise en place).
 
+## Écrans visés
+
+Deux usages, deux exigences :
+
+- **Le site** (vue de l'année, pages des mois, cartes d'activité, repères) doit rester lisible et utilisable sur **ordinateur, tablette et téléphone**. Toute modification se vérifie aux trois largeurs, sans défilement horizontal.
+- **La vue projetée** (bouton « Projeter ») est la seule vue **optimisée pour le beamer** : texte dimensionné pour être lu du fond de la classe, support affiché le plus grand possible, commandes au clavier. Elle reste utilisable sur tablette et téléphone, où les blocs s'empilent (support, chrono, explications), mais c'est le rendu au beamer qui prime en cas d'arbitrage.
+
 ## Projeter en classe
 
-Le bouton **Projeter** ouvre le support de l'activité en grand pour le beamer, avec la consigne, les questions de réflexion et un minuteur réglé sur la durée prévue. La respiration carrée dispose d'un guide animé sur 6 cycles.
+Le bouton **Projeter** ouvre l'activité en grand pour le beamer. La vue projetée se compose du **support** (la diapositive) et de deux blocs séparés :
 
-Pour la respiration carrée, on choisit 4, 5 ou 6 cycles et un seul bouton lance le guide et le minuteur ensemble. À la fin du temps, le minuteur affiche un court message calme, sans son.
+- le bloc **explications**, en trois parties : la consigne (dans un encadré à la couleur du mois), les exemples et le moment de réflexion ;
+- le bloc **chrono**, réglé sur la durée prévue de l'activité.
 
-Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espace` démarrer ou mettre en pause le minuteur (quel que soit le bouton sélectionné), `F` plein écran, `Échap` fermer. Un rappel de ces raccourcis s’affiche sous le minuteur et se masque avec la croix (le choix est gardé dans le navigateur). Le focus clavier reste dans la projection et revient sur le bouton « Projeter » à la fermeture.
+Les interrupteurs « Afficher » en haut de l'écran masquent ou affichent chaque partie séparément : **Consigne**, **Exemples**, **Réflexion**, **Chrono**. Le support occupe la place libérée : sans explications, il prend toute la largeur et le chrono passe en bandeau dessous ; sans rien d'autre, il remplit l'écran. Tout est affiché à l'ouverture de chaque activité : les réglages ne sont pas gardés d'une activité à l'autre.
+
+Si le chrono est masqué pendant qu'il tourne, il réapparaît à la fin du temps. Il affiche alors un court message calme, sans son.
+
+Pour la respiration carrée, on choisit 4, 5 ou 6 cycles et un seul bouton lance le guide et le chrono ensemble. Quand le chrono est masqué, un bouton « Démarrer » apparaît sous le guide.
+
+Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espace` démarrer ou mettre en pause le chrono (quel que soit le bouton sélectionné), `C` consigne, `E` exemples, `R` réflexion, `T` chrono (afficher ou masquer), `F` plein écran, `Échap` fermer. Un rappel de ces raccourcis s’affiche sous le chrono sur ordinateur et se masque avec la croix (le choix est gardé dans le navigateur). Le focus clavier reste dans la projection et revient sur le bouton « Projeter » à la fermeture.
 
 ## Lisibilité
 

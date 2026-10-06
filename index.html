@@ -163,7 +163,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .filt .hint{margin-left:4px}
 .meta svg{width:18px;height:18px}
 .act p{margin:0;font-size:1rem}
-.act .cons{font-size:1.15rem;font-weight:700}
+.act .cons{font-size:1.05rem;font-weight:400;line-height:1.45;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--c,var(--accent)) 13%,var(--surface))}
 .flag{align-self:flex-start;font-size:1rem;font-weight:700;color:var(--warn);background:var(--warn-soft);border-radius:999px;padding:3px 9px}
 .act .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
 details.more{font-size:1rem}
@@ -206,19 +206,41 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .proj{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;grid-template-rows:auto 1fr;padding:calc(env(safe-area-inset-top,0px) + 14px) clamp(16px,2.5vw,36px) calc(env(safe-area-inset-bottom,0px) + 16px)}
 .proj-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-bottom:12px}
 .proj-top .btn{min-height:52px;font-size:1.05rem}
-.proj-top .t{margin-right:auto;font-weight:700;font-size:1.35rem;min-width:0}
-.proj-top .t small{display:block;font:600 1.1rem var(--num);color:var(--ink-2)}
-.proj-body{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(340px,1fr);gap:18px;min-height:0}
-.proj-body.solo{grid-template-columns:minmax(0,1fr)}
-.stage{container-type:size;min-height:0;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
-.stage img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-.side{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:14px;padding:22px 26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);font-size:clamp(1.2rem,1.8vw,1.9rem)}
-.side p{margin:0}
-.side .cons{font-size:clamp(1.5rem,2.4vw,2.6rem);font-weight:700;line-height:1.3}
-.side .q{margin:0;padding-left:1.1em;font-size:clamp(1.4rem,2.2vw,2.2rem)}
-.side .q li{margin:.3em 0}
-.side .lbl{font-size:clamp(1.1rem,1.5vw,1.5rem);letter-spacing:0;text-transform:none;color:var(--ink);margin:0 0 4px}
-.tbox{margin-top:auto;display:flex;flex-direction:column;gap:10px;position:sticky;bottom:-22px;background:var(--surface);padding:10px 0 22px}
+.proj-top .t{margin-right:auto;font-weight:700;font-size:clamp(1.35rem,2vw,2.1rem);line-height:1.15;min-width:0}
+.proj-top .t small{display:block;font:600 1.1rem var(--num);color:var(--ink-2);margin-bottom:2px}
+.tg{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tg .tgl{font-size:1rem;font-weight:700;color:var(--ink-2);margin-right:2px}
+.tg .btn{gap:7px;background:transparent;border-style:dashed;color:var(--ink-2)}
+.tg .btn::before{content:"";width:.7em;height:.7em;border-radius:50%;border:2px solid currentColor;flex:none}
+.tg .btn[aria-pressed="true"]{background:var(--surface);border-style:solid;border-color:var(--ink-2);color:var(--ink)}
+.tg .btn[aria-pressed="true"]::before{background:var(--cb,var(--accent));border-color:var(--cb,var(--accent))}
+.proj-body{display:grid;gap:18px;min-height:0;grid-template-columns:minmax(0,1.6fr) minmax(340px,1fr);grid-template-rows:minmax(0,1fr) auto;grid-template-areas:"stage exp" "stage chr"}
+.proj-body>.stage{grid-area:stage}
+.exp{grid-area:exp}
+.chrono{grid-area:chr}
+.proj-body.no-chr{grid-template-rows:minmax(0,1fr);grid-template-areas:"stage exp"}
+.proj-body.no-exp{grid-template-columns:minmax(0,1fr);grid-template-areas:"stage" "chr"}
+.proj-body.no-exp.no-chr,.proj-body.solo{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);grid-template-areas:"stage"}
+.proj-body.no-stage{grid-template-columns:minmax(0,1fr);grid-template-areas:"exp" "chr"}
+.proj-body.no-stage.no-chr{grid-template-rows:minmax(0,1fr);grid-template-areas:"exp"}
+.proj-body.no-stage.no-exp{grid-template-rows:auto;align-content:start;grid-template-areas:"chr"}
+.stage{container-type:size;min-height:0;display:grid;grid-template:minmax(0,1fr)/minmax(0,1fr);place-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
+.stage img{width:100%;height:100%;object-fit:contain;display:block}
+/* bloc explications : consigne, exemples, réflexion (chacun masquable) */
+.exp{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:20px;padding:22px 26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);font-size:clamp(1.15rem,1.55vw,1.75rem)}
+.exp p{margin:0}
+.exp .lbl{font-size:clamp(1rem,1.15vw,1.25rem);letter-spacing:0;text-transform:none;color:var(--ink-2);margin:0 0 8px}
+.exp .cons{font-size:clamp(1.25rem,1.8vw,2rem);font-weight:400;line-height:1.4;padding:.65em .8em;border-radius:16px;background:color-mix(in srgb,var(--c,var(--accent)) 14%,var(--surface))}
+.exp .q{margin:0;padding-left:1.1em}
+.exp .q li{margin:.35em 0}
+/* bloc chrono : séparé des explications, masquable */
+.chrono{display:flex;flex-direction:column;gap:10px;padding:16px 26px 18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.proj-body.no-exp .chrono{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 24px}
+.proj-body.no-exp .chrono .bar{flex:1 1 220px;width:auto}
+.proj-body.no-exp .chrono .end{min-height:0}
+.proj-body.no-exp .chrono .end:empty{display:none}
+.proj-body.no-exp .chrono .kh{flex-basis:100%}
+.proj-body:not(.no-chr) #gGo{display:none}
 .timer{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .timer .btn{min-height:56px;font-size:1.1rem;padding-inline:20px}
 .timer output{font:600 clamp(3rem,5vw,4.5rem)/1 var(--num);font-variant-numeric:tabular-nums;min-width:4.2ch}
@@ -260,6 +282,32 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
   .chero img{display:none}
   .chero .txt{padding:16px 18px;gap:8px;border-top:8px solid var(--cb)}
 }
+@media (max-width:900px){
+  .proj{overflow:auto;grid-template-rows:auto auto}
+  .proj-top .btn{min-height:44px;font-size:1rem}
+  .proj-top .tg{order:3;flex-basis:100%}
+  .proj-body,.proj-body.no-chr,.proj-body.no-exp,.proj-body.no-stage,.proj-body.solo{display:flex;flex-direction:column}
+  .stage{height:56vh;flex:none;order:1}
+  .stage:has(>img){height:auto;aspect-ratio:16/9}
+  .chrono{order:2}
+  .exp{order:3;overflow:visible}
+  .timer output{font-size:clamp(2.4rem,11vw,3.4rem)}
+  .chrono{padding:14px 18px}
+  .chrono .end{min-height:0}
+  .chrono .end:empty{display:none}
+  .chrono .kh{display:none} /* pas de clavier sur tablette et téléphone */
+  .exp{padding:18px}
+}
+@media (max-width:700px){
+  .proj-top{gap:8px}
+  .proj-top .t{flex-basis:100%}
+  .proj-top .btn{padding-inline:12px}
+  .proj{grid-template-columns:minmax(0,1fr)}
+  .proj-top{min-width:0}
+  .proj-top .tg{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;min-width:0;max-width:100%;padding:2px 0}
+  .proj-top .tg .tgl{display:none}
+  .proj-top .tg .btn{flex:none}
+}
 @media (max-width:700px){
   .act{display:grid;grid-template-columns:96px minmax(0,1fr);align-items:start}
   .act .thumb{grid-column:1;margin:12px 0 0 12px;width:84px;border-radius:10px;overflow:hidden}
@@ -270,9 +318,6 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
   .act .head .dur{display:inline-flex;white-space:nowrap}
   .act .row .dur{display:none}
   .act .row{justify-content:flex-start}
-  .proj{overflow:auto}
-  .proj-body{grid-template-columns:1fr}
-  .stage{height:56vh}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -295,7 +340,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
   <div class="panel help" id="help" hidden>
     <p><b>Une compétence par mois.</b> La carte du mois en cours est mise en avant ; les mois sans contenu affichent l’objectif et les outils prévus au programme.</p>
     <p><b>Projeter</b> ouvre le support en plein écran pour le beamer, avec la consigne, les questions de réflexion et un minuteur réglé sur la durée de l’activité. La respiration carrée propose 4, 5 ou 6 cycles et le minuteur suit le guide.</p>
-    <p>En projection : <kbd>←</kbd> <kbd>→</kbd> activité précédente / suivante, <kbd>Espace</kbd> démarre ou met en pause le minuteur, <kbd>F</kbd> plein écran, <kbd>Échap</kbd> ferme. Le rappel des raccourcis sous le minuteur se masque avec la croix.</p>
+    <p>En projection : <kbd>←</kbd> <kbd>→</kbd> activité précédente / suivante, <kbd>Espace</kbd> démarre ou met en pause le chrono, <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> affichent ou masquent la consigne, les exemples, la réflexion et le chrono, <kbd>F</kbd> plein écran, <kbd>Échap</kbd> ferme. Le rappel des raccourcis sous le minuteur se masque avec la croix.</p>
     <p><b>Durée</b> : au-dessus des activités, trois boutons gardent seulement celles qui tiennent en 3 min ou moins, 4 à 6 min, ou 7 min et plus.</p>
     <p><b>Repères</b> : pour l’équipe enseignante. Ce qui est solide, ce qui demande des nuances et ce qu’il vaut mieux reformuler, avec les références (APA 7).</p>
   </div>
@@ -520,32 +565,41 @@ function openProj(c, i, img){
     document.title = `${c.nom} · PL-CPS’`;
   } else {
     P.guide = a.guide==="breath"; P.cy = 4; P.bt = 0;
+    P.show = {cons:true, ex:true, ref:true, chr:true}; // tout affiché à l’ouverture de chaque activité
     P.total = P.left = P.guide ? P.cy*CYMS/1000 : Math.round((a.min||5)*60);
     el.innerHTML = `<div class="proj-top">
         <div class="t" id="pTitle"><small>${c.mois} · ${esc(a.groupe)} · ${i+1}/${acts.length}</small>${esc(a.titre)}</div>
+        <div class="tg" role="group" aria-label="Afficher ou masquer"><span class="tgl" aria-hidden="true">Afficher</span>
+          <button class="btn" data-tg="cons" aria-pressed="true" title="Afficher ou masquer la consigne (touche C)">Consigne</button>
+          ${a.exemples?`<button class="btn" data-tg="ex" aria-pressed="true" title="Afficher ou masquer les exemples (touche E)">Exemples</button>`:""}
+          ${a.reflexion?.length?`<button class="btn" data-tg="ref" aria-pressed="true" title="Afficher ou masquer le moment de réflexion (touche R)">Réflexion</button>`:""}
+          <button class="btn" data-tg="chr" aria-pressed="true" title="Afficher ou masquer le chrono (touche T)">Chrono</button>
+        </div>
         <button class="btn" id="pPrev" ${i===0?"disabled":""} aria-label="Activité précédente">←</button>
         <button class="btn" id="pNext" ${i===acts.length-1?"disabled":""} aria-label="Activité suivante">→</button>
         <button class="btn" id="pFs">Plein écran</button>
         <button class="btn pri" id="pClose">Fermer</button>
       </div>
-      <div class="proj-body ${a.img||a.guide?"":"solo"}">
-        ${P.guide ? `<div class="stage" id="stage"><div class="breath"><div class="sq" id="sq"><i id="sqDot"></i><div class="ph"><div><b id="sqPh">Prêt ?</b><span id="sqN">4</span></div></div></div>
-            <div class="cyc" role="group" aria-label="Nombre de cycles">${[4,5,6].map(n=>`<button class="btn" data-cy="${n}" aria-pressed="${n===P.cy}">${n} cycles</button>`).join("")}<button class="btn" id="bImg">Voir le support</button></div>
+      <div class="proj-body ${a.img||a.guide?"":"no-stage"}" id="pBody">
+        ${P.guide ? `<div class="stage" id="stage"><div class="breath"><div class="sq" id="sq"><i id="sqDot"></i><div class="ph"><div><b id="sqPh">Prêt ?</b><span id="sqN">4</span></div></div></div>
+            <div class="cyc" role="group" aria-label="Nombre de cycles">${[4,5,6].map(n=>`<button class="btn" data-cy="${n}" aria-pressed="${n===P.cy}">${n} cycles</button>`).join("")}<button class="btn" id="bImg">Voir le support</button><button class="btn pri" id="gGo">Démarrer</button></div>
             <p class="hint" id="brCount"></p></div></div>`
           : a.img ? `<div class="stage"><img src="${a.img}" alt=""></div>` : ""}
-        <div class="side">
-          <p class="cons">${esc(a.consigne)}</p>
-          ${a.exemples?`<div><span class="lbl">Exemples</span><ul class="q">${a.exemples.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
-          ${a.reflexion?.length?`<div><span class="lbl">Moment de réflexion</span><ul class="q">${a.reflexion.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
-          <div class="tbox">
-            <div class="timer" id="tm"><output id="tOut">${fmt(P.left)}</output>
-              <button class="btn pri" id="tGo">Démarrer</button><button class="btn" id="tReset"></button></div>
-            <div class="bar ${P.guide?"nt":""}"><i id="tBar"></i></div>
-            <p class="end" id="tEnd" role="status"></p>
-            ${khHidden() ? "" : `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>F</kbd> plein écran</span><button class="btn ico" id="khx" aria-label="Masquer ce rappel" title="Masquer ce rappel">×</button></p>`}
-          </div>
+        <div class="exp" id="pExp">
+          <section data-part="cons"><span class="lbl">Consigne</span><p class="cons">${esc(a.consigne)}</p></section>
+          ${a.exemples?`<section data-part="ex"><span class="lbl">Exemples</span><ul class="q">${a.exemples.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`:""}
+          ${a.reflexion?.length?`<section data-part="ref"><span class="lbl">Moment de réflexion</span><ul class="q">${a.reflexion.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`:""}
+        </div>
+        <div class="chrono" id="pChr">
+          <div class="timer" id="tm"><output id="tOut">${fmt(P.left)}</output>
+            <button class="btn pri" id="tGo">Démarrer</button><button class="btn" id="tReset"></button></div>
+          <div class="bar ${P.guide?"nt":""}"><i id="tBar"></i></div>
+          <p class="end" id="tEnd" role="status"></p>
+          ${khHidden() ? "" : `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> afficher ou masquer · <kbd>F</kbd> plein écran</span><button class="btn ico" id="khx" aria-label="Masquer ce rappel" title="Masquer ce rappel">×</button></p>`}
         </div>
       </div>`;
+    el.querySelectorAll("[data-tg]").forEach(x => x.onclick = () => toggleShow(x.dataset.tg));
+    $("#gGo")?.addEventListener("click", toggleTimer);
     $("#tGo").onclick = toggleTimer; $("#tReset").onclick = resetTimer;
     $("#pPrev").onclick = () => openProj(c, i-1); $("#pNext").onclick = () => openProj(c, i+1);
     if(P.guide){
@@ -558,7 +612,7 @@ function openProj(c, i, img){
       });
       $("#bImg").onclick = () => { stopTimer(); P.guide = false; P.total = P.left = Math.round((a.min||5)*60); $("#stage").innerHTML = `<img src="${a.img}" alt="">`; $("#tm").nextElementSibling.classList.remove("nt"); resetTimer(); };
     }
-    paintTimer(); syncGo();
+    paintTimer(); syncGo(); applyShow();
     $("#khx")?.addEventListener("click", () => { try{ localStorage.setItem("plcps-kh","1"); }catch(e){} $("#kh")?.remove(); $("#tGo")?.focus(); });
     document.title = `${a.titre} · PL-CPS’`;
   }
@@ -572,8 +626,19 @@ function closeProj(){
   if(document.fullscreenElement) document.exitFullscreen().catch(()=>{});
   if(wasOpen){ setTitle(); P.opener?.focus?.(); P.opener = null; }
 }
+/* affichage des blocs de la vue projetée : consigne, exemples, réflexion, chrono */
+function applyShow(){
+  const el = $("#proj"), b = $("#pBody"); if(!b) return;
+  const s = P.show;
+  el.querySelectorAll("#pExp [data-part]").forEach(x => x.hidden = !s[x.dataset.part]);
+  const anyExp = [...el.querySelectorAll("#pExp [data-part]")].some(x => !x.hidden);
+  $("#pExp").hidden = !anyExp; $("#pChr").hidden = !s.chr;
+  b.classList.toggle("no-exp", !anyExp); b.classList.toggle("no-chr", !s.chr);
+  el.querySelectorAll("[data-tg]").forEach(x => x.setAttribute("aria-pressed", !!s[x.dataset.tg]));
+}
+function toggleShow(k){ if(!P.show || !$(`#proj [data-tg="${k}"]`)) return; P.show[k] = !P.show[k]; applyShow(); }
 /* bouton principal du minuteur : un seul état pour le chrono et le guide */
-function syncGo(){ const g=$("#tGo"); if(g) g.textContent = P.run ? "Pause" : P.left<=0 ? "Terminé" : P.left<P.total ? "Reprendre" : "Démarrer"; }
+function syncGo(){ const t = P.run ? "Pause" : P.left<=0 ? "Terminé" : P.left<P.total ? "Reprendre" : "Démarrer"; ["#tGo","#gGo"].forEach(q => { const g=$(q); if(g) g.textContent = t; }); }
 function paintTimer(){
   const o=$("#tOut"); if(!o) return;
   o.textContent = fmt(P.left); $("#tBar").style.transform = `scaleX(${1-P.left/P.total})`;
@@ -586,7 +651,7 @@ function toggleTimer(){
   if(P.run){ stopTimer(); return; }
   if(P.left<=0) resetTimer();
   P.run = true;
-  if(P.guide) runBreath(); else P.tick = setInterval(() => { P.left--; paintTimer(); if(P.left<=0) stopTimer(); }, 1000);
+  if(P.guide) runBreath(); else P.tick = setInterval(() => { P.left--; paintTimer(); if(P.left<=0){ stopTimer(); if(P.show && !P.show.chr){ P.show.chr = true; applyShow(); } } }, 1000);
   syncGo();
 }
 function stopTimer(){ clearInterval(P.tick); if(P.br) cancelAnimationFrame(P.br); P.br = null; P.run = false; syncGo(); }
@@ -631,7 +696,9 @@ document.addEventListener("keydown", e => {
   else if(e.key==="ArrowRight") $("#pNext")?.click();
   else if(e.key==="ArrowLeft") $("#pPrev")?.click();
   else if(e.key===" " && !e.target.closest?.("summary")){ e.preventDefault(); toggleTimer(); } // Espace pilote toujours le minuteur
+  else if(e.ctrlKey || e.metaKey || e.altKey) return;
   else if(e.key.toLowerCase()==="f") $("#pFs")?.click();
+  else if({c:"cons",e:"ex",r:"ref",t:"chr"}[e.key.toLowerCase()]) toggleShow({c:"cons",e:"ex",r:"ref",t:"chr"}[e.key.toLowerCase()]);
 });
 document.addEventListener("keyup", e => { if(e.key===" " && !$("#proj").hidden && !e.target.closest?.("summary")) e.preventDefault(); });
 
