@@ -32,18 +32,24 @@ Deux usages, deux exigences :
 
 ## Projeter en classe
 
-Le bouton **Projeter** ouvre l'activité en grand pour le beamer. La vue projetée se compose du **support** (la diapositive) et de deux blocs séparés :
+Le bouton **Projeter** ouvre l'activité en grand pour le beamer. La vue projetée se compose du **support** (la diapositive) et de blocs séparés, chacun avec sa couleur, la même tout au long de l'année :
 
-- le bloc **explications**, en trois parties : la consigne (dans un encadré à la couleur du mois), les exemples et le moment de réflexion ;
-- le bloc **chrono**, réglé sur la durée prévue de l'activité.
+- **Consigne** en bleu, **Exemples** en jaune, **Moment de réflexion** en rose ;
+- **Chrono** en vert : le bloc entier se remplit de gauche à droite à mesure que le temps passe, comme dans PL-planif’. Il n'y a plus de barre de progression séparée.
 
-Les interrupteurs « Afficher » en haut de l'écran masquent ou affichent chaque partie séparément : **Consigne**, **Exemples**, **Réflexion**, **Chrono**. Le support occupe la place libérée : sans explications, il prend toute la largeur et le chrono passe en bandeau dessous ; sans rien d'autre, il remplit l'écran. Tout est affiché à l'ouverture de chaque activité : les réglages ne sont pas gardés d'une activité à l'autre.
+**Masquer et afficher.** Chaque bloc porte une icône « œil barré » qui le masque. Un bloc masqué devient une pastille « + » de sa couleur dans l'en-tête ; un clic dessus le réaffiche. Le support occupe la place libérée : sans explications, il prend toute la largeur et le chrono passe en bandeau dessous ; sans rien d'autre, il remplit l'écran. Tout est affiché à l'ouverture de chaque activité : les réglages ne sont pas gardés d'une activité à l'autre.
+
+**Support seul.** Un clic sur le support l'affiche seul, sur fond noir, sur tout l'écran (vrai plein écran quand le navigateur le permet ; sur iPhone, il couvre la fenêtre). Un clic ou `Échap` revient à la vue projetée.
+
+**En-tête.** Il ne porte que le titre et quatre icônes : activité précédente, activité suivante, plein écran, fermer. Les boutons de la vue projetée font 44 px de haut.
 
 Si le chrono est masqué pendant qu'il tourne, il réapparaît à la fin du temps. Il affiche alors un court message calme, sans son.
 
 Pour la respiration carrée, on choisit 4, 5 ou 6 cycles et un seul bouton lance le guide et le chrono ensemble. Quand le chrono est masqué, un bouton « Démarrer » apparaît sous le guide.
 
-Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espace` démarrer ou mettre en pause le chrono (quel que soit le bouton sélectionné), `C` consigne, `E` exemples, `R` réflexion, `T` chrono (afficher ou masquer), `F` plein écran, `Échap` fermer. Un rappel de ces raccourcis s’affiche sous le chrono sur ordinateur et se masque avec la croix (le choix est gardé dans le navigateur). Le focus clavier reste dans la projection et revient sur le bouton « Projeter » à la fermeture.
+Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espace` démarrer ou mettre en pause le chrono (quel que soit le bouton sélectionné), `C` consigne, `E` exemples, `R` réflexion, `T` chrono (masquer ou afficher), `F` plein écran, `Échap` fermer. Un rappel de ces raccourcis s’affiche en bas de l'écran sur ordinateur et se masque avec la croix (le choix est gardé dans le navigateur). Le focus clavier reste dans la projection et revient sur le bouton « Projeter » à la fermeture.
+
+Sur les cartes d'activité, la consigne est dans un encadré bleu, la couleur « consigne » de la vue projetée.
 
 ## Lisibilité
 

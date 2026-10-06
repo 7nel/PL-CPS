@@ -112,6 +112,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .fr.cur{background:var(--accent);border-color:transparent;color:var(--accent-ink)}
 .fr.cur .fs{color:inherit}
 .mcard{--c:var(--accent);position:relative;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--edge);border-radius:var(--r-panel);padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;transition:transform .15s ease,border-color .15s}
+:root{--k-cons:var(--h-blue);--k-ex:var(--h-yellow);--k-ref:var(--h-pink)}
 .mcard,.chero,.group,.proj,.fr{--cb:color-mix(in srgb,var(--c) 65%,var(--ink))}
 .mcard:hover{transform:translateY(-2px);border-color:var(--c)}
 .mcard::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;border-radius:var(--r-panel) 0 0 var(--r-panel);background:var(--cb)}
@@ -174,7 +175,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .filt .hint{margin-left:4px}
 .meta svg{width:18px;height:18px}
 .act p{margin:0;font-size:1rem}
-.act .cons{font-size:1.05rem;font-weight:400;line-height:1.45;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--c,var(--accent)) 13%,var(--surface))}
+.act .cons{font-size:1.05rem;font-weight:400;line-height:1.45;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--k-cons) 14%,var(--surface))}
 .flag{align-self:flex-start;font-size:1rem;font-weight:700;color:var(--warn);background:var(--warn-soft);border-radius:999px;padding:3px 9px}
 .act .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
 details.more{font-size:1rem}
@@ -214,18 +215,24 @@ footer.about a{display:inline-flex;align-items:center;min-height:44px}
 footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}
 
 /* ---- projection ---- */
-.proj{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;grid-template-rows:auto 1fr;padding:calc(env(safe-area-inset-top,0px) + 14px) clamp(16px,2.5vw,36px) calc(env(safe-area-inset-bottom,0px) + 16px)}
-.proj-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-bottom:12px}
-.proj-top .btn{min-height:52px;font-size:1.05rem}
-.proj-top .t{margin-right:auto;font-weight:700;font-size:clamp(1.35rem,2vw,2.1rem);line-height:1.15;min-width:0}
-.proj-top .t small{display:block;font:600 1.1rem var(--num);color:var(--ink-2);margin-bottom:2px}
-.tg{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.tg .tgl{font-size:1rem;font-weight:700;color:var(--ink-2);margin-right:2px}
-.tg .btn{gap:7px;background:transparent;border-style:dashed;color:var(--ink-2)}
-.tg .btn::before{content:"";width:.7em;height:.7em;border-radius:50%;border:2px solid currentColor;flex:none}
-.tg .btn[aria-pressed="true"]{background:var(--surface);border-style:solid;border-color:var(--ink-2);color:var(--ink)}
-.tg .btn[aria-pressed="true"]::before{background:var(--cb,var(--accent));border-color:var(--cb,var(--accent))}
-.proj-body{display:grid;gap:18px;min-height:0;grid-template-columns:minmax(0,1.6fr) minmax(340px,1fr);grid-template-rows:minmax(0,1fr) auto;grid-template-areas:"stage exp" "stage chr"}
+.proj{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;padding:calc(env(safe-area-inset-top,0px) + 10px) clamp(16px,2.5vw,36px) calc(env(safe-area-inset-bottom,0px) + 14px)}
+/* en-tête léger : titre à gauche, quatre icônes à droite ; les blocs masqués y reviennent sous forme de pastilles */
+.proj-top{display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap;padding-bottom:10px;min-width:0}
+.proj-top .t{flex:1 1 12ch;font-weight:700;font-size:clamp(1.35rem,2vw,2.1rem);line-height:1.15;min-width:0}
+.proj-top .t small{display:block;font:600 1.05rem var(--num);color:var(--ink-2);margin-bottom:2px}
+.pnav{display:flex;gap:2px;align-items:center;flex:none}
+.pi{width:44px;height:44px;display:grid;place-items:center;border:0;border-radius:12px;background:transparent;color:var(--ink);cursor:pointer}
+.pi:hover{background:var(--surface-2)}
+.pi[disabled]{opacity:.3;cursor:not-allowed}
+.pi svg{width:24px;height:24px}
+.phid{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.phid:empty{display:none}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 12px 4px 9px;border-radius:999px;border:1px dashed color-mix(in srgb,var(--k) 60%,var(--ink));background:color-mix(in srgb,var(--k) 14%,var(--surface));color:var(--ink);font-weight:700;font-size:1rem;cursor:pointer}
+.chip svg{width:18px;height:18px}
+.chip:hover{border-style:solid}
+[data-k="cons"]{--k:var(--k-cons)}[data-k="ex"]{--k:var(--k-ex)}[data-k="ref"]{--k:var(--k-ref)}[data-k="chr"]{--k:var(--accent)}
+
+.proj-body{display:grid;gap:16px;min-height:0;grid-template-columns:minmax(0,1.6fr) minmax(340px,1fr);grid-template-rows:minmax(0,1fr) auto;grid-template-areas:"stage exp" "stage chr"}
 .proj-body>.stage{grid-area:stage}
 .exp{grid-area:exp}
 .chrono{grid-area:chr}
@@ -237,33 +244,45 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .proj-body.no-stage.no-exp{grid-template-rows:auto;align-content:start;grid-template-areas:"chr"}
 .stage{container-type:size;min-height:0;display:grid;grid-template:minmax(0,1fr)/minmax(0,1fr);place-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
 .stage img{width:100%;height:100%;object-fit:contain;display:block}
-/* bloc explications : consigne, exemples, réflexion (chacun masquable) */
-.exp{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:20px;padding:22px 26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);font-size:clamp(1.15rem,1.55vw,1.75rem)}
-.exp p{margin:0}
-.exp .lbl{font-size:clamp(1rem,1.15vw,1.25rem);letter-spacing:0;text-transform:none;color:var(--ink-2);margin:0 0 8px}
-.exp .cons{font-size:clamp(1.25rem,1.8vw,2rem);font-weight:400;line-height:1.4;padding:.65em .8em;border-radius:16px;background:color-mix(in srgb,var(--c,var(--accent)) 14%,var(--surface))}
-.exp .q{margin:0;padding-left:1.1em}
-.exp .q li{margin:.35em 0}
-/* bloc chrono : séparé des explications, masquable */
-.chrono{display:flex;flex-direction:column;gap:10px;padding:16px 26px 18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
-.proj-body.no-exp .chrono{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 24px}
-.proj-body.no-exp .chrono .bar{flex:1 1 220px;width:auto}
-.proj-body.no-exp .chrono .end{min-height:0}
-.proj-body.no-exp .chrono .end:empty{display:none}
-.proj-body.no-exp .chrono .kh{flex-basis:100%}
+.zoomb{all:unset;display:block;width:100%;height:100%;cursor:zoom-in}
+.zoomb:focus-visible{outline:3px solid var(--accent);outline-offset:-4px}
+/* support seul, sur tout l’écran */
+.pzoom{position:fixed;inset:0;z-index:60;background:#000;border:0;padding:0;margin:0;display:grid;grid-template:minmax(0,1fr)/minmax(0,1fr);cursor:zoom-out}
+.pzoom img{width:100%;height:100%;object-fit:contain;display:block}
+
+/* explications : trois blocs, une couleur chacun, masquables séparément */
+.exp{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:12px;font-size:clamp(1.15rem,1.5vw,1.7rem)}
+.part{border-radius:var(--r-panel);padding:12px 18px 16px;background:color-mix(in srgb,var(--k) 14%,var(--surface));border:1px solid color-mix(in srgb,var(--k) 30%,var(--line))}
+.part .ph{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:2px}
+.part .lbl{margin:0;font-size:clamp(1rem,1.1vw,1.2rem);letter-spacing:0;text-transform:none;font-weight:700;color:color-mix(in srgb,var(--k) 42%,var(--ink))}
+.part p{margin:0}
+.part .cons{font-size:clamp(1.25rem,1.75vw,1.95rem);font-weight:400;line-height:1.4}
+.part .q{margin:0;padding-left:1.1em}
+.part .q li{margin:.3em 0}
+.hideb{width:36px;height:36px;margin:-4px -8px -4px 0;display:grid;place-items:center;border:0;border-radius:10px;background:transparent;color:color-mix(in srgb,var(--k) 42%,var(--ink));cursor:pointer;flex:none}
+.hideb:hover{background:color-mix(in srgb,var(--k) 24%,var(--surface))}
+.hideb svg{width:20px;height:20px}
+
+/* chrono : un bloc qui se remplit, comme dans PL-planif’ */
+.chrono{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:6px;padding:14px 18px 16px 22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.chrono>*{position:relative;z-index:1}
+.cfill{position:absolute!important;inset:0;width:0%;z-index:0!important;background:color-mix(in srgb,var(--accent) 34%,transparent);transition:width .95s linear}
+.cfill.nt{transition:none}
+.cfill::after{content:"";position:absolute;top:0;bottom:0;right:0;width:5px;background:linear-gradient(to bottom,var(--accent) 0 12px,color-mix(in srgb,var(--accent) 28%,transparent) 12px calc(100% - 12px),var(--accent) calc(100% - 12px) 100%)}
+.cfill.z::after{display:none}
+.proj-body.no-exp .chrono{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 24px}
 .proj-body:not(.no-chr) #gGo{display:none}
-.timer{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.timer .btn{min-height:56px;font-size:1.1rem;padding-inline:20px}
-.timer output{font:600 clamp(3rem,5vw,4.5rem)/1 var(--num);font-variant-numeric:tabular-nums;min-width:4.2ch}
-.timer.done output{color:var(--h-orange);animation:settle 1.2s cubic-bezier(.16,1,.3,1) 1}
+.timer{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.timer .btn{min-height:44px;font-size:1rem;padding-inline:16px}
+.timer output{font:600 clamp(2.8rem,4.6vw,4.2rem)/1 var(--num);font-variant-numeric:tabular-nums;min-width:4.2ch;margin-right:auto}
+.proj-body.no-exp .timer output{margin-right:8px}
+.timer.done output{animation:settle 1.2s cubic-bezier(.16,1,.3,1) 1}
 @keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
-.end{min-height:1.5em;font-weight:700}
-.kh{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:clamp(1.1rem,1.4vw,1.4rem);color:var(--ink-2)}
-.kh .btn{flex:none}
+.end{font-weight:700;margin:0}
+.end:empty{display:none}
+.kh{display:flex;align-items:center;gap:10px;margin:10px 0 0;font-size:1rem;color:var(--ink-2)}
+.kh span{margin-right:auto}
 .kh kbd{font-size:1em}
-.bar{height:12px;border-radius:99px;background:var(--line-strong);overflow:hidden;width:100%}
-.bar i{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left;background:var(--c,var(--accent));transition:transform .9s linear}
-.bar.nt i{transition:none}
 
 /* guide respiration carrée */
 .breath{display:grid;place-items:center;gap:18px;padding:18px;width:100%;height:100%}
@@ -273,7 +292,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .sq .ph b{font:600 clamp(1.6rem,4vw,2.8rem)/1.1 var(--num);display:block}
 .sq .ph span{font:600 clamp(2.6rem,7vw,5rem)/1 var(--num);color:color-mix(in srgb,var(--c) 45%,var(--ink))}
 .breath .hint{font-size:1.5rem;font-weight:700;color:var(--ink)}
-.cyc .btn{min-height:56px;font-size:1.25rem;padding-inline:20px}
+.cyc .btn{min-height:44px;font-size:1.05rem;padding-inline:16px}
 .cyc{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center}
 
 
@@ -298,29 +317,25 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 }
 @media (max-width:900px){
   .proj{overflow:auto;grid-template-rows:auto auto}
-  .proj-top .btn{min-height:44px;font-size:1rem}
-  .proj-top .tg{order:3;flex-basis:100%}
   .proj-body,.proj-body.no-chr,.proj-body.no-exp,.proj-body.no-stage,.proj-body.solo{display:flex;flex-direction:column}
   .stage{height:56vh;flex:none;order:1}
-  .stage:has(>img){height:auto;aspect-ratio:16/9}
-  .chrono{order:2}
-  .exp{order:3;overflow:visible}
+  .stage:has(img){height:auto;aspect-ratio:16/9}
+  .chrono{order:2;flex:none}
+  .exp{order:3;overflow:visible;flex:none}
   .timer output{font-size:clamp(2.4rem,11vw,3.4rem)}
-  .chrono{padding:14px 18px}
-  .chrono .end{min-height:0}
-  .chrono .end:empty{display:none}
-  .chrono .kh{display:none} /* pas de clavier sur tablette et téléphone */
-  .exp{padding:18px}
+  .kh{display:none} /* pas de clavier sur tablette et téléphone */
+  .hideb{width:44px;height:44px;margin:-8px -12px -8px 0}
+  .chip{min-height:44px}
 }
 @media (max-width:700px){
-  .proj-top{gap:8px}
-  .proj-top .t{flex-basis:100%}
-  .proj-top .btn{padding-inline:12px}
-  .proj{grid-template-columns:minmax(0,1fr)}
-  .proj-top{min-width:0}
-  .proj-top .tg{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;min-width:0;max-width:100%;padding:2px 0}
-  .proj-top .tg .tgl{display:none}
-  .proj-top .tg .btn{flex:none}
+  .proj-top .t{flex:1 1 0}
+  .proj-top .t small{font-size:1rem}
+  .proj-top .gn{display:none}
+  .phid{order:3;flex-basis:100%}
+  .timer{gap:4px;flex-wrap:nowrap}
+  .timer output{font-size:2.3rem;min-width:0}
+  .timer .btn{padding-inline:12px}
+  .chrono{padding:10px 8px 10px 16px}
 }
 @media (max-width:700px){
   .frise{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
@@ -353,7 +368,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
   <div class="panel help" id="help" hidden>
     <p><b>Une compétence par mois.</b> La carte du mois en cours est mise en avant ; les mois sans contenu affichent l’objectif et les outils prévus au programme.</p>
     <p><b>Projeter</b> ouvre le support en plein écran pour le beamer, avec la consigne, les questions de réflexion et un minuteur réglé sur la durée de l’activité. La respiration carrée propose 4, 5 ou 6 cycles et le minuteur suit le guide.</p>
-    <p>En projection : <kbd>←</kbd> <kbd>→</kbd> activité précédente / suivante, <kbd>Espace</kbd> démarre ou met en pause le chrono, <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> affichent ou masquent la consigne, les exemples, la réflexion et le chrono, <kbd>F</kbd> plein écran, <kbd>Échap</kbd> ferme. Le rappel des raccourcis sous le minuteur se masque avec la croix.</p>
+    <p>En projection : <kbd>←</kbd> <kbd>→</kbd> activité précédente / suivante, <kbd>Espace</kbd> démarre ou met en pause le chrono, <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquent ou affichent la consigne, les exemples, la réflexion et le chrono (ou l’œil barré de chaque bloc), un clic sur le support l’affiche seul sur tout l’écran, <kbd>F</kbd> plein écran, <kbd>Échap</kbd> ferme. Le rappel des raccourcis sous le minuteur se masque avec la croix.</p>
     <p><b>Durée</b> : au-dessus des activités, trois boutons gardent seulement celles qui tiennent en 3 min ou moins, 4 à 6 min, ou 7 min et plus.</p>
     <p><b>Repères</b> : pour l’équipe enseignante. Ce qui est solide, ce qui demande des nuances et ce qu’il vaut mieux reformuler, avec les références (APA 7).</p>
   </div>
@@ -386,6 +401,13 @@ const ico = {
   time:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9.5 2.5h5"/></svg>',
   box:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/></svg>',
   proj:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg>',
+  prev:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',
+  next:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>',
+  fs:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+  hide:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M10.6 6.2A9.6 9.6 0 0112 6c5 0 8.5 4.2 9.5 6-.4.8-1.300 2-2.600 3.200M6.300 7.700C4.400 9 3.100 10.800 2.500 12c1 1.800 4.500 6 9.500 6 1.300 0 2.500-.3 3.600-.7M9.900 9.900a3 3 0 004.200 4.200"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
+  reset:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5v5h5"/><path d="M4.600 10A8 8 0 1112 20a8 8 0 01-6.900-4"/></svg>',
   back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>'
 };
 
@@ -571,48 +593,49 @@ function openProj(c, i, img){
   P.c = c; P.i = i; stopTimer();
   const acts = actsOf(c), a = acts[i];
   el.style.setProperty("--c", `var(${c.hue})`);
+  const nav = (extra="") => `<div class="pnav">${extra}
+      <button class="pi" id="pFs" aria-label="Plein écran" title="Plein écran (touche F)">${ico.fs}</button>
+      <button class="pi" id="pClose" aria-label="Fermer la vue projetée" title="Fermer (Échap)">${ico.x}</button></div>`;
+  const zoomable = src => `<button class="zoomb" id="pZoomBtn" data-src="${src}" aria-label="Afficher le support seul sur tout l’écran" title="Support seul sur tout l’écran"><img src="${src}" alt=""></button>`;
   if(!a){ // image seule
-    P.guide = false;
-    el.innerHTML = `<div class="proj-top"><div class="t" id="pTitle"><small>${c.mois} · ${esc(c.nom)}</small>${esc(c.essentiel?.titre||"")}</div>
-      <button class="btn" id="pFs">Plein écran</button><button class="btn pri" id="pClose">Fermer</button></div>
-      <div class="proj-body solo"><div class="stage"><img src="${img}" alt=""></div></div>`;
+    P.guide = false; P.show = null; P.parts = [];
+    el.innerHTML = `<div class="proj-top"><div class="t" id="pTitle"><small>${c.mois} · ${esc(c.nom)}</small>${esc(c.essentiel?.titre||"")}</div>${nav()}</div>
+      <div class="proj-body solo"><div class="stage">${zoomable(img)}</div></div>`;
     document.title = `${c.nom} · PL-CPS’`;
   } else {
     P.guide = a.guide==="breath"; P.cy = 4; P.bt = 0;
+    P.parts = ["cons", a.exemples && "ex", a.reflexion?.length && "ref", "chr"].filter(Boolean);
     P.show = {cons:true, ex:true, ref:true, chr:true}; // tout affiché à l’ouverture de chaque activité
     P.total = P.left = P.guide ? P.cy*CYMS/1000 : Math.round((a.min||5)*60);
+    const hideb = k => `<button class="hideb" data-hide="${k}" aria-label="Masquer ${PART[k][1]}" title="Masquer (touche ${PART[k][2]})">${ico.hide}</button>`;
+    const part = (k, body) => `<section class="part" data-part="${k}" data-k="${k}"><div class="ph"><span class="lbl">${PART[k][3]}</span>${hideb(k)}</div>${body}</section>`;
     el.innerHTML = `<div class="proj-top">
-        <div class="t" id="pTitle"><small>${c.mois} · ${esc(a.groupe)} · ${i+1}/${acts.length}</small>${esc(a.titre)}</div>
-        <div class="tg" role="group" aria-label="Afficher ou masquer"><span class="tgl" aria-hidden="true">Afficher</span>
-          <button class="btn" data-tg="cons" aria-pressed="true" title="Afficher ou masquer la consigne (touche C)">Consigne</button>
-          ${a.exemples?`<button class="btn" data-tg="ex" aria-pressed="true" title="Afficher ou masquer les exemples (touche E)">Exemples</button>`:""}
-          ${a.reflexion?.length?`<button class="btn" data-tg="ref" aria-pressed="true" title="Afficher ou masquer le moment de réflexion (touche R)">Réflexion</button>`:""}
-          <button class="btn" data-tg="chr" aria-pressed="true" title="Afficher ou masquer le chrono (touche T)">Chrono</button>
-        </div>
-        <button class="btn" id="pPrev" ${i===0?"disabled":""} aria-label="Activité précédente">←</button>
-        <button class="btn" id="pNext" ${i===acts.length-1?"disabled":""} aria-label="Activité suivante">→</button>
-        <button class="btn" id="pFs">Plein écran</button>
-        <button class="btn pri" id="pClose">Fermer</button>
+        <div class="t" id="pTitle"><small>${c.mois}<span class="gn"> · ${esc(a.groupe)}</span> · ${i+1}/${acts.length}</small>${esc(a.titre)}</div>
+        <div class="phid" id="pHid" role="group" aria-label="Blocs masqués"></div>
+        ${nav(`<button class="pi" id="pPrev" ${i===0?"disabled":""} aria-label="Activité précédente" title="Activité précédente (←)">${ico.prev}</button>
+          <button class="pi" id="pNext" ${i===acts.length-1?"disabled":""} aria-label="Activité suivante" title="Activité suivante (→)">${ico.next}</button>`)}
       </div>
       <div class="proj-body ${a.img||a.guide?"":"no-stage"}" id="pBody">
         ${P.guide ? `<div class="stage" id="stage"><div class="breath"><div class="sq" id="sq"><i id="sqDot"></i><div class="ph"><div><b id="sqPh">Prêt ?</b><span id="sqN">4</span></div></div></div>
             <div class="cyc" role="group" aria-label="Nombre de cycles">${[4,5,6].map(n=>`<button class="btn" data-cy="${n}" aria-pressed="${n===P.cy}">${n} cycles</button>`).join("")}<button class="btn" id="bImg">Voir le support</button><button class="btn pri" id="gGo">Démarrer</button></div>
             <p class="hint" id="brCount"></p></div></div>`
-          : a.img ? `<div class="stage"><img src="${a.img}" alt=""></div>` : ""}
+          : a.img ? `<div class="stage">${zoomable(a.img)}</div>` : ""}
         <div class="exp" id="pExp">
-          <section data-part="cons"><span class="lbl">Consigne</span><p class="cons">${esc(a.consigne)}</p></section>
-          ${a.exemples?`<section data-part="ex"><span class="lbl">Exemples</span><ul class="q">${a.exemples.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`:""}
-          ${a.reflexion?.length?`<section data-part="ref"><span class="lbl">Moment de réflexion</span><ul class="q">${a.reflexion.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`:""}
+          ${part("cons", `<p class="cons">${esc(a.consigne)}</p>`)}
+          ${a.exemples ? part("ex", `<ul class="q">${a.exemples.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`) : ""}
+          ${a.reflexion?.length ? part("ref", `<ul class="q">${a.reflexion.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`) : ""}
         </div>
-        <div class="chrono" id="pChr">
+        <div class="chrono" id="pChr" data-k="chr">
+          <div class="cfill z ${P.guide?"nt":""}" id="tFill" style="width:0%"></div>
           <div class="timer" id="tm"><output id="tOut">${fmt(P.left)}</output>
-            <button class="btn pri" id="tGo">Démarrer</button><button class="btn" id="tReset"></button></div>
-          <div class="bar ${P.guide?"nt":""}"><i id="tBar"></i></div>
+            <button class="btn pri" id="tGo">Démarrer</button>
+            <button class="pi" id="tReset">${ico.reset}</button>
+            ${hideb("chr")}</div>
           <p class="end" id="tEnd" role="status"></p>
-          ${khHidden() ? "" : `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> afficher ou masquer · <kbd>F</kbd> plein écran</span><button class="btn ico" id="khx" aria-label="Masquer ce rappel" title="Masquer ce rappel">×</button></p>`}
         </div>
-      </div>`;
-    el.querySelectorAll("[data-tg]").forEach(x => x.onclick = () => toggleShow(x.dataset.tg));
+      </div>
+      ${khHidden() ? "" : `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquer ou afficher · <kbd>F</kbd> plein écran</span><button class="pi" id="khx" aria-label="Masquer ce rappel" title="Masquer ce rappel">${ico.x}</button></p>`}`;
+    el.querySelectorAll("[data-hide]").forEach(x => x.onclick = () => toggleShow(x.dataset.hide, true));
     $("#gGo")?.addEventListener("click", toggleTimer);
     $("#tGo").onclick = toggleTimer; $("#tReset").onclick = resetTimer;
     $("#pPrev").onclick = () => openProj(c, i-1); $("#pNext").onclick = () => openProj(c, i+1);
@@ -624,41 +647,65 @@ function openProj(c, i, img){
         el.querySelectorAll("[data-cy]").forEach(x => x.setAttribute("aria-pressed", x===b));
         resetTimer();
       });
-      $("#bImg").onclick = () => { stopTimer(); P.guide = false; P.total = P.left = Math.round((a.min||5)*60); $("#stage").innerHTML = `<img src="${a.img}" alt="">`; $("#tm").nextElementSibling.classList.remove("nt"); resetTimer(); };
+      $("#bImg").onclick = () => { stopTimer(); P.guide = false; P.total = P.left = Math.round((a.min||5)*60); $("#stage").innerHTML = zoomable(a.img); bindZoom(); $("#tFill").classList.remove("nt"); resetTimer(); };
     }
     paintTimer(); syncGo(); applyShow();
     $("#khx")?.addEventListener("click", () => { try{ localStorage.setItem("plcps-kh","1"); }catch(e){} $("#kh")?.remove(); $("#tGo")?.focus(); });
     document.title = `${a.titre} · PL-CPS’`;
   }
-  $("#pClose").onclick = closeProj;
+  $("#pClose").onclick = closeProj; bindZoom();
   $("#pFs").onclick = () => { const r = document.fullscreenElement ? document.exitFullscreen() : el.requestFullscreen?.(); r?.catch?.(()=>{}); };
   el.hidden = false; document.body.style.overflow = "hidden"; $("#pClose").focus();
 }
+/* support seul : l’image occupe tout l’écran (vrai plein écran quand le navigateur le permet) ; un clic ou Échap revient */
+function bindZoom(){ const b = $("#pZoomBtn"); if(b) b.onclick = () => openZoom(b.dataset.src); }
+function openZoom(src){
+  const el = $("#proj"); if($("#pZoom")) return;
+  const z = Object.assign(document.createElement("button"), {className:"pzoom", id:"pZoom"});
+  z.setAttribute("aria-label", "Revenir à la vue projetée"); z.innerHTML = `<img src="${src}" alt="">`;
+  z.onclick = closeZoom; el.append(z); z.focus();
+  P.zoomFs = !document.fullscreenElement && !!z.requestFullscreen; // on ne quitte le plein écran à la fermeture que si le zoom l’a lui-même demandé
+  if(P.zoomFs) z.requestFullscreen().catch(() => { P.zoomFs = false; });
+}
+function closeZoom(){
+  const z = $("#pZoom"); if(!z) return;
+  if(P.zoomFs && document.fullscreenElement) document.exitFullscreen().catch(()=>{});
+  P.zoomFs = false; z.remove(); $("#pZoomBtn")?.focus();
+}
+document.addEventListener("fullscreenchange", () => { if(!document.fullscreenElement && $("#pZoom")){ P.zoomFs = false; closeZoom(); } });
 function closeProj(){
-  const el = $("#proj"), wasOpen = !el.hidden;
+  const el = $("#proj"), wasOpen = !el.hidden; $("#pZoom")?.remove(); P.zoomFs = false;
   stopTimer(); el.hidden = true; document.body.style.overflow = "";
   if(document.fullscreenElement) document.exitFullscreen().catch(()=>{});
   if(wasOpen){ setTitle(); P.opener?.focus?.(); P.opener = null; }
 }
-/* affichage des blocs de la vue projetée : consigne, exemples, réflexion, chrono */
+/* blocs de la vue projetée : [article, « la consigne », touche, titre] */
+const PART = {cons:["Consigne","la consigne","C","Consigne"], ex:["Exemples","les exemples","E","Exemples"], ref:["Réflexion","le moment de réflexion","R","Moment de réflexion"], chr:["Chrono","le chrono","T","Chrono"]};
+/* chaque bloc se masque depuis lui-même ; masqué, il devient une pastille « + » dans l’en-tête */
 function applyShow(){
-  const el = $("#proj"), b = $("#pBody"); if(!b) return;
+  const el = $("#proj"), b = $("#pBody"); if(!b || !P.show) return;
   const s = P.show;
   el.querySelectorAll("#pExp [data-part]").forEach(x => x.hidden = !s[x.dataset.part]);
   const anyExp = [...el.querySelectorAll("#pExp [data-part]")].some(x => !x.hidden);
   $("#pExp").hidden = !anyExp; $("#pChr").hidden = !s.chr;
   b.classList.toggle("no-exp", !anyExp); b.classList.toggle("no-chr", !s.chr);
-  el.querySelectorAll("[data-tg]").forEach(x => x.setAttribute("aria-pressed", !!s[x.dataset.tg]));
+  const h = $("#pHid");
+  h.innerHTML = P.parts.filter(k => !s[k]).map(k => `<button class="chip" data-show="${k}" data-k="${k}" title="Afficher ${PART[k][1]} (touche ${PART[k][2]})">${ico.plus}${PART[k][0]}</button>`).join("");
+  h.querySelectorAll("[data-show]").forEach(x => x.onclick = () => toggleShow(x.dataset.show, true));
 }
-function toggleShow(k){ if(!P.show || !$(`#proj [data-tg="${k}"]`)) return; P.show[k] = !P.show[k]; applyShow(); }
+function toggleShow(k, focus){
+  if(!P.show || !P.parts?.includes(k)) return;
+  P.show[k] = !P.show[k]; applyShow();
+  if(focus) (P.show[k] ? $(`#proj [data-hide="${k}"]`) : $(`#proj [data-show="${k}"]`))?.focus(); // le focus suit le bloc
+}
 /* bouton principal du minuteur : un seul état pour le chrono et le guide */
 function syncGo(){ const t = P.run ? "Pause" : P.left<=0 ? "Terminé" : P.left<P.total ? "Reprendre" : "Démarrer"; ["#tGo","#gGo"].forEach(q => { const g=$(q); if(g) g.textContent = t; }); }
 function paintTimer(){
   const o=$("#tOut"); if(!o) return;
-  o.textContent = fmt(P.left); $("#tBar").style.transform = `scaleX(${1-P.left/P.total})`;
+  o.textContent = fmt(P.left); const pc = P.left>=P.total ? 0 : Math.min(100, 100*(1-P.left/P.total)), fl = $("#tFill"); fl.style.width = pc.toFixed(2) + "%"; fl.classList.toggle("z", pc===0);
   $("#tm").classList.toggle("done", P.left<=0);
   $("#tEnd").textContent = P.left<=0 ? "C’est terminé. Prenez un instant." : "";
-  $("#tReset").textContent = "Remettre à " + fmt(P.total);
+  const r = $("#tReset"), lab = "Remettre à " + fmt(P.total); r.setAttribute("aria-label", lab); r.title = lab;
 }
 function toggleTimer(){
   if(!$("#tGo")) return;
@@ -706,6 +753,7 @@ document.addEventListener("keydown", e => {
     else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
     else if(!el.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
   }
+  else if($("#pZoom")){ if(e.key==="Escape" || e.key===" " || e.key==="Enter"){ e.preventDefault(); closeZoom(); } }
   else if(e.key==="Escape") closeProj();
   else if(e.key==="ArrowRight") $("#pNext")?.click();
   else if(e.key==="ArrowLeft") $("#pPrev")?.click();
