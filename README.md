@@ -65,6 +65,8 @@ Aucune installation ni compte n'est nécessaire, et aucune donnée n'est collect
 
 - **En ligne** : activer GitHub Pages sur ce dépôt (Settings → Pages → Deploy from branch → `main` → `/root`). Adresse : `https://7nel.github.io/PL-CPS/` (respecter les majuscules).
 - **En local** : le contenu est chargé depuis `data/competences.json`, ce que les navigateurs bloquent quand on ouvre `index.html` par double-clic. Pour travailler hors ligne, lancer un petit serveur dans le dossier (par exemple `python3 -m http.server`) puis ouvrir `http://localhost:8000`.
+- **Hors ligne en classe** : après une première visite en ligne, `sw.js` met le site, les polices (`fonts/`) et les supports en cache, et il s'ouvre ensuite sans réseau. Le contenu est récupéré en priorité sur le réseau ; après une mise à jour du site, la copie en cache est remplacée à la visite suivante. Pour forcer le renouvellement des supports, changer le numéro de `CACHE` dans `sw.js`.
+- **Polices** : Atkinson Hyperlegible et Lexend sont hébergées dans `fonts/` (latin uniquement), sans appel à Google Fonts.
 
 Chaque compétence a sa propre adresse, par exemple `…/PL-CPS/#stress` ou `…/PL-CPS/#communication`.
 

@@ -17,10 +17,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
 <title>PL-CPS’</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lexend:wght@400;600&display=swap">
+<link rel="preload" href="fonts/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/atkinson-700.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/atkinson-400.woff2) format("woff2")}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/atkinson-700.woff2) format("woff2")}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/atkinson-400-i.woff2) format("woff2")}
+@font-face{font-family:"Lexend";font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/lexend.woff2) format("woff2")}
 :root{
   --bg:#eff2f0;--surface:#ffffff;--surface-2:#e4e9e6;--line:#d7ddda;--line-strong:#c3cbc7;--edge:#7d8d89;
   --ink:#253433;--ink-2:#415351;
@@ -55,6 +58,7 @@ html{font-size:18px}
 html,body{min-height:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.55 var(--ui);-webkit-font-smoothing:antialiased}
 button{font:inherit;color:inherit}
+img{height:auto}
 a{color:var(--accent)}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
 h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
@@ -104,7 +108,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .months{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
 .frise{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .fr{--c:var(--accent);width:100%;min-height:68px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px 12px;border:1px solid var(--edge);border-radius:var(--r-ctl);background:var(--surface);cursor:pointer;text-align:left;position:relative;overflow:hidden;color:var(--ink)}
-.fr::after{content:"";position:absolute;inset:auto 0 0 0;height:5px;background:var(--cb)}
+.fr::after{content:"";position:absolute;top:10px;right:10px;width:12px;height:12px;border-radius:50%;background:var(--cb)}
 .fr .fm{font-weight:700}
 .fr .fs{color:var(--ink-2)}
 .fr.soon{border-style:dashed;background:transparent}
@@ -115,7 +119,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 :root{--k-cons:var(--h-blue);--k-ex:var(--h-yellow);--k-ref:var(--h-pink)}
 .mcard,.chero,.group,.proj,.fr{--cb:color-mix(in srgb,var(--c) 65%,var(--ink))}
 .mcard:hover{transform:translateY(-2px);border-color:var(--c)}
-.mcard::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;border-radius:var(--r-panel) 0 0 var(--r-panel);background:var(--cb)}
+.mcard::before{content:"";position:absolute;top:14px;right:14px;width:14px;height:14px;border-radius:50%;background:var(--cb)}
 .mcard .m{font:600 1rem/1 var(--num);color:var(--ink-2);display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .mcard h3{font-size:1.2rem}
 .mcard p{margin:0;font-size:1rem;color:var(--ink-2)}
@@ -276,7 +280,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .timer .btn{min-height:44px;font-size:1rem;padding-inline:16px}
 .timer output{font:600 clamp(2.8rem,4.6vw,4.2rem)/1 var(--num);font-variant-numeric:tabular-nums;min-width:4.2ch;margin-right:auto}
 .proj-body.no-exp .timer output{margin-right:8px}
-.timer.done output{animation:settle 1.2s cubic-bezier(.16,1,.3,1) 1}
+.timer.done output{color:color-mix(in srgb,var(--h-orange) 78%,var(--ink));animation:settle 1.2s cubic-bezier(.16,1,.3,1) 1}
 @keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
 .end{font-weight:700;margin:0}
 .end:empty{display:none}
@@ -347,7 +351,16 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
   .act .inner:first-child{grid-column:1/-1;padding-left:16px}
   .act .row{justify-content:flex-start}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.self-start{align-self:flex-start}
+.mt-m{margin-top:12px}.mt-s{margin:.5em 0 0}.m0{margin:0}.col-all{grid-column:1/-1}
+.h-page{font-size:1.9rem}.h-lead{font-size:1.5rem}.h-sub{font-size:1.15rem}
+.notice{padding:22px 24px}.notice-grid{display:grid;gap:12px;justify-items:start}
+.flip{display:inline-flex;transform:scaleX(-1)}
+@media (prefers-reduced-motion:reduce){
+  .mcard,.ib{transition:none}
+  .mcard:hover,.ib:hover,.ib:active{transform:none}
+  .timer.done output{animation:none}
+}
 </style>
 
 </head>
@@ -431,7 +444,7 @@ function renderYear(){
   <div style="display:flex;flex-direction:column;gap:22px">
     <div class="intro">
       <button class="panel now" style="--c:var(${cur.hue})" data-go="${cur.id}">
-        ${cur.img ? `<img src="${cur.img}" alt="${esc(cur.nom)}">` : ""}
+        ${cur.img ? `<img src="${cur.img}" alt="${esc(cur.nom)}" width="1600" height="900">` : ""}
         <div class="body"><div>
           <p class="eyebrow" style="margin-bottom:4px">${curIdx!==undefined ? "Ce mois-ci · " : "Pour la rentrée · "}${cur.mois}</p>
           <h2>${esc(cur.nom)}</h2></div>
@@ -441,7 +454,7 @@ function renderYear(){
       <div class="panel lead">
         <h2>Une compétence par mois</h2>
         <p>Activités courtes, supports à projeter et outils réutilisables dans tout l’établissement.</p>
-        <button class="btn" data-go="cadre" style="align-self:flex-start">Pourquoi les CPS à l’école&#8239;?</button>
+        <button class="btn self-start" data-go="cadre">Pourquoi les CPS à l’école&#8239;?</button>
       </div>
     </div>
     <div class="sec-h"><h2>L’année</h2><span class="hint">de septembre à juin</span></div>
@@ -483,11 +496,11 @@ function renderComp(c, tab){
       <button class="btn" data-go="">${ico.back} L’année</button>
       <span class="pn" role="group" aria-label="Mois voisins">
         ${prev?`<button class="btn ico" data-go="${prev.id}" aria-label="Mois précédent&#8239;: ${prev.mois}, ${esc(prev.nom)}" title="${prev.mois} · ${esc(prev.nom)}">${ico.back}</button>`:""}
-        ${next?`<button class="btn ico" data-go="${next.id}" aria-label="Mois suivant&#8239;: ${next.mois}, ${esc(next.nom)}" title="${next.mois} · ${esc(next.nom)}"><span style="display:inline-flex;transform:scaleX(-1)">${ico.back}</span></button>`:""}
+        ${next?`<button class="btn ico" data-go="${next.id}" aria-label="Mois suivant&#8239;: ${next.mois}, ${esc(next.nom)}" title="${next.mois} · ${esc(next.nom)}"><span class="flip">${ico.back}</span></button>`:""}
       </span>
     </div>
     <section class="panel chero ${c.img?"":"noimg"}" style="--c:var(${c.hue})">
-      ${c.img?`<img src="${c.img}" alt="">`:""}
+      ${c.img?`<img src="${c.img}" alt="" width="1600" height="900">`:""}
       <div class="txt">
         <span class="m">${c.mois}</span>
         <h1>${esc(c.nom)}</h1>
@@ -502,7 +515,7 @@ function renderComp(c, tab){
       <div id="tabBody" role="tabpanel" aria-labelledby="tab-${curTab}" tabindex="0"></div>`
     : `<section class="panel prose" style="grid-template-columns:1fr">
          <section><h2>Idées d’activités du programme</h2><ul>${c.idees.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
-         <p style="margin-top:12px"><b>À construire.</b> Les activités de ce mois ne sont pas encore rédigées. Elles seront ajoutées prochainement.</p>${(()=>{const r=DATA.find((d,n)=>n>i&&ready(d))||[...DATA].slice(0,i).reverse().find(ready); return r?`<p><button class="btn wrap" data-go="${r.id}">Voir les activités de ${r.mois}&#8239;: ${esc(r.nom)}</button></p>`:""})()}</section>
+         <p class="mt-m"><b>À construire.</b> Les activités de ce mois ne sont pas encore rédigées. Elles seront ajoutées prochainement.</p>${(()=>{const r=DATA.find((d,n)=>n>i&&ready(d))||[...DATA].slice(0,i).reverse().find(ready); return r?`<p><button class="btn wrap" data-go="${r.id}">Voir les activités de ${r.mois}&#8239;: ${esc(r.nom)}</button></p>`:""})()}</section>
        </section>`}
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
@@ -526,7 +539,7 @@ function actCard(a, k){
     a.materiel ? `${esc(a.materiel)}` : ""
   ];
   return `<article class="act" data-min="${a.min??5}">
-    ${a.img?`<button class="thumb" data-proj="${k}" tabindex="-1" aria-hidden="true"><img src="${a.img}" alt="" loading="lazy"></button>`:""}
+    ${a.img?`<button class="thumb" data-proj="${k}" tabindex="-1" aria-hidden="true"><img src="${a.img}" alt="" loading="lazy" width="1600" height="900"></button>`:""}
     <div class="inner">
       <div class="head"><h3>${esc(a.titre)}</h3><span class="dur">${ico.time}${esc(durTxt(a))}</span></div>
       <p class="cons">${esc(a.consigne)}</p>
@@ -563,8 +576,8 @@ function renderTab(c){
   } else if(curTab==="ess"){
     const e = c.essentiel;
     b.innerHTML = `<section class="panel" style="overflow:hidden">
-      ${e.img?`<button class="bigthumb" data-projimg="${e.img}" aria-label="Projeter ${esc(e.titre)}"><img src="${e.img}" alt=""></button>`:""}
-      <div class="prose"><section style="grid-column:1/-1"><h2 style="font-size:1.5rem">${esc(e.titre)}</h2></section>
+      ${e.img?`<button class="bigthumb" data-projimg="${e.img}" aria-label="Projeter ${esc(e.titre)}"><img src="${e.img}" alt="" width="1600" height="900"></button>`:""}
+      <div class="prose"><section class="col-all"><h2 class="h-lead">${esc(e.titre)}</h2></section>
       ${e.items.map(([t,d])=>`<section><h2>${esc(t)}</h2><p>${esc(d)}</p></section>`).join("")}</div></section>`;
   } else if(curTab==="pistes"){
     b.innerHTML = `<p class="hint" style="margin:0 0 12px">${c.id==="stress"?"Stratégies que les élèves peuvent utiliser seuls.":"Idées complémentaires, non testées en classe."}</p>
@@ -596,11 +609,11 @@ function openProj(c, i, img){
   const nav = (extra="") => `<div class="pnav">${extra}
       <button class="pi" id="pFs" aria-label="Plein écran" title="Plein écran (touche F)">${ico.fs}</button>
       <button class="pi" id="pClose" aria-label="Fermer la vue projetée" title="Fermer (Échap)">${ico.x}</button></div>`;
-  const zoomable = src => `<button class="zoomb" id="pZoomBtn" data-src="${src}" aria-label="Afficher le support seul sur tout l’écran" title="Support seul sur tout l’écran"><img src="${src}" alt=""></button>`;
+  const zoomable = (src, alt) => `<button class="zoomb" id="pZoomBtn" data-src="${src}" aria-label="Afficher le support seul sur tout l’écran" title="Support seul sur tout l’écran"><img src="${src}" alt="${esc(alt||"")}" width="1600" height="900"></button>`;
   if(!a){ // image seule
     P.guide = false; P.show = null; P.parts = [];
     el.innerHTML = `<div class="proj-top"><div class="t" id="pTitle"><small>${c.mois} · ${esc(c.nom)}</small>${esc(c.essentiel?.titre||"")}</div>${nav()}</div>
-      <div class="proj-body solo"><div class="stage">${zoomable(img)}</div></div>`;
+      <div class="proj-body solo"><div class="stage">${zoomable(img, c.essentiel?.titre||c.nom)}</div></div>`;
     document.title = `${c.nom} · PL-CPS’`;
   } else {
     P.guide = a.guide==="breath"; P.cy = 4; P.bt = 0;
@@ -619,7 +632,7 @@ function openProj(c, i, img){
         ${P.guide ? `<div class="stage" id="stage"><div class="breath"><div class="sq" id="sq"><i id="sqDot"></i><div class="ph"><div><b id="sqPh">Prêt ?</b><span id="sqN">4</span></div></div></div>
             <div class="cyc" role="group" aria-label="Nombre de cycles">${[4,5,6].map(n=>`<button class="btn" data-cy="${n}" aria-pressed="${n===P.cy}">${n} cycles</button>`).join("")}<button class="btn" id="bImg">Voir le support</button><button class="btn pri" id="gGo">Démarrer</button></div>
             <p class="hint" id="brCount"></p></div></div>`
-          : a.img ? `<div class="stage">${zoomable(a.img)}</div>` : ""}
+          : a.img ? `<div class="stage">${zoomable(a.img, "Support de l’activité\u202f: "+a.titre)}</div>` : ""}
         <div class="exp" id="pExp">
           ${part("cons", `<p class="cons">${esc(a.consigne)}</p>`)}
           ${a.exemples ? part("ex", `<ul class="q">${a.exemples.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`) : ""}
@@ -647,7 +660,7 @@ function openProj(c, i, img){
         el.querySelectorAll("[data-cy]").forEach(x => x.setAttribute("aria-pressed", x===b));
         resetTimer();
       });
-      $("#bImg").onclick = () => { stopTimer(); P.guide = false; P.total = P.left = Math.round((a.min||5)*60); $("#stage").innerHTML = zoomable(a.img); bindZoom(); $("#tFill").classList.remove("nt"); resetTimer(); };
+      $("#bImg").onclick = () => { stopTimer(); P.guide = false; P.total = P.left = Math.round((a.min||5)*60); $("#stage").innerHTML = zoomable(a.img, "Support de l’activité\u202f: "+a.titre); bindZoom(); $("#tFill").classList.remove("nt"); resetTimer(); };
     }
     paintTimer(); syncGo(); applyShow();
     $("#khx")?.addEventListener("click", () => { try{ localStorage.setItem("plcps-kh","1"); }catch(e){} $("#kh")?.remove(); $("#tGo")?.focus(); });
@@ -771,7 +784,7 @@ function renderCadre(){
   $("#view").innerHTML = `
   <div style="display:flex;flex-direction:column;gap:18px">
     <div class="crumbs"><button class="btn" data-go="">${ico.back} L’année</button></div>
-    <div class="sec-h"><h1 style="font-size:1.9rem">Pourquoi les CPS à l’école ?</h1><span class="hint">d’après la présentation d’équipe « Les compétences socio-émotionnelles »</span></div>
+    <div class="sec-h"><h1 class="h-page">Pourquoi les CPS à l’école ?</h1><span class="hint">d’après la présentation d’équipe « Les compétences socio-émotionnelles »</span></div>
     <div class="cadre">
       <section class="panel wide">
         <p class="eyebrow">Définition · OMS</p>
@@ -847,7 +860,7 @@ addEventListener("error", e => {
 /* ============ navigation (#id) ============ */
 function go(id){ if(("#"+id)!==location.hash){ location.hash = id; } else route(); }
 function renderNotFound(){
-  $("#view").innerHTML = `<section class="panel" style="padding:22px 24px;display:grid;gap:12px;justify-items:start"><h1 style="font-size:1.9rem">Page introuvable</h1><p style="margin:0">Cette adresse ne correspond à aucune compétence.</p><button class="btn pri" data-go="">${ico.back} Retour à l’année</button></section>`;
+  $("#view").innerHTML = `<section class="panel notice notice-grid"><h1 class="h-page">Page introuvable</h1><p class="m0">Cette adresse ne correspond à aucune compétence.</p><button class="btn pri" data-go="">${ico.back} Retour à l’année</button></section>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
 }
 function route(){
@@ -866,10 +879,11 @@ async function start(){
     DATA = await r.json();
     route();
   }catch(e){
-    $("#view").innerHTML = '<section class="panel" style="padding:22px 24px"><h2 style="font-size:1.15rem">Le contenu n’a pas pu être chargé</h2><p style="margin:.5em 0 0">Vérifiez la connexion internet, puis rechargez la page (touche F5).</p><p class="hint" style="margin:.5em 0 0">Hors ligne ou en double-cliquant sur index.html, le navigateur bloque le fichier data/competences.json : ouvrez le site depuis son adresse en ligne ou depuis un petit serveur local (voir le README).</p></section>';
+    $("#view").innerHTML = '<section class="panel notice"><h2 class="h-sub">Le contenu n’a pas pu être chargé</h2><p class="mt-s">Vérifiez la connexion internet, puis rechargez la page (touche F5).</p><p class="hint mt-s">Hors ligne ou en double-cliquant sur index.html, le navigateur bloque le fichier data/competences.json : ouvrez le site depuis son adresse en ligne ou depuis un petit serveur local (voir le README).</p></section>';
   }
 }
 start();
+if("serviceWorker" in navigator && location.protocol.startsWith("http")) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(()=>{}));
 </script>
 
 </body>
