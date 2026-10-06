@@ -22,7 +22,7 @@
 <style>
 :root{
   --bg:#eff2f0;--surface:#ffffff;--surface-2:#e4e9e6;--line:#d7ddda;--line-strong:#c3cbc7;
-  --ink:#253433;--ink-2:#5b6c6a;
+  --ink:#253433;--ink-2:#415351;
   --accent:#2f6f63;--accent-ink:#ffffff;--accent-soft:color-mix(in srgb,var(--accent) 16%,var(--surface));
   --mark:#FFD83D;--warn:#9a5b12;--warn-soft:#fbefd9;
   --r-card:24px;--r-panel:16px;--r-ctl:14px;
@@ -51,7 +51,7 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html,body{min-height:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--ui);-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.55 var(--ui);-webkit-font-smoothing:antialiased}
 button{font:inherit;color:inherit}
 a{color:var(--accent)}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
@@ -61,10 +61,10 @@ h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
 /* ---- en-tête (identique PL-lect’ / PL-planif’) ---- */
 .top{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
 .brand{margin-right:auto;min-width:0}
-.eyebrow{font:700 .8rem/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0 0 6px}
-.brand h1{font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:700}
-.brand h1 button{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:44px}
-.brand h1 button:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:6px}
+.eyebrow{font:700 .9rem/1 var(--ui);color:var(--ink-2);margin:0 0 6px}
+.brand .t1{margin:0;font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:700;line-height:1.2}
+.brand .t1 button{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:44px}
+.brand .t1 button:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:6px}
 .icons{display:flex;gap:8px}
 .ib{width:48px;height:48px;display:grid;place-items:center;border-radius:var(--r-ctl);border:1px solid var(--line);background:var(--surface);cursor:pointer;color:var(--ink);transition:transform .15s ease}
 .ib:hover{transform:translateY(-1px)}
@@ -83,7 +83,7 @@ h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
 /* ---- aide ---- */
 .help{padding:18px 22px;display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .help p{margin:0;font-size:.95rem}
-kbd{font:700 .8rem var(--num);background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+kbd{font:700 .9rem var(--num);background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
 
 /* ---- vue année ---- */
 .intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px;align-items:stretch}
@@ -103,13 +103,13 @@ kbd{font:700 .8rem var(--num);background:var(--surface-2);border:1px solid var(-
 .mcard{--c:var(--accent);position:relative;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel);padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;transition:transform .15s ease,border-color .15s}
 .mcard:hover{transform:translateY(-2px);border-color:var(--c)}
 .mcard::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;border-radius:var(--r-panel) 0 0 var(--r-panel);background:var(--c)}
-.mcard .m{font:600 .78rem/1 var(--num);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);display:flex;justify-content:space-between;gap:8px}
+.mcard .m{font:600 .9rem/1 var(--num);color:var(--ink-2);display:flex;justify-content:space-between;gap:8px}
 .mcard h3{font-size:1.08rem}
 .mcard p{margin:0;font-size:.9rem;color:var(--ink-2)}
 .mcard.soon{background:color-mix(in srgb,var(--surface) 55%,var(--bg))}
 .mcard.soon h3{color:var(--ink-2)}
 .mcard.cur{outline:2px solid var(--c);outline-offset:2px}
-.pill{font:700 .8rem/1 var(--ui);letter-spacing:.04em;padding:5px 9px;border-radius:999px;white-space:nowrap}
+.pill{font:700 .875rem/1 var(--ui);letter-spacing:.04em;padding:5px 9px;border-radius:999px;white-space:nowrap}
 .pill.ok{background:color-mix(in srgb,var(--c) 22%,var(--surface));color:var(--ink)}
 .pill.no{background:var(--surface-2);color:var(--ink-2)}
 .pill.cur{background:color-mix(in srgb,var(--c) 55%,#000);color:#fff}
@@ -119,40 +119,44 @@ kbd{font:700 .8rem var(--num);background:var(--surface-2);border:1px solid var(-
 .chero{--c:var(--accent);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);overflow:hidden}
 .chero img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;display:block}
 .chero .txt{padding:24px 26px;display:flex;flex-direction:column;gap:12px;border-left:1px solid var(--line)}
-.chero .m{font:600 .8rem/1 var(--num);letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
-.chero h2{font-size:clamp(1.5rem,2.6vw,2rem)}
+.chero .m{font:600 1rem/1 var(--num);color:color-mix(in srgb,var(--c) 45%,var(--ink))}
+.chero h1{font-size:clamp(1.5rem,2.6vw,2rem)}
 .chero .sub{margin:0;color:var(--ink-2);font-weight:700}
 .chero .obj{margin:0}
-.chero .obj b{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.chero .obj b{display:block;font-size:.9rem;color:var(--ink-2)}
 .chero.noimg{grid-template-columns:1fr}
 .chero.noimg .txt{border-left:0;border-top:8px solid var(--c)}
-.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
-.tools span{font-size:.86rem;padding:6px 11px;border-radius:999px;border:1px dashed color-mix(in srgb,var(--c) 70%,var(--line));background:color-mix(in srgb,var(--c) 9%,var(--surface))}
+.outils{margin-top:auto}
+.outils summary{cursor:pointer;font-weight:700;color:var(--ink-2);min-height:44px;display:flex;align-items:center}
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.tools span{font-size:.9rem;padding:6px 11px;border-radius:999px;border:1px dashed color-mix(in srgb,var(--c) 70%,var(--line));background:color-mix(in srgb,var(--c) 9%,var(--surface))}
 
 .tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:0}
 .tab{border:0;background:none;min-height:44px;padding:10px 14px;font-weight:700;color:var(--ink-2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
 .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--c,var(--accent))}
-.tab .n{font:600 .75rem var(--num);color:var(--ink-2);margin-left:4px}
+.tab .n{font:600 .875rem var(--num);color:var(--ink-2);margin-left:4px}
 
 .group{display:flex;flex-direction:column;gap:12px}
 .group+.group{margin-top:10px}
 .group h3{font-size:1.02rem;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:2;background:var(--bg);padding:8px 0}
-.group h3::before{content:"";width:18px;height:3px;border-radius:2px;background:var(--c)}
+.group h3::before{content:"";width:18px;height:3px;border-radius:2px;background:color-mix(in srgb,var(--c) 70%,var(--ink))}
 .acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .act{display:flex;flex-direction:column;overflow:hidden;border-radius:var(--r-panel);background:var(--surface);border:1px solid var(--line)}
 .act .thumb{position:relative;display:block;border:0;padding:0;cursor:zoom-in;background:var(--surface-2)}
 .act .thumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 .act .inner{padding:14px 16px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
 .act h4{font-size:1.05rem}
-.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:.84rem}
+.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:.9rem}
 .meta span{display:inline-flex;gap:5px;align-items:center;color:var(--ink-2)}
-.meta .dur{font-size:1rem;font-weight:700;color:var(--ink)}
+.act .row{align-items:center;justify-content:space-between}
+.dur{display:inline-flex;gap:6px;align-items:center;font-size:1.05rem;font-weight:700;color:var(--ink)}
+.dur svg{width:18px;height:18px}
 .filt{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .filt .hint{margin-left:4px}
 .meta svg{width:15px;height:15px}
 .act p{margin:0;font-size:.95rem}
-details.more .cons{font-weight:700;margin-bottom:4px}
-.flag{align-self:flex-start;font-size:.78rem;font-weight:700;color:var(--warn);background:var(--warn-soft);border-radius:999px;padding:3px 9px}
+.act .cons{font-size:1.05rem;font-weight:700}
+.flag{align-self:flex-start;font-size:.875rem;font-weight:700;color:var(--warn);background:var(--warn-soft);border-radius:999px;padding:3px 9px}
 .act .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
 details.more{font-size:.93rem}
 details.more summary{cursor:pointer;font-weight:700;color:var(--ink-2);min-height:44px;display:flex;align-items:center}
@@ -160,7 +164,7 @@ details.more ul,details.more ol{margin:.4em 0 0;padding-left:1.2em}
 details.more li{margin:.15em 0}
 .bigthumb{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
 .bigthumb img{width:100%;display:block;border-bottom:1px solid var(--line)}
-.lbl{display:block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);font-weight:700;margin-top:8px}
+.lbl{display:block;font-size:.9rem;color:var(--ink-2);font-weight:700;margin-top:8px}
 
 .prose{padding:22px 26px;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .prose section h4{font-size:1rem;margin-bottom:6px}
@@ -176,23 +180,24 @@ details.more li{margin:.15em 0}
 .sci h4{font-size:1rem}
 .claims{display:grid;gap:10px}
 .claim{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;font-size:.95rem}
-.claim .v{font:700 .72rem/1 var(--ui);padding:5px 8px;border-radius:999px;white-space:nowrap;text-align:center;min-width:92px}
+.claim .v{font:700 .875rem/1 var(--ui);padding:5px 8px;border-radius:999px;white-space:nowrap;text-align:center;min-width:92px}
 .v.solid{background:color-mix(in srgb,var(--h-green) 26%,var(--surface))}
 .v.nuance{background:color-mix(in srgb,var(--h-yellow) 30%,var(--surface))}
 .v.flou{background:color-mix(in srgb,var(--h-orange) 28%,var(--surface))}
 .v.todo{background:color-mix(in srgb,var(--h-blue) 26%,var(--surface))}
 .claim p{margin:0;max-width:75ch}
-.refs{font-size:.86rem;color:var(--ink-2);padding-left:1.6em;text-indent:-1.6em;margin:0;display:grid;gap:6px;list-style:none}
+.refs{font-size:.9rem;color:var(--ink-2);padding-left:1.6em;text-indent:-1.6em;margin:0;display:grid;gap:6px;list-style:none}
 .refs i{font-style:italic}
 
-footer.about{font-size:.85rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}
+footer.about a{display:inline-flex;align-items:center;min-height:44px}
+footer.about{font-size:.9rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}
 
 /* ---- projection ---- */
 .proj{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;grid-template-rows:auto 1fr;padding:calc(env(safe-area-inset-top,0px) + 14px) clamp(16px,2.5vw,36px) calc(env(safe-area-inset-bottom,0px) + 16px)}
 .proj-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-bottom:12px}
 .proj-top .btn{min-height:52px;font-size:1.05rem}
-.proj-top .t{margin-right:auto;font-weight:700;font-size:1.05rem;min-width:0}
-.proj-top .t small{display:block;font:600 .95rem var(--num);color:var(--ink-2)}
+.proj-top .t{margin-right:auto;font-weight:700;font-size:1.35rem;min-width:0}
+.proj-top .t small{display:block;font:600 1.1rem var(--num);color:var(--ink-2)}
 .proj-body{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(340px,1fr);gap:18px;min-height:0}
 .proj-body.solo{grid-template-columns:minmax(0,1fr)}
 .stage{container-type:size;min-height:0;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
@@ -200,7 +205,7 @@ footer.about{font-size:.85rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap
 .side{min-height:0;overflow:auto;display:flex;flex-direction:column;gap:14px;padding:22px 26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);font-size:clamp(1.2rem,1.8vw,1.9rem)}
 .side p{margin:0}
 .side .cons{font-size:clamp(1.5rem,2.4vw,2.6rem);font-weight:700;line-height:1.3}
-.side .q{margin:0;padding-left:1.1em}
+.side .q{margin:0;padding-left:1.1em;font-size:clamp(1.4rem,2.2vw,2.2rem)}
 .side .q li{margin:.3em 0}
 .side .lbl{font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--ink);margin:0 0 4px}
 .timer{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
@@ -209,18 +214,18 @@ footer.about{font-size:.85rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap
 .timer.done output{color:var(--h-orange);animation:settle 1.2s cubic-bezier(.16,1,.3,1) 1}
 @keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
 .end{min-height:1.5em;font-weight:700}
-.bar{height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden;width:100%}
+.bar{height:12px;border-radius:99px;background:var(--line-strong);overflow:hidden;width:100%}
 .bar i{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left;background:var(--c,var(--accent));transition:transform .9s linear}
 .bar.nt i{transition:none}
 
 /* guide respiration carrée */
 .breath{display:grid;place-items:center;gap:18px;padding:18px;width:100%;height:100%}
-.sq{position:relative;width:max(160px,min(calc(100cqh - 200px),90cqw));aspect-ratio:1;border:6px solid color-mix(in srgb,var(--c) 45%,var(--line));border-radius:18px}
-.sq i{position:absolute;width:34px;height:34px;margin:-17px;border-radius:50%;background:var(--c);box-shadow:0 0 0 10px color-mix(in srgb,var(--c) 22%,transparent);left:0;top:100%}
+.sq{position:relative;width:max(160px,min(calc(100cqh - 200px),90cqw));aspect-ratio:1;border:6px solid color-mix(in srgb,var(--c) 70%,var(--ink));border-radius:18px}
+.sq i{position:absolute;width:34px;height:34px;margin:-17px;border-radius:50%;background:color-mix(in srgb,var(--c) 70%,var(--ink));box-shadow:0 0 0 10px color-mix(in srgb,var(--c) 22%,transparent);left:0;top:100%}
 .sq .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
 .sq .ph b{font:600 clamp(1.6rem,4vw,2.8rem)/1.1 var(--num);display:block}
-.sq .ph span{font:600 clamp(2.6rem,7vw,5rem)/1 var(--num);color:var(--c)}
-.breath .hint{font-size:1rem}
+.sq .ph span{font:600 clamp(2.6rem,7vw,5rem)/1 var(--num);color:color-mix(in srgb,var(--c) 45%,var(--ink))}
+.breath .hint{font-size:1.2rem}
 .cyc{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center}
 
 
@@ -239,6 +244,8 @@ footer.about{font-size:.85rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap
 @media (max-width:900px){
   .intro,.chero{grid-template-columns:1fr}
   .chero .txt{border-left:0;border-top:1px solid var(--line)}
+  .chero img{display:none}
+  .chero .txt{padding:16px 18px;gap:8px;border-top:8px solid var(--c)}
 }
 @media (max-width:700px){
   .proj{overflow:auto}
@@ -254,11 +261,11 @@ footer.about{font-size:.85rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap
   <header class="top">
     <div class="brand">
       <p class="eyebrow">PL-CPS’</p>
-      <h1><button id="homeLink" title="Retour à l’année">Compétences psychosociales</button></h1>
+      <p class="t1"><button id="homeLink" title="Retour à l’année">Compétences psychosociales</button></p>
     </div>
     <nav class="icons" aria-label="Actions">
       <button class="ib" id="bHelp" title="Aide" aria-label="Aide" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M9.3 9.2a2.8 2.8 0 015.4 1c0 1.9-2.7 2.4-2.7 4"/><circle cx="12" cy="17.3" r=".6" fill="currentColor"/></svg></button>
-      <button class="ib" id="bTheme" title="Thème clair / sombre" aria-label="Thème clair ou sombre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M12 2.5a9.5 9.5 0 000 19z" fill="currentColor"/></svg></button>
+      <button class="ib" id="bTheme" title="Thème clair / sombre" aria-label="Thème sombre" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M12 2.5a9.5 9.5 0 000 19z" fill="currentColor"/></svg></button>
       <button class="ib" id="bYear" title="L’année" aria-label="Vue de l’année"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M8 2.8v3.4M16 2.8v3.4"/><path d="M7.5 13h2M11 13h2M14.5 13h2M7.5 16.5h2M11 16.5h2" stroke-linecap="round"/></svg></button>
     </nav>
   </header>
@@ -303,11 +310,12 @@ const ico = {
 };
 
 /* ============ thème ============ */
-function setTheme(t){ document.documentElement.dataset.theme = t; try{localStorage.setItem("plcps-theme",t)}catch(e){} }
+const isDark = () => (document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
+function setTheme(t){ document.documentElement.dataset.theme = t; $("#bTheme").setAttribute("aria-pressed", isDark()); try{localStorage.setItem("plcps-theme",t)}catch(e){} }
 try{ const t = localStorage.getItem("plcps-theme"); if(t) document.documentElement.dataset.theme = t; }catch(e){}
+$("#bTheme").setAttribute("aria-pressed", isDark());
 $("#bTheme").onclick = () => {
-  const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-  setTheme(cur === "dark" ? "light" : "dark");
+  setTheme(isDark() ? "light" : "dark");
 };
 $("#bHelp").onclick = e => { const h=$("#help"); h.hidden=!h.hidden; e.currentTarget.setAttribute("aria-expanded", !h.hidden); };
 $("#bYear").onclick = $("#homeLink").onclick = () => go("");
@@ -368,18 +376,18 @@ function renderComp(c, tab){
   <div style="display:flex;flex-direction:column;gap:18px;--c:var(${c.hue})">
     <div class="crumbs">
       <button class="btn" data-go="">${ico.back} L’année</button>
-      ${prev?`<button class="btn" data-go="${prev.id}">${prev.mois}</button>`:""}
-      ${next?`<button class="btn" data-go="${next.id}">${next.mois}</button>`:""}
+      ${prev?`<button class="btn" data-go="${prev.id}">← ${prev.mois} · ${esc(prev.nom)}</button>`:""}
+      ${next?`<button class="btn" data-go="${next.id}">${next.mois} · ${esc(next.nom)} →</button>`:""}
     </div>
     <section class="panel chero ${c.img?"":"noimg"}" style="--c:var(${c.hue})">
       ${c.img?`<img src="${c.img}" alt="">`:""}
       <div class="txt">
         <span class="m">${c.mois}</span>
-        <h2>${esc(c.nom)}</h2>
+        <h1>${esc(c.nom)}</h1>
         ${c.sous?`<p class="sub">${esc(c.sous)}</p>`:""}
         <p class="obj"><b>Objectif</b>${esc(c.objectif)}</p>
-        <div><span class="lbl" style="margin:0 0 8px">Outils transférables dans l’établissement</span>
-        <div class="tools">${c.outils.map(o=>`<span>${esc(o)}</span>`).join("")}</div></div>
+        <details class="outils" ${matchMedia("(max-width:900px)").matches?"":"open"}><summary>Outils à réutiliser dans l’établissement</summary>
+        <div class="tools">${c.outils.map(o=>`<span>${esc(o)}</span>`).join("")}</div></details>
       </div>
     </section>
     ${ready(c) ? `
@@ -387,7 +395,7 @@ function renderComp(c, tab){
       <div id="tabBody" role="tabpanel" aria-labelledby="tab-${curTab}" tabindex="0"></div>`
     : `<section class="panel prose">
          <section><h4>Idées d’activités du programme</h4><ul>${c.idees.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>
-         <section><h4>À construire</h4><p>Les activités de ce mois ne sont pas encore rédigées. Ajouter un objet <code>groupes</code> à l’entrée « ${c.id} » dans les données pour les publier ici.</p></section>
+         <section><h4>À construire</h4><p>Les activités de ce mois ne sont pas encore rédigées. Elles seront ajoutées prochainement.</p></section>
        </section>`}
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
@@ -405,20 +413,20 @@ function renderComp(c, tab){
 
 function actCard(a, k){
   return `<article class="act" data-min="${a.min??5}">
-    ${a.img?`<button class="thumb" data-proj="${k}" aria-label="Projeter ${esc(a.titre)}"><img src="${a.img}" alt="" loading="lazy"></button>`:""}
+    ${a.img?`<button class="thumb" data-proj="${k}" tabindex="-1" aria-hidden="true"><img src="${a.img}" alt="" loading="lazy"></button>`:""}
     <div class="inner">
       <h4>${esc(a.titre)}</h4>
-      <div class="meta"><span class="dur">${ico.time}${esc(a.duree)}</span>${a.principes?`<span>Principe${a.principes.length>1?"s":""} ${esc(a.principes)}</span>`:""}${a.source==="doc"?`<span>Document enseignant (hors padlet)</span>`:""}${a.materiel?`<span>${ico.box}${esc(a.materiel.length>48?"Matériel prévu":a.materiel)}</span>`:""}</div>
+      <div class="meta">${a.principes?`<span>Principe${a.principes.length>1?"s":""} ${esc(a.principes)}</span>`:""}${a.source==="doc"?`<span>Document enseignant (hors padlet)</span>`:""}${a.materiel?`<span>${ico.box}${esc(a.materiel.length>48?"Matériel prévu":a.materiel)}</span>`:""}</div>
       ${a.flag?'<span class="flag">Déroulé reconstitué depuis les supports, à valider</span>':""}
-      <p><b>Objectif&#8239;:</b> ${esc(a.objectif)}</p>
-      <details class="more"><summary>Consigne et détails</summary>
-        <p class="cons">${esc(a.consigne)}</p>
+      <p class="cons">${esc(a.consigne)}</p>
+      <details class="more"><summary>Objectif et détails</summary>
+        <p><b>Objectif&#8239;:</b> ${esc(a.objectif)}</p>
         ${a.materiel&&a.materiel.length>48?`<span class="lbl">Matériel</span><p>${esc(a.materiel)}</p>`:""}
         ${a.exemples?`<span class="lbl">Exemples</span><ul>${a.exemples.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
         ${a.variante?`<span class="lbl">Variante</span><p>${esc(a.variante)}</p>`:""}
         ${a.reflexion?.length?`<span class="lbl">Moment de réflexion</span><ul>${a.reflexion.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
       </details>
-      <div class="row"><button class="btn pri" data-proj="${k}">${ico.proj} Projeter</button></div>
+      <div class="row"><span class="dur">${ico.time}${esc(a.duree)}</span><button class="btn pri" data-proj="${k}">${ico.proj} Projeter</button></div>
     </div>
   </article>`;
 }
@@ -597,7 +605,7 @@ function renderCadre(){
   $("#view").innerHTML = `
   <div style="display:flex;flex-direction:column;gap:18px">
     <div class="crumbs"><button class="btn" data-go="">${ico.back} L’année</button></div>
-    <div class="sec-h"><h2 style="font-size:1.5rem">Pourquoi les CPS à l’école ?</h2><span class="hint">d’après la présentation d’équipe « Les compétences socio-émotionnelles »</span></div>
+    <div class="sec-h"><h1 style="font-size:1.5rem">Pourquoi les CPS à l’école ?</h1><span class="hint">d’après la présentation d’équipe « Les compétences socio-émotionnelles »</span></div>
     <div class="cadre">
       <section class="panel wide">
         <p class="eyebrow">Définition · OMS</p>
@@ -674,6 +682,7 @@ addEventListener("error", e => {
 function go(id){ if(("#"+id)!==location.hash){ location.hash = id; } else route(); }
 function route(){
   const id = location.hash.slice(1); const c = DATA.find(d=>d.id===id);
+  const t1 = $(".t1"); if(c || id==="cadre"){ t1.removeAttribute("role"); t1.removeAttribute("aria-level"); } else { t1.setAttribute("role","heading"); t1.setAttribute("aria-level","1"); }
   closeProj(); id==="cadre" ? (renderCadre(), setTitle("Pourquoi les CPS à l’école ?")) : c ? renderComp(c, "acts") : (renderYear(), setTitle()); window.scrollTo(0,0);
 }
 addEventListener("hashchange", route);
