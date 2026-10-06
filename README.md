@@ -41,13 +41,15 @@ Le bouton **Projeter** ouvre l'activité en grand pour le beamer. La vue projet�
 
 **Support seul.** Un clic sur le support l'affiche seul, sur fond noir, sur tout l'écran (vrai plein écran quand le navigateur le permet ; sur iPhone, il couvre la fenêtre). Un clic ou `Échap` revient à la vue projetée.
 
-**En-tête.** Il ne porte que le titre et quatre icônes : activité précédente, activité suivante, plein écran, fermer. Les boutons de la vue projetée font 44 px de haut.
+**En-tête.** Il ne porte que le titre et quatre icônes : activité précédente, activité suivante, plein écran, fermer. Les boutons de la vue projetée, y compris ceux qui masquent un bloc, font 44 px de haut.
+
+**Consigne longue.** Quand les blocs de texte dépassent la hauteur de l’écran, ils défilent à l’intérieur de leur colonne et un bouton « Suite » avec un fondu en bas l’indique. Il disparaît une fois le bas atteint. Avec « réduire les animations », le défilement est instantané.
 
 Si le chrono est masqué pendant qu'il tourne, il réapparaît à la fin du temps. Il affiche alors un court message calme, sans son.
 
 Pour la respiration carrée, on choisit 4, 5 ou 6 cycles et un seul bouton lance le guide et le chrono ensemble. Quand le chrono est masqué, un bouton « Démarrer » apparaît sous le guide.
 
-Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espace` démarrer ou mettre en pause le chrono (quel que soit le bouton sélectionné), `C` consigne, `E` exemples, `R` réflexion, `T` chrono (masquer ou afficher), `F` plein écran, `Échap` fermer. Un rappel de ces raccourcis s’affiche en bas de l'écran sur ordinateur et se masque avec la croix (le choix est gardé dans le navigateur). Le focus clavier reste dans la projection et revient sur le bouton « Projeter » à la fermeture.
+Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espace` démarrer ou mettre en pause le chrono (quel que soit le bouton sélectionné), `C` consigne, `E` exemples, `R` réflexion, `T` chrono (masquer ou afficher), `F` plein écran, `Échap` fermer. Un rappel de ces raccourcis s’affiche en bas de l'écran sur ordinateur et se masque avec le bouton « Compris » (le choix est gardé dans le navigateur). Le focus clavier reste dans la projection et revient sur le bouton « Projeter » à la fermeture.
 
 Sur les cartes d'activité, la consigne est dans un encadré bleu, la couleur « consigne » de la vue projetée.
 
@@ -57,7 +59,7 @@ Tout le texte courant fait 18 px au minimum. Seule exception assumée : la liste
 
 ## Trouver une activité
 
-La vue de l’année affiche les dix mois en frise (passé, en cours, à venir), puis les mois dont les activités sont prêtes. Sur la page d’une compétence, quatre boutons placés à droite des onglets filtrent les activités par durée : 3 min ou moins, 4 à 6 min, 7 min et plus. Chaque carte montre la durée et l’objectif ; la consigne complète est dans « Consigne et détails ».
+La vue de l’année affiche les dix mois dans une seule frise : pour chacun, le mois, la compétence et son état (« En cours », nombre d’activités, ou « À construire »). Le mois en cours est en couleur ; chaque case ouvre le mois. Sur la page d’une compétence, quatre boutons placés à droite des onglets filtrent les activités par durée : 3 min ou moins, 4 à 6 min, 7 min et plus. Chaque carte montre la durée, le bouton « Projeter » en tête, puis l’objectif ; la consigne complète est dans « Consigne et détails ».
 
 ## Mise en ligne
 
