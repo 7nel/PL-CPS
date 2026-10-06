@@ -26,7 +26,7 @@
   --ink:#253433;--ink-2:#415351;
   --accent:#2f6f63;--accent-ink:#ffffff;--accent-soft:color-mix(in srgb,var(--accent) 16%,var(--surface));
   --mark:#FFD83D;--warn:#9a5b12;--warn-soft:#fbefd9;
-  --r-card:24px;--r-panel:16px;--r-ctl:14px;
+  --shade:#000;--shade-ink:#fff;--r-card:24px;--r-panel:16px;--r-ctl:14px;
   --shadow:0 1px 2px rgba(37,52,51,.06),0 10px 24px rgba(37,52,51,.08);
   --ui:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
   --num:"Lexend","Atkinson Hyperlegible",system-ui,sans-serif;
@@ -88,14 +88,14 @@ h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
 kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
 
 /* ---- vue année ---- */
-.intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px;align-items:stretch}
+.intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px;align-items:start}
 .now{display:grid;grid-template-columns:minmax(0,1fr);overflow:hidden;cursor:pointer;text-align:left;padding:0;border:1px solid var(--edge)}
 .now img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
 .now .body{padding:16px 22px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .now .body div{margin-right:auto}
-.now h2{font-size:1.35rem}
+.now h2{font-size:1.5rem}
 .lead{padding:22px 24px;display:flex;flex-direction:column;gap:12px}
-.lead h2{font-size:1.15rem}
+.lead h2{font-size:1.5rem}
 .lead p{margin:0;max-width:62ch}
 .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 
@@ -103,19 +103,19 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .sec-h h2{font-size:1.5rem}
 .months{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
 .mcard{--c:var(--accent);position:relative;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--edge);border-radius:var(--r-panel);padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;transition:transform .15s ease,border-color .15s}
+.mcard,.chero,.group,.proj{--cb:color-mix(in srgb,var(--c) 65%,var(--ink))}
 .mcard:hover{transform:translateY(-2px);border-color:var(--c)}
-.mcard::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;border-radius:var(--r-panel) 0 0 var(--r-panel);background:var(--c)}
-.mcard .m{font:600 1rem/1 var(--num);color:var(--ink-2);display:flex;justify-content:space-between;gap:8px}
+.mcard::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;border-radius:var(--r-panel) 0 0 var(--r-panel);background:var(--cb)}
+.mcard .m{font:600 1rem/1 var(--num);color:var(--ink-2);display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .mcard h3{font-size:1.2rem}
 .mcard p{margin:0;font-size:1rem;color:var(--ink-2)}
 .mcard.soon{background:transparent;border-style:dashed;box-shadow:none}
 .mcard.soon h3{color:var(--ink-2)}
-.soonrow{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
-.soonrow .mcard{padding:12px 14px}
+.soonline{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .pill{font:700 1rem/1 var(--ui);letter-spacing:.04em;padding:5px 9px;border-radius:999px;white-space:nowrap}
 .pill.ok{background:color-mix(in srgb,var(--c) 22%,var(--surface));color:var(--ink)}
 .pill.no{background:var(--surface-2);color:var(--ink-2)}
-.pill.cur{background:color-mix(in srgb,var(--c) 55%,#000);color:#fff}
+.pill.cur{background:color-mix(in srgb,var(--c) 55%,var(--shade));color:var(--shade-ink)}
 
 /* ---- vue compétence ---- */
 .crumbs{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
@@ -131,7 +131,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .chero .obj{margin:0}
 .chero .obj b{display:block;font-size:1rem;color:var(--ink-2)}
 .chero.noimg{grid-template-columns:1fr}
-.chero.noimg .txt{border-left:0;border-top:8px solid var(--c)}
+.chero.noimg .txt{border-left:0;border-top:8px solid var(--cb)}
 .outils summary{cursor:pointer;font-weight:700;color:var(--ink-2);min-height:44px;display:flex;align-items:center}
 .outils .tools{margin-top:4px}
 .tools{display:flex;flex-wrap:wrap;gap:8px}
@@ -139,13 +139,13 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 
 .tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:0}
 .tab{border:0;background:none;min-height:44px;padding:10px 14px;font-weight:700;color:var(--ink-2);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
-.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--c,var(--accent))}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:color-mix(in srgb,var(--c,var(--accent)) 65%,var(--ink))}
 .tab .n{font:600 1rem var(--num);color:var(--ink-2);margin-left:4px}
 
 .group{display:flex;flex-direction:column;gap:12px}
 .group+.group{margin-top:10px}
 .group h2{font-size:1.5rem;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:2;background:var(--bg);padding:8px 0}
-.group h2::before{content:"";width:18px;height:3px;border-radius:2px;background:color-mix(in srgb,var(--c) 70%,var(--ink))}
+.group h2::before{content:"";width:18px;height:3px;border-radius:2px;background:var(--cb)}
 .acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .act{display:flex;flex-direction:column;overflow:hidden;border-radius:var(--r-panel);background:var(--surface);border:1px solid var(--line)}
 .act .thumb{position:relative;display:block;border:0;padding:0;cursor:zoom-in;background:var(--surface-2)}
@@ -225,6 +225,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .timer.done output{color:var(--h-orange);animation:settle 1.2s cubic-bezier(.16,1,.3,1) 1}
 @keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
 .end{min-height:1.5em;font-weight:700}
+.kh{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:1rem;color:var(--ink-2)}
 .bar{height:12px;border-radius:99px;background:var(--line-strong);overflow:hidden;width:100%}
 .bar i{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left;background:var(--c,var(--accent));transition:transform .9s linear}
 .bar.nt i{transition:none}
@@ -257,7 +258,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
   .intro,.chero{grid-template-columns:1fr}
   .chero .txt{border-left:0;border-top:1px solid var(--line)}
   .chero img{display:none}
-  .chero .txt{padding:16px 18px;gap:8px;border-top:8px solid var(--c)}
+  .chero .txt{padding:16px 18px;gap:8px;border-top:8px solid var(--cb)}
 }
 @media (max-width:700px){
   .act{display:grid;grid-template-columns:96px minmax(0,1fr);align-items:start}
@@ -294,7 +295,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
   <div class="panel help" id="help" hidden>
     <p><b>Une compétence par mois.</b> La carte du mois en cours est mise en avant ; les mois sans contenu affichent l’objectif et les outils prévus au programme.</p>
     <p><b>Projeter</b> ouvre le support en plein écran pour le beamer, avec la consigne, les questions de réflexion et un minuteur réglé sur la durée de l’activité. La respiration carrée propose 4, 5 ou 6 cycles et le minuteur suit le guide.</p>
-    <p>En projection : <kbd>←</kbd> <kbd>→</kbd> activité précédente / suivante, <kbd>Espace</kbd> démarre ou met en pause le minuteur, <kbd>F</kbd> plein écran, <kbd>Échap</kbd> ferme.</p>
+    <p>En projection : <kbd>←</kbd> <kbd>→</kbd> activité précédente / suivante, <kbd>Espace</kbd> démarre ou met en pause le minuteur, <kbd>F</kbd> plein écran, <kbd>Échap</kbd> ferme. Le rappel des raccourcis sous le minuteur se masque avec la croix.</p>
     <p><b>Durée</b> : au-dessus des activités, trois boutons gardent seulement celles qui tiennent en 3 min ou moins, 4 à 6 min, ou 7 min et plus.</p>
     <p><b>Repères</b> : pour l’équipe enseignante. Ce qui est solide, ce qui demande des nuances et ce qu’il vaut mieux reformuler, avec les références (APA 7).</p>
   </div>
@@ -352,7 +353,7 @@ function renderYear(){
       <button class="panel now" style="--c:var(${cur.hue})" data-go="${cur.id}">
         ${cur.img ? `<img src="${cur.img}" alt="${esc(cur.nom)}">` : ""}
         <div class="body"><div>
-          <p class="eyebrow" style="margin-bottom:4px">${curIdx!==undefined ? "Ce mois-ci · " : ""}${cur.mois}</p>
+          <p class="eyebrow" style="margin-bottom:4px">${curIdx!==undefined ? "Ce mois-ci · " : "Pour la rentrée · "}${cur.mois}</p>
           <h2>${esc(cur.nom)}</h2></div>
           <span class="btn pri">${curReady ? "Ouvrir les activités" : "Voir le programme"}</span>
         </div>
@@ -360,7 +361,7 @@ function renderYear(){
       <div class="panel lead">
         <h2>Une compétence par mois</h2>
         <p>Activités courtes, supports à projeter et outils réutilisables dans tout l’établissement.</p>
-        <button class="btn" data-go="cadre" style="align-self:flex-start;margin-top:auto">Pourquoi les CPS à l’école&#8239;?</button>
+        <button class="btn" data-go="cadre" style="align-self:flex-start">Pourquoi les CPS à l’école&#8239;?</button>
       </div>
     </div>
     <div class="sec-h"><h2>L’année</h2><span class="hint">de septembre à juin</span></div>
@@ -373,8 +374,8 @@ function renderYear(){
       </button>` : "").join("")}
     </div>
     ${DATA.some((c,i)=>!ready(c)&&i!==curIdx) ? `<div class="sec-h"><h2>Bientôt</h2><span class="hint">objectif et outils déjà prévus</span></div>
-    <div class="months soonrow">
-      ${DATA.map((c,i) => (!ready(c)&&i!==curIdx) ? `<button class="mcard soon" style="--c:var(${c.hue})" data-go="${c.id}"><span class="m"><span>${c.mois}</span></span><h3>${esc(c.nom)}</h3></button>` : "").join("")}
+    <div class="soonline">
+      ${DATA.map((c,i) => (!ready(c)&&i!==curIdx) ? `<button class="btn" data-go="${c.id}" title="${esc(c.nom)}">${c.mois}</button>` : "").join("")}
     </div>` : ""}
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
@@ -390,9 +391,9 @@ function renderComp(c, tab){
   const acts = actsOf(c);
   const tabs = ready(c) ? [
     ["acts","Activités",acts.length],
-    c.essentiel && ["ess","L’essentiel"],
+    c.essentiel && ["ess","L’essentiel",c.essentiel.items.length],
     c.pistes && ["pistes", c.id==="stress"?"Guide élève":"Pistes", c.pistes.length],
-    c.reperes && ["sci","Repères"]
+    c.reperes && ["sci","Repères",c.reperes.claims.length]
   ].filter(Boolean) : [];
   if(!tabs.find(t=>t[0]===curTab)) curTab = "acts";
   const i = DATA.indexOf(c), prev = DATA[i-1], next = DATA[i+1];
@@ -421,7 +422,7 @@ function renderComp(c, tab){
       <div id="tabBody" role="tabpanel" aria-labelledby="tab-${curTab}" tabindex="0"></div>`
     : `<section class="panel prose" style="grid-template-columns:1fr">
          <section><h2>Idées d’activités du programme</h2><ul>${c.idees.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
-         <p style="margin-top:12px"><b>À construire.</b> Les activités de ce mois ne sont pas encore rédigées. Elles seront ajoutées prochainement.</p>${(()=>{const r=DATA.map((d,n)=>[d,Math.abs(n-i)]).filter(([d])=>ready(d)).sort((x,y)=>x[1]-y[1])[0]?.[0]; return r?`<p><button class="btn wrap" data-go="${r.id}">Voir les activités de ${r.mois} : ${esc(r.nom)}</button></p>`:""})()}</section>
+         <p style="margin-top:12px"><b>À construire.</b> Les activités de ce mois ne sont pas encore rédigées. Elles seront ajoutées prochainement.</p>${(()=>{const r=DATA.map((d,n)=>[d,Math.abs(n-i)]).filter(([d])=>ready(d)).sort((x,y)=>x[1]-y[1])[0]?.[0]; return r?`<p><button class="btn wrap" data-go="${r.id}">Voir les activités de ${r.mois}&#8239;: ${esc(r.nom)}</button></p>`:""})()}</section>
        </section>`}
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
@@ -500,6 +501,7 @@ function renderTab(c){
 }
 
 /* ============ projection ============ */
+const khHidden = () => { try{ return localStorage.getItem("plcps-kh")==="1"; }catch(e){ return false; } };
 const CYMS = 16000; /* un cycle de respiration : 4 côtés × 4 s */
 let P = {c:null, i:0, left:0, total:0, run:false, tick:null, br:null, bt:0, guide:false, cy:4, opener:null};
 function fmt(s){ s=Math.max(0,Math.round(s)); return Math.floor(s/60)+":"+String(s%60).padStart(2,"0"); }
@@ -540,6 +542,7 @@ function openProj(c, i, img){
               <button class="btn pri" id="tGo">Démarrer</button><button class="btn" id="tReset"></button></div>
             <div class="bar ${P.guide?"nt":""}"><i id="tBar"></i></div>
             <p class="end" id="tEnd" role="status"></p>
+            ${khHidden() ? "" : `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>F</kbd> plein écran</span><button class="btn ico" id="khx" aria-label="Masquer ce rappel" title="Masquer ce rappel">×</button></p>`}
           </div>
         </div>
       </div>`;
@@ -556,6 +559,7 @@ function openProj(c, i, img){
       $("#bImg").onclick = () => { stopTimer(); P.guide = false; P.total = P.left = Math.round((a.min||5)*60); $("#stage").innerHTML = `<img src="${a.img}" alt="">`; $("#tm").nextElementSibling.classList.remove("nt"); resetTimer(); };
     }
     paintTimer(); syncGo();
+    $("#khx")?.addEventListener("click", () => { try{ localStorage.setItem("plcps-kh","1"); }catch(e){} $("#kh")?.remove(); $("#tGo")?.focus(); });
     document.title = `${a.titre} · PL-CPS’`;
   }
   $("#pClose").onclick = closeProj;

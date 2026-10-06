@@ -29,7 +29,7 @@ Le bouton **Projeter** ouvre le support de l'activité en grand pour le beamer, 
 
 Pour la respiration carrée, on choisit 4, 5 ou 6 cycles et un seul bouton lance le guide et le minuteur ensemble. À la fin du temps, le minuteur affiche un court message calme, sans son.
 
-Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espace` démarrer ou mettre en pause le minuteur (quel que soit le bouton sélectionné), `F` plein écran, `Échap` fermer. Le focus clavier reste dans la projection et revient sur le bouton « Projeter » à la fermeture.
+Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espace` démarrer ou mettre en pause le minuteur (quel que soit le bouton sélectionné), `F` plein écran, `Échap` fermer. Un rappel de ces raccourcis s’affiche sous le minuteur et se masque avec la croix (le choix est gardé dans le navigateur). Le focus clavier reste dans la projection et revient sur le bouton « Projeter » à la fermeture.
 
 ## Lisibilité
 
