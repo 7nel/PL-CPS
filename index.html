@@ -520,7 +520,7 @@ const durTxt = a => a.guide==="breath" ? "1 à 1,5 min" : a.duree;
 function actCard(a, k){
   const infos = [
     a.principes ? `Principe${a.principes.length>1?"s":""} ${esc(a.principes)}` : "",
-    a.source==="doc" ? "Document enseignant (hors padlet)" : "",
+    a.source==="doc" ? "Document enseignant (hors supports)" : "",
     a.materiel ? `${esc(a.materiel)}` : ""
   ];
   return `<article class="act" data-min="${a.min??5}">
