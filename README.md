@@ -59,6 +59,8 @@ Tout le texte courant fait 18 px au minimum. Seule exception assumée : la liste
 
 ## Trouver une activité
 
+**Accueil.** Deux raccourcis ouvrent la vue projetée sans passer par les onglets : « Reprendre » (la dernière activité projetée, gardée dans le navigateur de cet appareil) et « Projeter la première activité » du mois en cours. Aucune donnée n’est envoyée ailleurs.
+
 La vue de l’année affiche les dix mois dans une seule frise : pour chacun, le mois, la compétence et son état (« En cours », nombre d’activités, ou « À construire »). Le mois en cours est en couleur ; chaque case ouvre le mois. Sur la page d’une compétence, les onglets de classe (Activités, L’essentiel) sont à gauche et ceux de l’équipe (Repères, et Pistes quand elles ne sont pas destinées aux élèves) à droite, après « Pour l’équipe ». Quatre boutons sous les onglets filtrent les activités par durée : 3 min ou moins, 4 à 6 min, 7 min et plus. Chaque carte montre la durée, le bouton « Projeter » en tête, puis l’objectif ; la consigne complète est dans « Consigne et détails ».
 
 ## Mise en ligne
@@ -67,7 +69,7 @@ Aucune installation ni compte n'est nécessaire, et aucune donnée n'est collect
 
 - **En ligne** : activer GitHub Pages sur ce dépôt (Settings → Pages → Deploy from branch → `main` → `/root`). Adresse : `https://7nel.github.io/PL-CPS/` (respecter les majuscules).
 - **En local** : le contenu est chargé depuis `data/competences.json`, ce que les navigateurs bloquent quand on ouvre `index.html` par double-clic. Pour travailler hors ligne, lancer un petit serveur dans le dossier (par exemple `python3 -m http.server`) puis ouvrir `http://localhost:8000`.
-- **Hors ligne en classe** : après une première visite en ligne, `sw.js` met le site, les polices (`fonts/`) et les supports en cache, et il s'ouvre ensuite sans réseau. Le contenu est récupéré en priorité sur le réseau ; après une mise à jour du site, la copie en cache est remplacée à la visite suivante. Pour forcer le renouvellement des supports, changer le numéro de `CACHE` dans `sw.js`.
+- **Hors ligne en classe** : après une première visite en ligne, `sw.js` met le site, les polices (`fonts/`) et les supports en cache, et il s'ouvre ensuite sans réseau. Le contenu est récupéré en priorité sur le réseau ; après une mise à jour du site, la copie en cache est remplacée à la visite suivante. Le cache garde une seule copie par page (sans paramètres d’adresse), pour ne jamais servir une version périmée hors ligne. Pour forcer le renouvellement des supports, changer le numéro de `CACHE` dans `sw.js` (actuellement `plcps-v2`).
 - **Polices** : Atkinson Hyperlegible et Lexend sont hébergées dans `fonts/` (latin uniquement), sans appel à Google Fonts.
 
 Chaque compétence a sa propre adresse, par exemple `…/PL-CPS/#stress` ou `…/PL-CPS/#communication`.

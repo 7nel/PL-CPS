@@ -389,6 +389,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 
   <div class="panel help" id="help" hidden>
     <p><b>Une compétence par mois.</b> La carte du mois en cours est mise en avant. La frise de l’année montre les dix mois, avec le nombre d’activités prêtes ou « À construire ». Un mois sans contenu affiche l’objectif et les outils prévus au programme.</p>
+    <p><b>Lancer vite.</b> Sur l’accueil, « Reprendre » rouvre la dernière activité projetée sur cet appareil, et « Projeter la première activité » ouvre directement celle du mois.</p>
     <p><b>Projeter</b> ouvre le support en plein écran pour le beamer, avec la consigne, les questions de réflexion et un minuteur réglé sur la durée de l’activité. La respiration carrée propose 4, 5 ou 6 cycles et le minuteur suit le guide.</p>
     <p>En projection : <kbd>←</kbd> <kbd>→</kbd> activité précédente / suivante, <kbd>Espace</kbd> démarre ou met en pause le chrono, <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquent ou affichent la consigne, les exemples, la réflexion et le chrono (ou l’œil barré de chaque bloc), un clic sur le support l’affiche seul sur tout l’écran, le bouton « Suite » fait défiler quand le texte dépasse, <kbd>F</kbd> plein écran, <kbd>Échap</kbd> ferme. Le rappel des raccourcis sous le minuteur se masque avec « Masquer ce rappel ».</p>
     <p><b>Onglets</b> : à gauche, ce qui sert en classe (activités, l’essentiel) ; à droite, après « Pour l’équipe », ce qui est destiné aux enseignant·es (Repères, et Pistes quand elles existent).</p>
@@ -450,6 +451,8 @@ function renderYear(){
   const cur = DATA[curIdx] || DATA[0];
   const curReady = ready(cur);
   const nReady = DATA.filter(ready).length;
+  const last = lastProj(), first = curReady && actsOf(cur)[0] ? {c:cur, i:0, a:actsOf(cur)[0]} : null;
+  const launches = [last && {...last, lab:`Reprendre\u202f: ${last.a.titre}`}, first && !(last && last.c===first.c && last.i===0) && {...first, lab:`Projeter la première activité ${/^[aeiouhàâéèêîôû]/i.test(cur.mois) ? "d’" : "de "}${cur.mois.toLowerCase()}`}].filter(Boolean);
   $("#view").innerHTML = `
   <div style="display:flex;flex-direction:column;gap:22px">
     <div class="intro">
@@ -464,6 +467,7 @@ function renderYear(){
       <div class="panel lead">
         <h2>Une compétence psychosociale (CPS) par mois</h2>
         <p>Activités courtes, supports à projeter et outils réutilisables dans tout l’établissement.</p>
+        ${launches.map((l,n)=>`<button class="btn ${n===0?"pri ":""}self-start wrap" data-launch="${DATA.indexOf(l.c)}:${l.i}">${ico.proj} ${esc(l.lab)}</button>`).join("")}
         <button class="btn self-start" data-go="cadre">Pourquoi les CPS à l’école&#8239;?</button>
       </div>
     </div>
@@ -475,6 +479,7 @@ function renderYear(){
     </ol>
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
+  document.querySelectorAll("[data-launch]").forEach(b => b.onclick = () => { const [n,i] = b.dataset.launch.split(":").map(Number); openProj(DATA[n], i); });
 }
 
 /* ============ vue compétence ============ */
@@ -600,6 +605,8 @@ function renderTab(c){
 }
 
 /* ============ projection ============ */
+const LAST_KEY = "plcps-last";
+const lastProj = () => { try{ const v = JSON.parse(localStorage.getItem(LAST_KEY)||"null"); const c = v && DATA.find(d=>d.id===v.id); const a = c && actsOf(c)[v.i]; return a ? {c, i:v.i, a} : null; }catch(e){ return null; } };
 const khHidden = () => { try{ return localStorage.getItem("plcps-kh")==="1"; }catch(e){ return false; } };
 const CYMS = 16000; /* un cycle de respiration : 4 côtés × 4 s */
 let P = {c:null, i:0, left:0, total:0, run:false, tick:null, br:null, bt:0, guide:false, cy:4, opener:null};
@@ -610,6 +617,7 @@ function openProj(c, i, img){
   if(el.hidden) P.opener = document.activeElement;
   P.c = c; P.i = i; stopTimer();
   const acts = actsOf(c), a = acts[i];
+  if(a){ try{ localStorage.setItem(LAST_KEY, JSON.stringify({id:c.id, i})); }catch(e){} }
   el.style.setProperty("--c", `var(${c.hue})`);
   const nav = (extra="") => `<div class="pnav">${extra}
       <button class="pi" id="pFs" aria-label="Plein écran" title="Plein écran (touche F)">${ico.fs}</button>
