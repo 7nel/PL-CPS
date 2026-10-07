@@ -745,7 +745,8 @@
             "duree": "1 min",
             "min": 1,
             "modalites": [
-              "individuel"
+              "individuel",
+              "plenum"
             ],
             "guide": "breath",
             "objectif": "Retour au calme.",
@@ -760,7 +761,8 @@
             "duree": "30 s",
             "min": 0.5,
             "modalites": [
-              "individuel"
+              "individuel",
+              "plenum"
             ],
             "objectif": "Préparer un travail efficace, revenir au présent en cas de surcharge.",
             "consigne": "Les deux pieds bien posés au sol. Concentre toute ton attention sur le contact pieds / sol pendant 20 à 30 secondes. Respire normalement. Sens le poids de tes pieds.",
@@ -772,7 +774,8 @@
             "duree": "1 min",
             "min": 1,
             "modalites": [
-              "individuel"
+              "individuel",
+              "plenum"
             ],
             "objectif": "Apaiser l’anxiété avant une évaluation ou un moment important.",
             "consigne": "Ferme les yeux. Imagine un endroit où tu te sens totalement calme. Concentre-toi sur 3 détails : un son, une couleur, une sensation. Reste une minute dans cet espace intérieur.",
@@ -784,7 +787,8 @@
             "duree": "1–2 min",
             "min": 2,
             "modalites": [
-              "individuel"
+              "individuel",
+              "plenum"
             ],
             "objectif": "Relâcher les tensions physiques, se préparer à un moment stressant.",
             "consigne": "1. Choisis un groupe musculaire. 2. Serre-le fort 5 secondes. 3. Relâche d’un coup en expirant, 10 secondes. 4. Répète 2 à 3 fois.",
