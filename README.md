@@ -63,6 +63,10 @@ Tout le texte courant fait 18 px au minimum. Seule exception assumée : la liste
 
 La vue de l’année affiche les dix mois dans une seule frise : pour chacun, le mois, la compétence et son état (« En cours », nombre d’activités, ou « À construire »). Le mois en cours est en couleur ; chaque case ouvre le mois. Sur la page d’une compétence, les onglets de classe (Activités, L’essentiel) sont à gauche et ceux de l’équipe (Repères, et Pistes quand elles ne sont pas destinées aux élèves) à droite, après « Pour l’équipe ». Quatre boutons sous les onglets filtrent les activités par durée : 3 min ou moins, 4 à 6 min, 7 min et plus. Chaque carte montre la durée, le bouton « Projeter » en tête, puis l’objectif ; la consigne complète est dans « Consigne et détails ».
 
+**Toutes les activités.** Le bouton « Toutes les activités » (accueil et page d’un mois) les affiche sans le filtre des mois. On cherche par mot-clé (titre, objectif, consigne, matériel, réflexion, mois, compétence), puis on filtre par modalité (individuel, groupe, plénum) et par durée. Chaque carte indique son mois et sa compétence. Les filtres sont dans l’adresse (`#activites?m=groupe&t=s&q=mot`), donc partageables.
+
+**Couleurs.** La marque colorée de chaque mois suit sa famille de compétences selon Santé publique France (2022) : cognitives (bleu), sociales (orange), émotionnelles (vert). Estime de soi et résilience, absentes de la liste de l’OMS, forment les « ajouts du programme » (jaune).
+
 ## Mise en ligne
 
 Aucune installation ni compte n'est nécessaire, et aucune donnée n'est collectée. Seul le choix du thème clair ou sombre est gardé dans le navigateur.
@@ -85,9 +89,9 @@ Chaque compétence a sa propre adresse, par exemple `…/PL-CPS/#stress` ou `…
 
 Pas besoin de toucher `index.html` : on modifie `data/competences.json` et on pousse le commit. Le site se met à jour tout seul (chargement avec contournement du cache).
 
-Champs d'une compétence : `id`, `mois`, `nom`, `sous`, `hue` (`--h-orange`, `--h-green`, `--h-yellow`, `--h-pink`, `--h-blue`, `--h-plum`), `img`, `objectif`, `outils`, et selon l'avancement `essentiel`, `groupes`, `pistes`, `reperes`, ou `idees` pour un mois à construire.
+Champs d'une compétence : `id`, `mois`, `nom`, `sous`, `famille` (`cognitive`, `sociale`, `emotionnelle` ou `ajout`) et `hue` (la couleur qui va avec : `--h-blue`, `--h-orange`, `--h-green`, `--h-yellow`), `img`, `objectif`, `outils`, et selon l'avancement `essentiel`, `groupes`, `pistes`, `reperes`, ou `idees` pour un mois à construire.
 
-Champs d'une activité (dans `groupes[].acts`) : `titre`, `img`, `duree` (texte affiché), `min` (durée du minuteur, en minutes), `objectif`, `materiel`, `consigne`, `exemples`, `variante`, `reflexion`, et en option `principes`, `source: "doc"` ou `guide: "breath"`.
+Champs d'une activité (dans `groupes[].acts`) : `titre`, `img`, `duree` (texte affiché), `min` (durée du minuteur, en minutes), `objectif`, `materiel`, `modalites` (liste parmi `individuel`, `groupe`, `plenum`), `consigne`, `exemples`, `variante`, `reflexion`, et en option `principes`, `source: "doc"` ou `guide: "breath"`.
 
 Niveaux des `reperes.claims` : `solid`, `nuance`, `flou`, `todo`.
 

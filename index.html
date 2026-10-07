@@ -116,6 +116,23 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .lead h2{font-size:1.5rem}
 .lead p{margin:0;max-width:62ch}
 .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+/* marque colorée : la couleur de la famille de compétences, assombrie pour se détacher du fond */
+.chero,.group,.proj,.fr,.legend li{--cb:color-mix(in srgb,var(--c) 65%,var(--ink))}
+.legend{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0;padding:0;list-style:none}
+.legend li{display:inline-flex;align-items:center;gap:8px;font-size:1rem;color:var(--ink)}
+.legend .dot{width:16px;height:16px;background:var(--cb);flex:none}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:700 .95rem/1 var(--ui);padding:6px 11px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface-2);color:var(--ink);white-space:nowrap}
+.from{--cb:color-mix(in srgb,var(--c) 65%,var(--ink));all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:44px;font:700 1rem/1.25 var(--ui);color:var(--ink)}
+.from::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--cb);flex:none}
+.from:hover span{text-decoration:underline;text-underline-offset:3px}
+.from:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.allbar{display:flex;flex-direction:column;gap:14px;padding:18px 20px}
+.allbar .row2{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:flex-start}
+.allbar .fgrp{display:flex;flex-direction:column;gap:6px}
+.allbar .fgrp>b{font-size:1rem}
+.allbar input[type=search]{font:inherit;font-size:1.1rem;min-height:48px;width:100%;max-width:520px;padding:0 14px;border:1px solid var(--edge);border-radius:var(--r-ctl);background:var(--surface);color:var(--ink)}
+.allbar input[type=search]::placeholder{color:var(--ink-2)}
 
 .sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .sec-h h2{font-size:1.5rem}
@@ -401,6 +418,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 
   <div class="panel help" id="help" hidden>
     <p><b>Une compétence par mois.</b> La carte du mois en cours est mise en avant. La frise de l’année montre les dix mois, avec le nombre d’activités prêtes ou « À construire ». Un mois sans contenu affiche l’objectif et les outils prévus au programme.</p>
+    <p><b>Toutes les activités.</b> Le bouton « Toutes les activités » (accueil et page d’un mois) les réunit sans le filtre des mois : cherche un mot-clé, ou filtre par modalité (individuel, groupe, plénum) et par durée. Chaque carte indique son mois et sa compétence.</p>
     <p><b>Lancer vite.</b> Sur l’accueil, « Reprendre » rouvre la dernière activité projetée sur cet appareil, et « Projeter la première activité » ouvre directement celle du mois.</p>
     <p><b>Projeter</b> ouvre le support en plein écran pour le beamer, avec la consigne, les questions de réflexion et un minuteur réglé sur la durée de l’activité. La respiration carrée propose 4, 5 ou 6 cycles et le minuteur suit le guide.</p>
     <p>En projection : <kbd>←</kbd> <kbd>→</kbd> activité précédente / suivante, <kbd>Espace</kbd> démarre ou met en pause le chrono, <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquent ou affichent la consigne, les exemples, la réflexion et le chrono (ou l’œil barré de chaque bloc), un clic sur le support l’affiche seul sur tout l’écran, le bouton « Suite » fait défiler quand le texte dépasse, <kbd>F</kbd> plein écran, <kbd>Échap</kbd> ferme. Le rappel des raccourcis sous le minuteur se masque avec « Masquer ce rappel ».</p>
@@ -480,6 +498,7 @@ function renderYear(){
         <h2>Une compétence psychosociale (CPS) par mois</h2>
         <p>Activités courtes, supports à projeter et outils réutilisables dans tout l’établissement.</p>
         ${launches.map((l,n)=>`<button class="btn ${n===0?"pri ":""}self-start wrap" data-launch="${DATA.indexOf(l.c)}:${l.i}">${ico.proj} ${esc(l.lab)}</button>`).join("")}
+        <button class="btn self-start" data-go="activites">Toutes les activités</button>
         <button class="btn self-start" data-go="cadre">Pourquoi les CPS à l’école&#8239;?</button>
       </div>
     </div>
@@ -487,8 +506,10 @@ function renderYear(){
     <ol class="frise">
       ${DATA.map((c,i) => { const st = i===curIdx ? "cur" : (curIdx!==undefined && i<curIdx) ? "past" : "next"; const n = ready(c) ? actsOf(c).length : 0;
         const lab = st==="cur" ? (n ? `En cours · ${n} activités` : "En cours · à construire") : n ? `${n} activités` : "À construire";
-        return `<li><button class="fr ${st} ${n?"ok":"soon"}" style="--c:var(${c.hue})" data-go="${c.id}" ${st==="cur"?'aria-current="true"':""}><span class="fm">${c.mois}</span><span class="fn">${esc(c.nom)}</span><span class="fs">${lab}${st==="past"?'<span class="sr">, mois passé</span>':""}</span></button></li>`; }).join("")}
+        return `<li><button class="fr ${st} ${n?"ok":"soon"}" style="--c:var(${c.hue})" data-go="${c.id}" ${st==="cur"?'aria-current="true"':""}><span class="fm">${c.mois}</span><span class="fn">${esc(c.nom)}</span><span class="fs">${lab}${st==="past"?'<span class="sr">, mois passé</span>':""}<span class="sr">, ${FAM[c.famille]?.sr||""}</span></span></button></li>`; }).join("")}
     </ol>
+    <ul class="legend" aria-label="Familles de compétences">${Object.values(FAM).map(f=>`<li style="--c:var(${f.hue})"><span class="dot" aria-hidden="true"></span>${f.nom}</li>`).join("")}</ul>
+    <p class="hint">Familles selon Santé publique France (2022). Estime de soi et résilience sont des ajouts du programme : elles ne figurent pas dans la liste de l’OMS.</p>
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
   document.querySelectorAll("[data-launch]").forEach(b => b.onclick = () => { const [n,i] = b.dataset.launch.split(":").map(Number); openProj(DATA[n], i); });
@@ -496,6 +517,13 @@ function renderYear(){
 
 /* ============ vue compétence ============ */
 let curComp = null, curTab = "acts", curFilt = "all";
+const FAM = {
+  cognitive:{nom:"Cognitives", hue:"--h-blue", sr:"famille cognitive"},
+  sociale:{nom:"Sociales", hue:"--h-orange", sr:"famille sociale"},
+  emotionnelle:{nom:"Émotionnelles", hue:"--h-green", sr:"famille émotionnelle"},
+  ajout:{nom:"Ajouts du programme", hue:"--h-yellow", sr:"ajout du programme, hors liste OMS"}
+};
+const MODAL = {individuel:"Individuel", groupe:"Groupe", plenum:"Plénum"};
 const FILT = [["all","Toutes",()=>true],["s","3 min ou moins",m=>m<=3],["m","4 à 6 min",m=>m>3&&m<=6],["l","7 min et plus",m=>m>6]];
 function setTitle(t){ document.title = t ? `${t} · PL-CPS’` : "PL-CPS’"; }
 function renderComp(c, tab){
@@ -514,6 +542,7 @@ function renderComp(c, tab){
   <div style="display:flex;flex-direction:column;gap:18px;--c:var(${c.hue})">
     <div class="crumbs">
       <button class="btn" data-go="">${ico.back} L’année</button>
+      <button class="btn" data-go="activites">Toutes les activités</button>
       <span class="pn" role="group" aria-label="Mois voisins">
         ${prev?`<button class="btn ico" data-go="${prev.id}" aria-label="Mois précédent&#8239;: ${prev.mois}, ${esc(prev.nom)}" title="${prev.mois} · ${esc(prev.nom)}">${ico.back}</button>`:""}
         ${next?`<button class="btn ico" data-go="${next.id}" aria-label="Mois suivant&#8239;: ${next.mois}, ${esc(next.nom)}" title="${next.mois} · ${esc(next.nom)}"><span class="flip">${ico.back}</span></button>`:""}
@@ -554,17 +583,19 @@ function renderComp(c, tab){
 }
 
 const durTxt = a => a.guide==="breath" ? "1 à 1,5 min" : a.duree;
-function actCard(a, k){
+function actCard(a, k, from){
   const infos = [
     a.principes ? `Principe${a.principes.length>1?"s":""} ${esc(a.principes)}` : "",
     a.source==="doc" ? "Document enseignant (hors supports)" : "",
     a.materiel ? `${esc(a.materiel)}` : ""
   ];
-  return `<article class="act" data-min="${a.min??5}">
+  return `<article class="act" data-min="${a.min??5}"${from?` style="--c:var(${from.hue})"`:""}>
     ${a.img?`<button class="thumb" data-proj="${k}" tabindex="-1" aria-hidden="true"><img src="${a.img}" alt="" loading="lazy" width="1600" height="900"></button>`:""}
     <div class="inner">
+      ${from?`<button class="from" data-go="${from.id}" aria-label="Ouvrir la compétence : ${esc(from.nom)}, ${from.mois}"><span>${from.mois} · ${esc(from.nom)}</span></button>`:""}
       <div class="head"><h3>${esc(a.titre)}</h3><span class="dur">${ico.time}${esc(durTxt(a))}</span></div>
-      <div class="row"><button class="btn pri" data-proj="${k}">${ico.proj} Projeter</button></div>
+      ${a.modalites?.length?`<div class="tags" aria-label="Modalité">${a.modalites.map(m=>`<span class="tag">${MODAL[m]||esc(m)}</span>`).join("")}</div>`:""}
+      <div class="row"><button class="btn pri" data-proj="${k}"${from?` data-c="${from.id}"`:""}>${ico.proj} Projeter</button></div>
       <p class="cons">${esc(a.consigne)}</p>
       <details class="more"><summary>Objectif et détails</summary>
         <p><b>Objectif&#8239;:</b> ${esc(a.objectif)}</p>
@@ -832,7 +863,7 @@ function renderCadre(){
           <div class="cat" style="--c:var(--h-orange)"><b>Sociales</b>${L(["Communication efficace","Empathie","Relations interpersonnelles et gestion des conflits"])}</div>
           <div class="cat" style="--c:var(--h-green)"><b>Émotionnelles</b>${L(["Gestion du stress","Régulation des émotions"])}</div>
         </div>
-        <p class="hint">Répartition de la présentation d’équipe. Santé publique France (2022) range la conscience de soi parmi les compétences émotionnelles ; le classement varie selon les référentiels.</p>
+        <p class="hint">Intitulés de la liste de l’OMS, regroupés selon les trois familles de Santé publique France (2022). Le classement varie selon les référentiels ; ce site suit celui de Santé publique France.</p>
       </section>
       <section class="panel">
         <h2>Ce qu’on sait de leur développement</h2>
@@ -893,15 +924,58 @@ addEventListener("error", e => {
 
 /* ============ navigation (#id) ============ */
 function go(id){ if(("#"+id)!==location.hash){ location.hash = id; } else route(); }
+const norm = t => String(t||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+/* ============ toutes les activités (sans le filtre des mois) ============ */
+let allQ = "", allM = "all", allT = "all";
+function renderAll(params){
+  allQ = params.get("q")||""; allM = MODAL[params.get("m")] ? params.get("m") : "all"; allT = FILT.some(f=>f[0]===params.get("t")) ? params.get("t") : "all";
+  const items = DATA.filter(ready).flatMap(c => actsOf(c).map((a,i) => ({c, i, a, hay: norm([c.nom, c.mois, a.groupe, a.titre, a.objectif, a.consigne, a.materiel, a.variante, ...(a.reflexion||[]), ...(a.exemples||[])].join(" "))})));
+  $("#view").innerHTML = `
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div class="crumbs"><button class="btn" data-go="">${ico.back} L’année</button></div>
+    <div class="sec-h"><h1 class="h-page">Toutes les activités</h1><span class="hint">${items.length} activités, tous mois confondus</span></div>
+    <section class="panel allbar" aria-label="Chercher et filtrer">
+      <div class="fgrp"><label for="allQ"><b>Mot-clé</b></label><input id="allQ" type="search" placeholder="Par exemple : colère, débat, respiration" autocomplete="off" enterkeyhint="search" value="${esc(allQ)}"></div>
+      <div class="row2">
+        <div class="fgrp"><b id="lblM">Modalité</b><div class="filt" role="group" aria-labelledby="lblM">${[["all","Toutes"],...Object.entries(MODAL)].map(([k,l])=>`<button class="btn" data-m="${k}" aria-pressed="${k===allM}">${l}</button>`).join("")}</div></div>
+        <div class="fgrp"><b id="lblT">Durée</b><div class="filt" role="group" aria-labelledby="lblT">${FILT.map(f=>`<button class="btn" data-t="${f[0]}" aria-pressed="${f[0]===allT}">${f[1]}</button>`).join("")}</div></div>
+      </div>
+      <div class="filt"><span class="hint" id="allCount" role="status" aria-live="polite"></span><button class="btn" id="allReset" hidden>${ico.reset} Effacer les filtres</button></div>
+    </section>
+    <div class="acts" id="allActs">${items.map(x=>actCard(x.a, x.i, x.c)).join("")}</div>
+    <p class="hint" id="allEmpty" hidden>Aucune activité ne correspond. Essaie un autre mot, ou élargis la durée ou la modalité.</p>
+  </div>`;
+  const cards = [...document.querySelectorAll("#allActs .act")];
+  const apply = () => {
+    const words = norm(allQ).split(/\s+/).filter(Boolean), okT = FILT.find(f=>f[0]===allT)[2]; let n = 0;
+    cards.forEach((el,k) => { const x = items[k];
+      const v = words.every(w=>x.hay.includes(w)) && (allM==="all" || (x.a.modalites||[]).includes(allM)) && okT(x.a.min??5);
+      el.hidden = !v; if(v) n++; });
+    document.querySelectorAll("[data-m]").forEach(b => b.setAttribute("aria-pressed", b.dataset.m===allM));
+    document.querySelectorAll("[data-t]").forEach(b => b.setAttribute("aria-pressed", b.dataset.t===allT));
+    const filtered = words.length || allM!=="all" || allT!=="all";
+    $("#allCount").textContent = filtered ? `${n} activité${n>1?"s":""} sur ${items.length}` : "";
+    $("#allReset").hidden = !filtered; $("#allEmpty").hidden = n>0;
+    const qs = new URLSearchParams(); if(allQ.trim()) qs.set("q", allQ.trim()); if(allM!=="all") qs.set("m", allM); if(allT!=="all") qs.set("t", allT);
+    history.replaceState(null, "", "#activites" + (qs.toString() ? "?"+qs : ""));
+  };
+  $("#allQ").oninput = e => { allQ = e.target.value; apply(); };
+  document.querySelectorAll("[data-m]").forEach(b => b.onclick = () => { allM = b.dataset.m; apply(); });
+  document.querySelectorAll("[data-t]").forEach(b => b.onclick = () => { allT = b.dataset.t; apply(); });
+  $("#allReset").onclick = () => { allQ = ""; allM = "all"; allT = "all"; $("#allQ").value = ""; apply(); $("#allQ").focus(); };
+  document.querySelectorAll("#allActs [data-proj]").forEach(x => x.onclick = () => openProj(DATA.find(d=>d.id===x.dataset.c), +x.dataset.proj));
+  document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
+  apply();
+}
 function renderNotFound(){
   $("#view").innerHTML = `<section class="panel notice notice-grid"><h1 class="h-page">Page introuvable</h1><p class="m0">Cette adresse ne correspond à aucune compétence.</p><button class="btn pri" data-go="">${ico.back} Retour à l’année</button></section>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
 }
 function route(){
-  const id = location.hash.slice(1); const c = DATA.find(d=>d.id===id);
-  const t1 = $(".t1"); if(c || id==="cadre"){ t1.removeAttribute("role"); t1.removeAttribute("aria-level"); } else { t1.setAttribute("role","heading"); t1.setAttribute("aria-level","1"); }
-  if(id && id!=="cadre" && !c){ closeProj(); renderNotFound(); setTitle("Page introuvable"); window.scrollTo(0,0); return; }
-  closeProj(); id==="cadre" ? (renderCadre(), setTitle("Pourquoi les CPS à l’école ?")) : c ? renderComp(c, "acts") : (renderYear(), setTitle()); window.scrollTo(0,0);
+  const [id, qs] = location.hash.slice(1).split("?"); const c = DATA.find(d=>d.id===id);
+  const t1 = $(".t1"); if(c || id==="cadre" || id==="activites"){ t1.removeAttribute("role"); t1.removeAttribute("aria-level"); } else { t1.setAttribute("role","heading"); t1.setAttribute("aria-level","1"); }
+  if(id && id!=="cadre" && id!=="activites" && !c){ closeProj(); renderNotFound(); setTitle("Page introuvable"); window.scrollTo(0,0); return; }
+  closeProj(); id==="activites" ? (renderAll(new URLSearchParams(qs||"")), setTitle("Toutes les activités")) : id==="cadre" ? (renderCadre(), setTitle("Pourquoi les CPS à l’école ?")) : c ? renderComp(c, "acts") : (renderYear(), setTitle()); window.scrollTo(0,0);
 }
 addEventListener("hashchange", route);
 

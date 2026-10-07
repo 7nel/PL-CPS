@@ -4,7 +4,8 @@
     "mois": "Septembre",
     "nom": "Conscience de soi",
     "sous": "Se connaître pour avancer",
-    "hue": "--h-orange",
+    "hue": "--h-blue",
+    "famille": "cognitive",
     "img": "supports/titre-conscience.jpg",
     "objectif": "Aider les élèves à identifier leurs émotions, leurs forces et leurs limites.",
     "outils": [
@@ -21,6 +22,9 @@
             "img": "supports/thermometre.jpg",
             "duree": "2–3 min",
             "min": 3,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Identifier son niveau d’énergie.",
             "materiel": "Aucun, ou échelle 0–10 projetée.",
             "consigne": "Chacun positionne son pouce pour montrer où il en est en énergie, de 0 (fatigué) à 10 (super en forme).",
@@ -40,6 +44,9 @@
             "img": "supports/roue-emotions.jpg",
             "duree": "3–4 min",
             "min": 4,
+            "modalites": [
+              "individuel"
+            ],
             "objectif": "Apprendre à nommer son émotion actuelle.",
             "materiel": "Roue des émotions projetée ou affichée.",
             "consigne": "Choisis dans la roue l’émotion qui correspond à ton état actuel et indique-la par un geste codé (1 doigt = joie, 2 = colère, etc.).",
@@ -50,6 +57,9 @@
             "img": "supports/roue-emotions-vide.jpg",
             "duree": "5 min",
             "min": 5,
+            "modalites": [
+              "groupe"
+            ],
             "objectif": "Comprendre le lien déclencheur → émotion → sensation → besoin.",
             "materiel": "Roue des émotions (version à compléter) ; situations : ton équipe perd un match, tu réussis une évaluation, un ami t’oublie à une fête…",
             "consigne": "En groupe, choisissez l’émotion la plus probable dans la situation proposée, puis associez-lui une sensation corporelle et un besoin.",
@@ -65,6 +75,9 @@
             "img": "supports/stop-think.jpg",
             "duree": "2 min · rituel",
             "min": 2,
+            "modalites": [
+              "individuel"
+            ],
             "objectif": "Développer la régulation émotionnelle.",
             "materiel": "Questions préparées.",
             "consigne": "Avant de répondre, respire calmement et compte 10 secondes dans ta tête. Cela t’aide à réfléchir avant de réagir.",
@@ -90,6 +103,9 @@
             "img": "supports/forces-cachees.jpg",
             "duree": "3–4 min",
             "min": 4,
+            "modalites": [
+              "individuel"
+            ],
             "objectif": "Identifier et valoriser ses forces personnelles.",
             "materiel": "Morceau de papier, liste des 14 forces.",
             "consigne": "Choisis le numéro d’une force que tu reconnais en toi aujourd’hui, écris-le et lève ton papier en même temps que les autres.",
@@ -104,6 +120,9 @@
             "img": "supports/limite-moteur.jpg",
             "duree": "4–5 min",
             "min": 5,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Prendre conscience de ce qui motive ou bloque chacun.",
             "materiel": "Aucun, ou pictos 💪 🤔 😬 projetés ; liste de situations.",
             "consigne": "Je donne une situation. Si c’est un moteur pour toi, montre 💪. Si ça dépend, montre 🤔. Si c’est une limite, montre 😬.",
@@ -128,6 +147,9 @@
             "img": "supports/carte-personnelle.jpg",
             "duree": "10–15 min",
             "min": 15,
+            "modalites": [
+              "individuel"
+            ],
             "objectif": "Représenter visuellement son rapport à une matière : forces, limites, émotions.",
             "materiel": "Feuilles, crayons de couleur, pictogrammes.",
             "consigne": "Au centre, écris ou dessine « Moi et… [la matière] ». Autour, place tes forces 💪, tes limites ou difficultés ❌, les émotions que tu ressens dans cette matière 😊, ce qui t’aide, ce qui te motive, tes objectifs.",
@@ -206,7 +228,8 @@
     "mois": "Octobre",
     "nom": "Communication efficace",
     "sous": "Communiquer pour s’épanouir",
-    "hue": "--h-blue",
+    "hue": "--h-orange",
+    "famille": "sociale",
     "img": "supports/titre-communication.jpg",
     "objectif": "Poser les bases de l’écoute active et de l’expression claire.",
     "outils": [
@@ -251,6 +274,9 @@
             "principes": "1",
             "duree": "5–8 min",
             "min": 8,
+            "modalites": [
+              "groupe"
+            ],
             "objectif": "Prendre conscience de l’importance de l’attention et de la reformulation.",
             "materiel": "Petites phrases sur cartes (définitions, faits historiques, notions vues en cours) : annexe 2.",
             "consigne": "L’enseignant donne une phrase à A. A la dit à l’oreille de B. B reformule (« Tu veux dire que… ? ») ; A confirme ou infirme, sans corriger. Puis B la transmet à C, etc. La dernière personne dit la phrase à voix haute et on la compare avec l’originale.",
@@ -266,6 +292,10 @@
             "principes": "1, 2 et 5",
             "duree": "5–10 min",
             "min": 10,
+            "modalites": [
+              "groupe",
+              "plenum"
+            ],
             "objectif": "Exprimer un désaccord sans agressivité avec les 3A, les 3C et « Moi + Toi + Nous ».",
             "materiel": "Questions simples et motivantes (annexe 3) ; slide des règles 3A, 3C, MTN.",
             "consigne": "Débat entre 4 à 6 élèves désignés : une partie pour, l’autre contre. Chacun s’exprime à tour de rôle. Les autres observent, puis on tourne.",
@@ -287,6 +317,9 @@
             "principes": "3",
             "duree": "3–4 min",
             "min": 4,
+            "modalites": [
+              "groupe"
+            ],
             "objectif": "Prendre conscience de l’importance du non-verbal.",
             "materiel": "Petits papiers avec des mots-clés du cours précédent (vocabulaire de langue, personnages historiques, termes scientifiques, notions de maths).",
             "consigne": "Tire un mot-clé. Par deux ou en petit groupe, explique-le sans parler ni écrire : seulement par gestes, postures et mimiques. Une fois trouvé, on change de rôle.",
@@ -302,6 +335,9 @@
             "principes": "2 et 3",
             "duree": "4–5 min par situation",
             "min": 5,
+            "modalites": [
+              "groupe"
+            ],
             "objectif": "Préparer et exprimer un message difficile de façon claire, respectueuse et constructive.",
             "materiel": "Cartes de situations délicates : annexe 4.",
             "consigne": "Trouvez en 2 minutes la meilleure manière de communiquer dans cette situation. Attention aux mots, au ton, à l’attitude et à la posture.",
@@ -327,6 +363,9 @@
             "principes": "1, 2 et 4",
             "duree": "4–5 min par version",
             "min": 5,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Repérer le manque de clarté, demander des précisions et reformuler.",
             "materiel": "Version 1 : consignes floues. Version 2 : mots à préciser et mots interdits (annexe 5).",
             "consigne": "Version 1 : je lis une phrase volontairement floue ; posez des questions ouvertes ou fermées pour la clarifier, puis reformulez-la. Version 2 : pioche un mot et explique-le en 15 secondes sans les mots interdits. Le groupe vote : clair 👍 ou pas clair 👎.",
@@ -348,6 +387,9 @@
             "principes": "5",
             "duree": "5–7 min",
             "min": 7,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Exprimer son opinion à la première personne et accueillir des avis différents sans juger.",
             "materiel": "Questions simples et ouvertes : annexe 6.",
             "consigne": "Je pose une question neutre et ludique. À tour de rôle, chacun commence par « Moi, je pense que… ». Un autre élève accueille l’avis (« Je reconnais que tu penses… », « Même si je ne pense pas pareil, je comprends ton idée »), puis donne le sien.",
@@ -404,7 +446,8 @@
     "mois": "Novembre",
     "nom": "Empathie",
     "sous": "Percevoir et comprendre pour être ensemble",
-    "hue": "--h-pink",
+    "hue": "--h-orange",
+    "famille": "sociale",
     "img": "supports/titre-empathie.jpg",
     "objectif": "Développer la capacité à se mettre à la place de l’autre.",
     "outils": [
@@ -448,6 +491,10 @@
             "source": "doc",
             "duree": "5–6 min",
             "min": 6,
+            "modalites": [
+              "groupe",
+              "plenum"
+            ],
             "objectif": "Identifier émotions et besoins d’autrui à partir d’indices verbaux, non verbaux et contextuels.",
             "materiel": "Situations d’exemple.",
             "consigne": "Lecture d’une situation. Trouvez 2 émotions possibles et 1 besoin probable, et dites sur quels indices vous vous basez.",
@@ -466,6 +513,10 @@
             "img": "supports/a-sa-place.jpg",
             "duree": "5–6 min",
             "min": 6,
+            "modalites": [
+              "groupe",
+              "plenum"
+            ],
             "objectif": "Adopter le point de vue d’autrui, même sans ressentir la même chose.",
             "consigne": "Lecture d’une situation. Identifiez la pensée, l’émotion, le besoin et l’attente probables du personnage.",
             "exemples": [
@@ -488,6 +539,9 @@
             "img": "supports/message-repare.jpg",
             "duree": "5 min",
             "min": 5,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Transformer une parole blessante en message empathique et constructif.",
             "materiel": "Liste de phrases blessantes courantes.",
             "consigne": "J’écris une phrase blessante au tableau. Proposez une version empathique, puis comparons l’effet des deux.",
@@ -507,6 +561,9 @@
             "img": "supports/empathie-pas-empathie.jpg",
             "duree": "5 min",
             "min": 5,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Distinguer réponse empathique (E), sympathique (S) et de jugement (J).",
             "materiel": "Phrases-réponses à afficher.",
             "consigne": "Je lis une réponse. Votez E, S ou J avec le signe correspondant.",
@@ -531,6 +588,9 @@
             "img": "supports/actes-gentillesse.jpg",
             "duree": "5 min",
             "min": 5,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Traduire l’empathie en gestes concrets qui améliorent le climat de classe.",
             "materiel": "Tableau, post-its.",
             "consigne": "Quels petits gestes pourraient rendre la journée de quelqu’un plus agréable ? Toutes les propositions sont notées, sans jugement.",
@@ -545,6 +605,9 @@
             "img": "supports/mots-actions.jpg",
             "duree": "5 min",
             "min": 5,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Traduire une intention empathique en paroles et en actes.",
             "consigne": "Je lis une situation. Complétez à tour de rôle avec une parole (« Je comprends que tu sois triste ») ou une action (« Je reste un moment avec lui »).",
             "exemples": [
@@ -567,6 +630,9 @@
             "img": "supports/histoires-inspirantes.jpg",
             "duree": "6 min",
             "min": 6,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Repérer des exemples concrets d’empathie dans la vie réelle ou la fiction.",
             "materiel": "Extraits courts (texte, vidéo, anecdote).",
             "consigne": "Après l’extrait : quelles émotions vois-tu ? Quels gestes ou paroles montrent l’empathie ? Qu’est-ce qui rend cette action touchante ?",
@@ -586,6 +652,9 @@
             "img": "supports/empathie-monde.jpg",
             "duree": "5–6 min",
             "min": 6,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Voir que l’empathie est universelle mais s’exprime différemment selon les cultures.",
             "materiel": "2–3 anecdotes de différents pays.",
             "consigne": "Pour chaque exemple : qu’est-ce que cette personne fait ou dit pour montrer son empathie ?",
@@ -636,6 +705,7 @@
     "nom": "Gestion du stress",
     "sous": "S’apaiser pour s’épanouir",
     "hue": "--h-green",
+    "famille": "emotionnelle",
     "img": "supports/stress-1.jpg",
     "objectif": "Donner des stratégies concrètes pour rester calme et concentré. Ce mois, on installe des routines : c’est la répétition qui fonctionne.",
     "outils": [
@@ -674,6 +744,9 @@
             "img": "supports/stress-2.jpg",
             "duree": "1 min",
             "min": 1,
+            "modalites": [
+              "individuel"
+            ],
             "guide": "breath",
             "objectif": "Retour au calme.",
             "consigne": "Inspire 4 s → retiens 4 s → expire 4 s → retiens 4 s. Répète 4 à 6 cycles.",
@@ -686,6 +759,9 @@
             "img": "supports/stress-3.jpg",
             "duree": "30 s",
             "min": 0.5,
+            "modalites": [
+              "individuel"
+            ],
             "objectif": "Préparer un travail efficace, revenir au présent en cas de surcharge.",
             "consigne": "Les deux pieds bien posés au sol. Concentre toute ton attention sur le contact pieds / sol pendant 20 à 30 secondes. Respire normalement. Sens le poids de tes pieds.",
             "reflexion": []
@@ -695,6 +771,9 @@
             "img": "supports/stress-4.jpg",
             "duree": "1 min",
             "min": 1,
+            "modalites": [
+              "individuel"
+            ],
             "objectif": "Apaiser l’anxiété avant une évaluation ou un moment important.",
             "consigne": "Ferme les yeux. Imagine un endroit où tu te sens totalement calme. Concentre-toi sur 3 détails : un son, une couleur, une sensation. Reste une minute dans cet espace intérieur.",
             "reflexion": []
@@ -704,6 +783,9 @@
             "img": "supports/stress-5.jpg",
             "duree": "1–2 min",
             "min": 2,
+            "modalites": [
+              "individuel"
+            ],
             "objectif": "Relâcher les tensions physiques, se préparer à un moment stressant.",
             "consigne": "1. Choisis un groupe musculaire. 2. Serre-le fort 5 secondes. 3. Relâche d’un coup en expirant, 10 secondes. 4. Répète 2 à 3 fois.",
             "reflexion": [
@@ -719,6 +801,9 @@
             "titre": "Thermomètre du stress",
             "duree": "5 min",
             "min": 5,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Identifier son niveau de stress.",
             "consigne": "Sur une échelle de 1 à 10, où se trouve ton stress aujourd’hui ?",
             "reflexion": [
@@ -729,6 +814,9 @@
             "titre": "Le sac à dos invisible",
             "duree": "5–10 min",
             "min": 8,
+            "modalites": [
+              "individuel"
+            ],
             "objectif": "Mettre en regard ce qui pèse et les ressources.",
             "consigne": "Imagine un sac à dos. Mets-y une chose qui pèse, une ressource que tu possèdes, une ressource à aller chercher.",
             "reflexion": [
@@ -739,6 +827,9 @@
             "titre": "Le tri urgent / important",
             "duree": "5–10 min",
             "min": 8,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Prioriser pour réduire la surcharge.",
             "consigne": "Classons ensemble 5 tâches d’un élève fictif (devoir, réviser un test, soirée, sport, ménage) : urgent, important ou secondaire.",
             "reflexion": [
@@ -749,6 +840,9 @@
             "titre": "Le puzzle",
             "duree": "5–10 min",
             "min": 8,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Montrer l’effet du découpage d’une tâche.",
             "consigne": "Découpons une grosse tâche (préparer un exposé) en micro-étapes : choix du sujet, plan, recherche, rédaction, relecture, répétition.",
             "reflexion": [
@@ -759,6 +853,9 @@
             "titre": "Les 3 cercles de contrôle",
             "duree": "5–10 min",
             "min": 8,
+            "modalites": [
+              "plenum"
+            ],
             "objectif": "Réduire le stress d’impuissance.",
             "consigne": "Trois cercles : ce que je contrôle, ce que je peux influencer, ce qui ne dépend pas de moi. Plaçons 4 ou 5 exemples.",
             "reflexion": [
@@ -839,6 +936,7 @@
     "mois": "Janvier",
     "nom": "Estime de soi",
     "hue": "--h-yellow",
+    "famille": "ajout",
     "objectif": "Renforcer la confiance en soi et reconnaître ses réussites.",
     "outils": [
       "Carnet de réussites personnelles",
@@ -854,7 +952,8 @@
     "id": "conflits",
     "mois": "Février",
     "nom": "Gestion des conflits",
-    "hue": "--h-plum",
+    "hue": "--h-orange",
+    "famille": "sociale",
     "objectif": "Apprendre des méthodes constructives de résolution.",
     "outils": [
       "Méthode DESC : décrire, exprimer, suggérer, conclure",
@@ -871,6 +970,7 @@
     "mois": "Mars",
     "nom": "Résolution de problèmes",
     "hue": "--h-blue",
+    "famille": "cognitive",
     "objectif": "Chercher ensemble des solutions à un obstacle.",
     "outils": [
       "Méthode des 3 idées",
@@ -886,7 +986,8 @@
     "id": "decision",
     "mois": "Avril",
     "nom": "Prise de décision",
-    "hue": "--h-orange",
+    "hue": "--h-blue",
+    "famille": "cognitive",
     "objectif": "Faire un choix réfléchi en fonction des objectifs et des contraintes.",
     "outils": [
       "Tableau avantages / inconvénients",
@@ -902,7 +1003,8 @@
     "id": "critique",
     "mois": "Mai",
     "nom": "Pensée critique",
-    "hue": "--h-green",
+    "hue": "--h-blue",
+    "famille": "cognitive",
     "objectif": "Prendre du recul sur les informations et les influences.",
     "outils": [
       "Grille : Qui ? Quoi ? Pourquoi ?",
@@ -918,7 +1020,8 @@
     "id": "resilience",
     "mois": "Juin",
     "nom": "Résilience",
-    "hue": "--h-pink",
+    "hue": "--h-yellow",
+    "famille": "ajout",
     "objectif": "Rebondir après un échec et persévérer.",
     "outils": [
       "« Encore une fois, et mieux »",
