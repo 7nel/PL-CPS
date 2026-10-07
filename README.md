@@ -1,4 +1,4 @@
-# PL-CPS'
+# PL-CPS’
 
 Programme annuel des compétences psychosociales pour le Cycle d'orientation (9e–11e HarmoS) : une compétence par mois, des activités courtes à mener en classe (2 à 15 minutes) et des outils que les élèves peuvent réutiliser dans tout l'établissement.
 
