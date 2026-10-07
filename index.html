@@ -151,7 +151,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .fr.soon .fn,.fr.soon .fs{color:var(--ink-2)}
 .fr.soon{background:color-mix(in srgb,var(--c) 9%,transparent)}
 .fr.soon::before{opacity:.7}
-.fr .now-tag{align-self:flex-start;font:700 .85rem/1 var(--ui);letter-spacing:.02em;padding:5px 9px;border-radius:999px;background:var(--accent);color:var(--accent-ink);margin:0 0 4px}
+.fr .now-tag{align-self:flex-end;font:700 .85rem/1 var(--ui);letter-spacing:.02em;padding:5px 9px;border-radius:999px;background:var(--accent);color:var(--accent-ink);margin:0 0 4px}
 .fr.cur{border-color:var(--cb);box-shadow:0 0 0 1px var(--cb)}
 :root{--k-cons:var(--h-blue);--k-ex:var(--h-yellow);--k-ref:var(--h-pink)}
 .soonline{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -516,7 +516,7 @@ function renderYear(){
         return `<li><button class="fr ${st} ${n?"ok":"soon"}" style="--c:var(${c.hue})" data-go="${c.id}" ${st==="cur"?'aria-current="true"':""}>${st==="cur"?'<span class="now-tag">En cours</span>':""}<span class="fm">${c.mois}</span><span class="fn">${esc(c.nom)}</span><span class="fs">${lab}${st==="past"?'<span class="sr">, mois passé</span>':""}<span class="sr">, ${FAM[c.famille]?.sr||""}</span></span></button></li>`; }).join("")}
     </ol>
     <ul class="legend" aria-label="Familles de compétences">${Object.values(FAM).map(f=>`<li style="--c:var(${f.hue})"><span class="dot" aria-hidden="true"></span>${f.nom}</li>`).join("")}</ul>
-    <p class="hint">Familles selon Santé publique France (2022). Estime de soi et résilience sont des ajouts du programme : elles ne figurent pas dans la liste de l’OMS.</p>
+    <p class="hint">Familles selon Santé publique France (2022). Estime de soi et résilience, ajoutées par le programme (elles ne figurent pas dans la liste de l’OMS), sont classées avec les compétences émotionnelles.</p>
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
   document.querySelectorAll("[data-launch]").forEach(b => b.onclick = () => { const [n,i] = b.dataset.launch.split(":").map(Number); openProj(DATA[n], i); });
@@ -527,8 +527,7 @@ let curComp = null, curTab = "acts", curFilt = "all";
 const FAM = {
   cognitive:{nom:"Cognitives", hue:"--h-blue", sr:"famille cognitive"},
   sociale:{nom:"Sociales", hue:"--h-orange", sr:"famille sociale"},
-  emotionnelle:{nom:"Émotionnelles", hue:"--h-green", sr:"famille émotionnelle"},
-  ajout:{nom:"Ajouts du programme", hue:"--h-yellow", sr:"ajout du programme, hors liste OMS"}
+  emotionnelle:{nom:"Émotionnelles", hue:"--h-green", sr:"famille émotionnelle"}
 };
 const MODAL = {individuel:"Individuel", groupe:"Groupe", plenum:"Plénum"};
 const FILT = [["all","Toutes",()=>true],["s","3 min ou moins",m=>m<=3],["m","4 à 6 min",m=>m>3&&m<=6],["l","7 min et plus",m=>m>6]];

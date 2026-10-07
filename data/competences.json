@@ -939,8 +939,8 @@
     "id": "estime",
     "mois": "Janvier",
     "nom": "Estime de soi",
-    "hue": "--h-yellow",
-    "famille": "ajout",
+    "hue": "--h-green",
+    "famille": "emotionnelle",
     "objectif": "Renforcer la confiance en soi et reconnaître ses réussites.",
     "outils": [
       "Carnet de réussites personnelles",
@@ -1024,8 +1024,8 @@
     "id": "resilience",
     "mois": "Juin",
     "nom": "Résilience",
-    "hue": "--h-yellow",
-    "famille": "ajout",
+    "hue": "--h-green",
+    "famille": "emotionnelle",
     "objectif": "Rebondir après un échec et persévérer.",
     "outils": [
       "« Encore une fois, et mieux »",

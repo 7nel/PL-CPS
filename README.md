@@ -65,7 +65,7 @@ La vue de l’année affiche les dix mois dans une seule frise : pour chacun, le
 
 **Toutes les activités.** Le bouton « Toutes les activités » (accueil et page d’un mois) les affiche sans le filtre des mois. On cherche par mot-clé (titre, objectif, consigne, matériel, réflexion, mois, compétence), puis on filtre par modalité (individuel, groupe, plénum) et par durée. Chaque carte indique son mois et sa compétence. Les filtres sont dans l’adresse (`#activites?m=groupe&t=s&q=mot`), donc partageables.
 
-**Couleurs.** Chaque case de la frise est teintée, avec une barre à gauche, de la couleur de la famille de compétences selon Santé publique France (2022) : cognitives (bleu), sociales (orange), émotionnelles (vert). Estime de soi et résilience, absentes de la liste de l’OMS, forment les « ajouts du programme » (jaune).
+**Couleurs.** Chaque case de la frise est teintée, avec une barre à gauche, de la couleur de la famille de compétences selon Santé publique France (2022) : cognitives (bleu), sociales (orange), émotionnelles (vert). Estime de soi et résilience, ajoutées par le programme (absentes de la liste de l’OMS), sont classées avec les compétences émotionnelles.
 
 ## Mise en ligne
 
@@ -89,7 +89,7 @@ Chaque compétence a sa propre adresse, par exemple `…/PL-CPS/#stress` ou `…
 
 Pas besoin de toucher `index.html` : on modifie `data/competences.json` et on pousse le commit. Le site se met à jour tout seul (chargement avec contournement du cache).
 
-Champs d'une compétence : `id`, `mois`, `nom`, `sous`, `famille` (`cognitive`, `sociale`, `emotionnelle` ou `ajout`) et `hue` (la couleur qui va avec : `--h-blue`, `--h-orange`, `--h-green`, `--h-yellow`), `img`, `objectif`, `outils`, et selon l'avancement `essentiel`, `groupes`, `pistes`, `reperes`, ou `idees` pour un mois à construire.
+Champs d'une compétence : `id`, `mois`, `nom`, `sous`, `famille` (`cognitive`, `sociale` ou `emotionnelle`) et `hue` (la couleur qui va avec : `--h-blue`, `--h-orange`, `--h-green`), `img`, `objectif`, `outils`, et selon l'avancement `essentiel`, `groupes`, `pistes`, `reperes`, ou `idees` pour un mois à construire.
 
 Champs d'une activité (dans `groupes[].acts`) : `titre`, `img`, `duree` (texte affiché), `min` (durée du minuteur, en minutes), `objectif`, `materiel`, `modalites` (liste parmi `individuel`, `groupe`, `plenum`), `consigne`, `exemples`, `variante`, `reflexion`, et en option `principes`, `source: "doc"` ou `guide: "breath"`.
 
