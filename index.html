@@ -141,7 +141,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .sec-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .sec-h h2{font-size:1.5rem}
 .frise{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-.fr{--c:var(--accent);width:100%;min-height:96px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px 12px;border:1px solid var(--edge);border-radius:var(--r-ctl);background:var(--surface);cursor:pointer;text-align:left;position:relative;overflow:hidden;color:var(--ink)}
+.fr{--c:var(--accent);width:100%;height:100%;min-height:96px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px 12px;border:1px solid var(--edge);border-radius:var(--r-ctl);background:var(--surface);cursor:pointer;text-align:left;position:relative;overflow:hidden;color:var(--ink)}
 .fr{background:color-mix(in srgb,var(--c) 13%,var(--surface));border-color:color-mix(in srgb,var(--c) 38%,var(--edge));padding-left:20px}
 .fr::before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:var(--cb)}
 .fr .fm{font-weight:700}
@@ -151,9 +151,8 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .fr.soon .fn,.fr.soon .fs{color:var(--ink-2)}
 .fr.soon{background:color-mix(in srgb,var(--c) 9%,transparent)}
 .fr.soon::before{opacity:.7}
-.fr.cur{background:var(--accent);border-color:transparent;color:var(--accent-ink)}
-.fr.cur .fs,.fr.cur .fn{color:inherit}
-.fr.cur::before{display:none}
+.fr .now-tag{align-self:flex-start;font:700 .85rem/1 var(--ui);letter-spacing:.02em;padding:5px 9px;border-radius:999px;background:var(--accent);color:var(--accent-ink);margin:0 0 4px}
+.fr.cur{border-color:var(--cb);box-shadow:0 0 0 1px var(--cb)}
 :root{--k-cons:var(--h-blue);--k-ex:var(--h-yellow);--k-ref:var(--h-pink)}
 .soonline{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .pill{font:700 1.05rem/1 var(--ui);letter-spacing:.02em;padding:6px 11px;border-radius:999px;white-space:nowrap}
@@ -390,7 +389,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 }
 @media (max-width:700px){
   .frise{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .fr{min-height:0;padding:4px 10px 10px;gap:0}
+  .fr{min-height:0;padding:6px 10px 10px 18px;gap:0}
   .act{display:grid;grid-template-columns:96px minmax(0,1fr);align-items:start}
   .act .thumb{grid-column:1;margin:12px 0 0 12px;width:84px;border-radius:10px;overflow:hidden}
   .act .thumb img{aspect-ratio:1;height:84px}
@@ -513,8 +512,8 @@ function renderYear(){
     <div class="sec-h"><h2>L’année</h2><span class="hint">de septembre à juin, une compétence par mois</span></div>
     <ol class="frise">
       ${DATA.map((c,i) => { const st = i===curIdx ? "cur" : (curIdx!==undefined && i<curIdx) ? "past" : "next"; const n = ready(c) ? actsOf(c).length : 0;
-        const lab = st==="cur" ? (n ? `En cours · ${n} activités` : "En cours · à construire") : n ? `${n} activités` : "À construire";
-        return `<li><button class="fr ${st} ${n?"ok":"soon"}" style="--c:var(${c.hue})" data-go="${c.id}" ${st==="cur"?'aria-current="true"':""}><span class="fm">${c.mois}</span><span class="fn">${esc(c.nom)}</span><span class="fs">${lab}${st==="past"?'<span class="sr">, mois passé</span>':""}<span class="sr">, ${FAM[c.famille]?.sr||""}</span></span></button></li>`; }).join("")}
+        const lab = n ? `${n} activités` : "À construire";
+        return `<li><button class="fr ${st} ${n?"ok":"soon"}" style="--c:var(${c.hue})" data-go="${c.id}" ${st==="cur"?'aria-current="true"':""}>${st==="cur"?'<span class="now-tag">En cours</span>':""}<span class="fm">${c.mois}</span><span class="fn">${esc(c.nom)}</span><span class="fs">${lab}${st==="past"?'<span class="sr">, mois passé</span>':""}<span class="sr">, ${FAM[c.famille]?.sr||""}</span></span></button></li>`; }).join("")}
     </ol>
     <ul class="legend" aria-label="Familles de compétences">${Object.values(FAM).map(f=>`<li style="--c:var(${f.hue})"><span class="dot" aria-hidden="true"></span>${f.nom}</li>`).join("")}</ul>
     <p class="hint">Familles selon Santé publique France (2022). Estime de soi et résilience sont des ajouts du programme : elles ne figurent pas dans la liste de l’OMS.</p>
