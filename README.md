@@ -65,7 +65,7 @@ La vue de l’année affiche les dix mois dans une seule frise : pour chacun, le
 
 **Toutes les activités.** Le bouton « Toutes les activités » (accueil et page d’un mois) les affiche sans le filtre des mois. On cherche par mot-clé (titre, objectif, consigne, matériel, réflexion, mois, compétence), puis on filtre par modalité (individuel, groupe, plénum) et par durée. Chaque carte indique son mois et sa compétence. Les filtres sont dans l’adresse (`#activites?m=groupe&t=s&q=mot`), donc partageables.
 
-**Couleurs.** La marque colorée de chaque mois suit sa famille de compétences selon Santé publique France (2022) : cognitives (bleu), sociales (orange), émotionnelles (vert). Estime de soi et résilience, absentes de la liste de l’OMS, forment les « ajouts du programme » (jaune).
+**Couleurs.** Chaque case de la frise est teintée, avec une barre à gauche, de la couleur de la famille de compétences selon Santé publique France (2022) : cognitives (bleu), sociales (orange), émotionnelles (vert). Estime de soi et résilience, absentes de la liste de l’OMS, forment les « ajouts du programme » (jaune).
 
 ## Mise en ligne
 

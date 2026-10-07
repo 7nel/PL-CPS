@@ -71,12 +71,16 @@ h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
 /* identité commune à la famille PL : monogramme, nom de l'outil, retour vers PL */
 .pl-id{display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap;margin:0 0 6px}
 .pl-name{display:inline-flex;align-items:center;gap:8px;font:700 1.1rem/1.2 var(--ui)}
+.pl-logo{position:relative;display:inline-flex;flex:none;border-radius:50%;line-height:0}
+.pl-logo::after{content:"";position:absolute;inset:-8px}
+.pl-logo:hover .pl-mark{transform:scale(1.08)}
+.pl-mark{transition:transform .15s ease}
+.pl-title{color:inherit;text-decoration:none}
+.pl-title:hover{text-decoration:underline;text-underline-offset:4px}
+.pl-logo:focus-visible,.pl-title:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
 .pl-mark{width:1.45em;height:1.45em;flex:none}
 .pl-mark circle{fill:var(--accent)}
 .pl-mark g{stroke:var(--accent-ink)}
-.pl-back{position:relative;color:var(--ink-2);font:700 .95rem/1.2 var(--ui);text-decoration:none;white-space:nowrap}
-.pl-back::after{content:"";position:absolute;inset:-12px -8px}
-.pl-back:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .brand .t1{margin:0;font-size:clamp(1.9rem,3.4vw,2.4rem);font-weight:700;line-height:1.2}
 .brand .t1 button{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:44px}
 .brand .t1 button:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:6px}
@@ -138,13 +142,15 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .sec-h h2{font-size:1.5rem}
 .frise{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .fr{--c:var(--accent);width:100%;min-height:96px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px 12px;border:1px solid var(--edge);border-radius:var(--r-ctl);background:var(--surface);cursor:pointer;text-align:left;position:relative;overflow:hidden;color:var(--ink)}
-.fr::after{content:"";position:absolute;top:10px;right:10px;width:16px;height:16px;border-radius:50%;background:var(--cb)}
+.fr{background:color-mix(in srgb,var(--c) 13%,var(--surface));border-color:color-mix(in srgb,var(--c) 38%,var(--edge));padding-left:20px}
+.fr::before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:var(--cb)}
 .fr .fm{font-weight:700}
 .fr .fn{font-size:1.05rem;line-height:1.25;padding-right:20px}
 .fr .fs{color:var(--ink);font-weight:700;margin-top:auto}
 .fr.soon{border-style:dashed;background:transparent}
 .fr.soon .fn,.fr.soon .fs{color:var(--ink-2)}
-.fr.soon::after{opacity:.5}
+.fr.soon{background:color-mix(in srgb,var(--c) 9%,transparent)}
+.fr.soon::before{opacity:.7}
 .fr.cur{background:var(--accent);border-color:transparent;color:var(--accent-ink)}
 .fr.cur .fs,.fr.cur .fn{color:inherit}
 :root{--k-cons:var(--h-blue);--k-ex:var(--h-yellow);--k-ref:var(--h-pink)}
@@ -406,7 +412,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 <div class="app" id="app">
   <header class="top">
     <div class="brand">
-      <div class="pl-id"><span class="pl-name"><svg class="pl-mark" viewBox="0 0 160 160" aria-hidden="true"><circle cx="80" cy="80" r="76"/><g fill="none" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M56,114 C55,100 58,86 56,70 C55,58 57,50 56,48 C64,46 78,45 80,58 C82,70 70,76 56,76"/><path d="M100,48 C99,64 101,86 100,100 C99,108 101,112 100,112 L128,111"/></g></svg>PL-CPS’</span><a class="pl-back" href="https://7nel.github.io/PL/" aria-label="Retour à PL, tous les outils"><span aria-hidden="true">←</span> PL</a></div>
+      <div class="pl-id"><a class="pl-logo" href="https://7nel.github.io/PL/" aria-label="Retour à PL, tous les outils" title="Retour à PL"><svg class="pl-mark" viewBox="0 0 160 160" aria-hidden="true"><circle cx="80" cy="80" r="76"/><g fill="none" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M56,114 C55,100 58,86 56,70 C55,58 57,50 56,48 C64,46 78,45 80,58 C82,70 70,76 56,76"/><path d="M100,48 C99,64 101,86 100,100 C99,108 101,112 100,112 L128,111"/></g></svg></a><a class="pl-name pl-title" id="plHome" href="./">PL-CPS’</a></div>
       <p class="t1"><button id="homeLink" title="Retour à l’année">Compétences psychosociales</button></p>
     </div>
     <nav class="icons" aria-label="Actions">
@@ -475,6 +481,7 @@ $("#bTheme").onclick = () => {
 };
 $("#bHelp").onclick = e => { const h=$("#help"); h.hidden=!h.hidden; e.currentTarget.setAttribute("aria-expanded", !h.hidden); };
 $("#bYear").onclick = $("#homeLink").onclick = () => go("");
+$("#plHome").onclick = e => { if(e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); go(""); };
 
 /* ============ vue année ============ */
 function renderYear(){
