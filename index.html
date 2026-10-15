@@ -6,8 +6,8 @@
 <meta name="description" content="Programme annuel des compétences psychosociales pour le Cycle d’orientation (9e–11e) : une compétence par mois, activités courtes, supports à projeter.">
 <meta name="author" content="Pauline Lentes, Melody Ehrensperger">
 <link rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">
-<meta name="theme-color" content="#2f6f63" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#182422" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1e2220" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="PL-CPS’">
@@ -25,10 +25,10 @@
 @font-face{font-family:"Atkinson Hyperlegible";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/atkinson-400-i.woff2) format("woff2")}
 @font-face{font-family:"Lexend";font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/lexend.woff2) format("woff2")}
 :root{
-  --bg:#eff2f0;--surface:#ffffff;--surface-2:#e4e9e6;--line:#d7ddda;--line-strong:#c3cbc7;--edge:#7d8d89;
+  --bg:#f4f0e8;--surface:#fffdf9;--surface-2:#e9e4d9;--line:#dcd6c8; --line-ctl:#7a8077;--line-strong:#c4bdad;--edge:var(--line-ctl);
   --ink:#253433;--ink-2:#415351;
   --accent:#2f6f63;--accent-ink:#ffffff;--accent-soft:color-mix(in srgb,var(--accent) 16%,var(--surface));
-  --mark:#FFD83D;--warn:#9a5b12;--warn-soft:#fbefd9;
+  --mark:#FFD83D;--mark-ink:#253433;--warn:#8f520f;--warn-soft:color-mix(in srgb,var(--warn) 16%,var(--surface));
   --shade:#000;--shade-ink:#fff;--r-card:24px;--r-panel:16px;--r-ctl:14px;
   --shadow:0 1px 2px rgba(37,52,51,.06),0 10px 24px rgba(37,52,51,.08);
   --ui:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
@@ -38,17 +38,17 @@
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   color-scheme:dark;
-  --bg:#182422;--surface:#202f2c;--surface-2:#24322f;--line:#33443f;--line-strong:#45574f;--edge:#6b7f79;
-  --ink:#eaf1ee;--ink-2:#9fb0ac;--accent:#6fbfae;--accent-ink:#182422;
-  --warn:#e6b366;--warn-soft:#3a3122;
+  --bg:#1e2220;--surface:#282d2a;--surface-2:#2d332f;--line:#3b423d; --line-ctl:#778179;--line-strong:#505a53;--edge:var(--line-ctl);
+  --ink:#f0ede6;--ink-2:#b3b6ab;--accent:#6fbfae;--accent-ink:#1e2220;
+  --warn:#e6b366;--warn-soft:color-mix(in srgb,var(--warn) 16%,var(--surface));
   --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 28px rgba(0,0,0,.35);
   --h-orange:#ec8a55;--h-green:#9ccc5c;--h-yellow:#f2c24a;--h-pink:#dc92cf;--h-blue:#7ab6dc;--h-plum:#d17a9f;
 }}
 :root[data-theme="dark"]{
   color-scheme:dark;
-  --bg:#182422;--surface:#202f2c;--surface-2:#24322f;--line:#33443f;--line-strong:#45574f;--edge:#6b7f79;
-  --ink:#eaf1ee;--ink-2:#9fb0ac;--accent:#6fbfae;--accent-ink:#182422;
-  --warn:#e6b366;--warn-soft:#3a3122;
+  --bg:#1e2220;--surface:#282d2a;--surface-2:#2d332f;--line:#3b423d; --line-ctl:#778179;--line-strong:#505a53;--edge:var(--line-ctl);
+  --ink:#f0ede6;--ink-2:#b3b6ab;--accent:#6fbfae;--accent-ink:#1e2220;
+  --warn:#e6b366;--warn-soft:color-mix(in srgb,var(--warn) 16%,var(--surface));
   --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 28px rgba(0,0,0,.35);
   --h-orange:#ec8a55;--h-green:#9ccc5c;--h-yellow:#f2c24a;--h-pink:#dc92cf;--h-blue:#7ab6dc;--h-plum:#d17a9f;
 }

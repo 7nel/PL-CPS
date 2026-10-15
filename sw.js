@@ -1,5 +1,5 @@
 // Cache hors ligne : le site fonctionne en classe sans réseau après une première visite.
-const CACHE = "plcps-v2";
+const CACHE = "plcps-v3";
 const SHELL = ["./", "index.html", "manifest.json", "data/competences.json",
   "icon-32.png", "icon-180.png", "icon-512.png",
   "fonts/atkinson-400.woff2", "fonts/atkinson-400-i.woff2", "fonts/atkinson-700.woff2", "fonts/lexend.woff2"];
