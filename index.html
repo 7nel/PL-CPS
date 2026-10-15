@@ -75,7 +75,7 @@ h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
 .pl-logo::after{content:"";position:absolute;inset:-8px}
 .pl-logo:hover .pl-mark{transform:scale(1.08)}
 .pl-mark{transition:transform .15s ease}
-.pl-title{color:inherit;text-decoration:none}
+.pl-title{color:inherit;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
 .pl-title:hover{text-decoration:underline;text-underline-offset:4px}
 .pl-logo:focus-visible,.pl-title:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
 .pl-mark{width:1.45em;height:1.45em;flex:none}
@@ -116,6 +116,11 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .now .body{padding:16px 22px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .now .body div{margin-right:auto}
 .now h2{font-size:1.5rem}
+.now h2 .mo,.chero h1 .m{display:block;font:600 clamp(2.4rem,4.2vw,3.6rem)/1 var(--num);color:color-mix(in srgb,var(--c) 45%,var(--ink));margin-bottom:8px}
+.now h2 .mo::after,.chero h1 .m::after{content:"";display:block;width:56px;height:4px;border-radius:2px;background:var(--cb);margin-top:10px}
+.now,.chero{--cb:color-mix(in srgb,var(--c) 65%,var(--ink))}
+.lead .launch{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.lead .more-links{display:flex;flex-wrap:wrap;gap:8px}
 .lead{box-shadow:none;background:transparent;border-color:var(--line);padding:22px 24px;display:flex;flex-direction:column;gap:12px}
 .lead h2{font-size:1.5rem}
 .lead p{margin:0;max-width:62ch}
@@ -126,7 +131,7 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .legend li{display:inline-flex;align-items:center;gap:8px;font-size:1rem;color:var(--ink)}
 .legend .dot{width:16px;height:16px;background:var(--cb);flex:none}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font:700 .95rem/1 var(--ui);padding:6px 11px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface-2);color:var(--ink);white-space:nowrap}
+.tag{font:700 1rem/1 var(--ui);padding:6px 11px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface-2);color:var(--ink);white-space:nowrap}
 .from{--cb:color-mix(in srgb,var(--c) 65%,var(--ink));all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:44px;font:700 1rem/1.25 var(--ui);color:var(--ink)}
 .from::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--cb);flex:none}
 .from:hover span{text-decoration:underline;text-underline-offset:3px}
@@ -142,16 +147,16 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .sec-h h2{font-size:1.5rem}
 .frise{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .fr{--c:var(--accent);width:100%;height:100%;min-height:96px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px 12px;border:1px solid var(--edge);border-radius:var(--r-ctl);background:var(--surface);cursor:pointer;text-align:left;position:relative;overflow:hidden;color:var(--ink)}
-.fr{background:color-mix(in srgb,var(--c) 13%,var(--surface));border-color:color-mix(in srgb,var(--c) 38%,var(--edge));padding-left:20px}
-.fr::before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:var(--cb)}
-.fr .fm{font-weight:700}
+.fr{background:color-mix(in srgb,var(--c) 13%,var(--surface));border-color:color-mix(in srgb,var(--c) 38%,var(--edge))}
+.fr .fm{display:flex;align-items:center;gap:8px;font:600 1.1rem/1.2 var(--num)}
+.fr .fm::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--cb);flex:none}
 .fr .fn{font-size:1.05rem;line-height:1.25;padding-right:20px}
 .fr .fs{color:var(--ink);font-weight:700;margin-top:auto}
 .fr.soon{border-style:dashed;background:transparent}
 .fr.soon .fn,.fr.soon .fs{color:var(--ink-2)}
 .fr.soon{background:color-mix(in srgb,var(--c) 9%,transparent)}
-.fr.soon::before{opacity:.7}
-.fr .now-tag{align-self:flex-end;font:700 .85rem/1 var(--ui);letter-spacing:.02em;padding:5px 9px;border-radius:999px;background:var(--accent);color:var(--accent-ink);margin:0 0 4px}
+.fr.soon .fm::before{opacity:.6}
+.fr .now-tag{align-self:flex-end;font:700 .9rem/1 var(--ui);padding:5px 9px;border-radius:999px;background:var(--accent);color:var(--accent-ink);margin:0 0 4px}
 .fr.cur{border-color:var(--cb);box-shadow:0 0 0 1px var(--cb)}
 :root{--k-cons:var(--h-blue);--k-ex:var(--h-yellow);--k-ref:var(--h-pink)}
 .soonline{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
@@ -168,16 +173,16 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .chero{--c:var(--accent);display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);overflow:hidden;align-items:center}
 .chero img{width:100%;object-fit:cover;aspect-ratio:16/9;display:block}
 .chero .txt{padding:12px 20px 4px;display:flex;flex-direction:column;gap:4px;border-left:1px solid var(--line)}
-.chero .m{font:600 1rem/1 var(--num);color:color-mix(in srgb,var(--c) 45%,var(--ink))}
-.chero h1{font-size:clamp(1.7rem,2.6vw,2.1rem)}
+.chero h1{font-size:clamp(1.6rem,2.4vw,2rem)}
 .chero .sub{margin:0;color:var(--ink-2);font-weight:700}
 .chero .obj{margin:0}
 .obj-rest{margin:0 0 10px;max-width:68ch}
 .chero .obj b{display:inline;margin-right:8px;font-size:1rem;color:var(--ink-2)}
 .chero.noimg{grid-template-columns:1fr}
-.chero.noimg .txt{border-left:0;border-top:8px solid var(--cb)}
+.chero.noimg .txt{border-left:0}
 .outils summary{cursor:pointer;font-weight:700;color:var(--ink-2);min-height:44px;display:flex;align-items:center}
 .outils .tools{margin-top:4px}
+.panel.todo{border-style:dashed;box-shadow:none;background:transparent}
 .tools{display:flex;flex-wrap:wrap;gap:8px}
 .tools span{font-size:1rem;padding:6px 11px;border-radius:999px;border:1px dashed color-mix(in srgb,var(--c) 70%,var(--line));background:color-mix(in srgb,var(--c) 9%,var(--surface))}
 
@@ -205,7 +210,9 @@ kbd{font:700 1rem var(--num);background:var(--surface-2);border:1px solid var(--
 .act .thumb{position:relative;display:block;border:0;padding:0;cursor:zoom-in;background:var(--surface-2)}
 .act .thumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 .act .inner{padding:14px 16px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
-.act h3{font-size:1.2rem}
+.act h3,.act h2{font-size:1.2rem}
+.act .mat{display:flex;gap:8px;align-items:flex-start;margin:0;font-size:1rem;color:var(--ink-2)}
+.act .mat svg{width:18px;height:18px;flex:none;margin-top:3px}
 .meta{display:flex;gap:8px;flex-wrap:wrap;font-size:1rem}
 .meta span{display:inline-flex;gap:5px;align-items:center;color:var(--ink-2)}
 .act .head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 10px}
@@ -266,6 +273,8 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .pi:hover{background:var(--surface-2)}
 .pi[disabled]{opacity:.3;cursor:not-allowed}
 .pi svg{width:24px;height:24px}
+.pi.az{font:700 1.1rem/1 var(--num);width:auto;min-width:44px;padding:0 8px}
+.pi.az small{font-size:.75em}
 .phid{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .phid:empty{display:none}
 .chip{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 12px 4px 9px;border-radius:999px;border:1px dashed color-mix(in srgb,var(--k) 60%,var(--ink));background:color-mix(in srgb,var(--k) 14%,var(--surface));color:var(--ink);font-weight:700;font-size:1rem;cursor:pointer}
@@ -292,13 +301,16 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 .pzoom img{width:100%;height:100%;object-fit:contain;display:block}
 
 /* explications : trois blocs, une couleur chacun, masquables séparément */
-.exp{position:relative;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:12px;font-size:clamp(1.3rem,1.75vw,2rem)}
+.proj{--zs:1}
+.proj[data-zs="1"]{--zs:1.2}
+.proj[data-zs="2"]{--zs:1.4}
+.exp{position:relative;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:12px;font-size:calc(clamp(1.3rem,2vw,2.6rem)*var(--zs))}
 .exp>.part{flex:none}
-.part{border-radius:var(--r-panel);padding:12px 18px 16px;background:color-mix(in srgb,var(--k) 14%,var(--surface));border:1px solid color-mix(in srgb,var(--k) 30%,var(--line))}
+.part{border-radius:var(--r-panel);padding:12px 18px 16px;background:color-mix(in srgb,var(--k) 16%,var(--surface));border:1px solid color-mix(in srgb,var(--k) 50%,var(--line))}
 .part .ph{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:2px}
-.part .lbl{margin:0;font-size:clamp(1.1rem,1.25vw,1.4rem);letter-spacing:0;text-transform:none;font-weight:700;color:color-mix(in srgb,var(--k) 42%,var(--ink))}
+.part .lbl{margin:0;font-size:calc(clamp(1.1rem,1.5vw,1.9rem)*var(--zs));letter-spacing:0;text-transform:none;font-weight:700;color:color-mix(in srgb,var(--k) 42%,var(--ink))}
 .part p{margin:0}
-.part .cons{font-size:clamp(1.35rem,1.9vw,2.1rem);font-weight:400;line-height:1.4}
+.part .cons{font-size:calc(clamp(1.35rem,2.2vw,2.9rem)*var(--zs));font-weight:400;line-height:1.4}
 .part .q{margin:0;padding-left:1.1em}
 .part .q li{margin:.3em 0}
 .hideb{width:44px;height:44px;margin:-8px -12px -8px 0;display:grid;place-items:center;border:0;border-radius:10px;background:transparent;color:color-mix(in srgb,var(--k) 42%,var(--ink));cursor:pointer;flex:none}
@@ -324,7 +336,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 @keyframes settle{from{transform:scale(1.12)}to{transform:scale(1)}}
 .end{font-weight:700;margin:0}
 .end:empty{display:none}
-.kh{display:flex;align-items:center;gap:10px;margin:10px 0 0;font-size:clamp(1rem,1.15vw,1.25rem);color:var(--ink-2)}
+.kh{display:flex;align-items:center;gap:10px;margin:10px 0 0;font-size:clamp(1rem,1.3vw,1.4rem);color:var(--ink-2)}
 .kh span{margin-right:auto}
 .kh kbd{font-size:1em}
 .kh .btn{min-height:44px;flex:none}
@@ -358,7 +370,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
   .intro,.chero{grid-template-columns:1fr}
   .chero .txt{border-left:0;border-top:1px solid var(--line)}
   .chero img{display:none}
-  .chero .txt{padding:16px 18px;gap:8px;border-top:8px solid var(--cb)}
+  .chero .txt{padding:16px 18px;gap:8px}
 }
 @media (max-width:900px){
   .proj{overflow:auto;grid-template-rows:auto auto}
@@ -389,7 +401,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
 }
 @media (max-width:700px){
   .frise{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .fr{min-height:0;padding:6px 10px 10px 18px;gap:0}
+  .fr{min-height:0;padding:6px 10px 10px;gap:0}
   .act{display:grid;grid-template-columns:96px minmax(0,1fr);align-items:start}
   .act .thumb{grid-column:1;margin:12px 0 0 12px;width:84px;border-radius:10px;overflow:hidden}
   .act .thumb img{aspect-ratio:1;height:84px}
@@ -427,7 +439,8 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:16px;flex-wrap:w
     <p><b>Toutes les activités.</b> Le bouton « Toutes les activités » (accueil et page d’un mois) les réunit sans le filtre des mois : cherche un mot-clé, ou filtre par modalité (individuel, groupe, plénum) et par durée. Chaque carte indique son mois et sa compétence.</p>
     <p><b>Lancer vite.</b> Sur l’accueil, « Reprendre » rouvre la dernière activité projetée sur cet appareil, et « Projeter la première activité » ouvre directement celle du mois.</p>
     <p><b>Projeter</b> ouvre le support en plein écran pour le beamer, avec la consigne, les questions de réflexion et un minuteur réglé sur la durée de l’activité. La respiration carrée propose 4, 5 ou 6 cycles et le minuteur suit le guide.</p>
-    <p>En projection : <kbd>←</kbd> <kbd>→</kbd> activité précédente / suivante, <kbd>Espace</kbd> démarre ou met en pause le chrono, <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquent ou affichent la consigne, les exemples, la réflexion et le chrono (ou l’œil barré de chaque bloc), un clic sur le support l’affiche seul sur tout l’écran, le bouton « Suite » fait défiler quand le texte dépasse, <kbd>F</kbd> plein écran, <kbd>Échap</kbd> ferme. Le rappel des raccourcis sous le minuteur se masque avec « Masquer ce rappel ».</p>
+    <p>En projection : <kbd>←</kbd> <kbd>→</kbd> activité précédente / suivante, <kbd>Espace</kbd> démarre ou met en pause le chrono, <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquent ou affichent la consigne, les exemples, la réflexion et le chrono (ou l’œil barré de chaque bloc), un clic sur le support l’affiche seul sur tout l’écran, le bouton « Suite » fait défiler quand le texte dépasse, <kbd>F</kbd> plein écran, <kbd>+</kbd> <kbd>−</kbd> (ou le bouton « A+ ») agrandissent le texte, <kbd>Échap</kbd> ferme. Le rappel des raccourcis sous le minuteur se masque avec « Masquer ce rappel », et <kbd>?</kbd> le fait revenir.</p>
+    <p><b>Lien direct.</b> Quand une activité est projetée, l’adresse du navigateur la désigne (par exemple <code>#stress/respiration-carree</code>) : on peut la copier pour rouvrir la même activité.</p>
     <p><b>Onglets</b> : à gauche, ce qui sert en classe (activités, l’essentiel) ; à droite, après « Pour l’équipe », ce qui est destiné aux enseignant·es (Repères, et Pistes quand elles existent).</p>
     <p><b>Durée</b> : sous les onglets, trois boutons gardent seulement celles qui tiennent en 3 min ou moins, 4 à 6 min, ou 7 min et plus.</p>
     <p><b>Repères</b> : pour l’équipe enseignante. Ce qui est solide, ce qui demande des nuances et ce qu’il vaut mieux reformuler, avec les références (APA 7).</p>
@@ -489,24 +502,26 @@ function renderYear(){
   const curReady = ready(cur);
   const nReady = DATA.filter(ready).length;
   const last = lastProj(), first = curReady && actsOf(cur)[0] ? {c:cur, i:0, a:actsOf(cur)[0]} : null;
-  const launches = [last && {...last, lab:`Reprendre\u202f: ${last.a.titre}`}, first && !(last && last.c===first.c && last.i===0) && {...first, lab:`Projeter la première activité ${/^[aeiouhàâéèêîôû]/i.test(cur.mois) ? "d’" : "de "}${cur.mois.toLowerCase()}`}].filter(Boolean);
+  /* un seul geste principal : reprendre si la dernière activité est de ce mois, sinon la première du mois ; l’autre mois est proposé à part, avec son nom */
+  const lastHere = last && last.c===cur;
+  const main = lastHere ? {...last, lab:`Reprendre\u202f: ${last.a.titre}`} : first && {...first, lab:`Projeter la première activité ${/^[aeiouhàâéèêîôû]/i.test(cur.mois) ? "d’" : "de "}${cur.mois.toLowerCase()}`};
+  const again = last && !lastHere && {...last, lab:`Reprendre (${last.c.mois})\u202f: ${last.a.titre}`};
   $("#view").innerHTML = `
   <div style="display:flex;flex-direction:column;gap:22px">
     <div class="intro">
       <button class="panel now" style="--c:var(${cur.hue})" data-go="${cur.id}">
         ${cur.img ? `<img src="${cur.img}" alt="${esc(cur.nom)}" width="1600" height="900">` : ""}
         <div class="body"><div>
-          <p class="eyebrow" style="margin-bottom:4px">${curIdx!==undefined ? "Ce mois-ci · " : "Pour la rentrée · "}${cur.mois}</p>
-          <h2>${esc(cur.nom)}</h2></div>
-          <span class="btn pri">${curReady ? "Ouvrir les activités" : "Voir le programme"}</span>
+          <h2><span class="mo">${cur.mois}</span>${esc(cur.nom)}</h2>${curIdx===undefined ? '<p class="hint m0">Pour la rentrée</p>' : ""}</div>
+          <span class="btn">${curReady ? "Ouvrir les activités" : "Voir le programme"}</span>
         </div>
       </button>
       <div class="panel lead">
         <h2>Une compétence psychosociale (CPS) par mois</h2>
         <p>Activités courtes, supports à projeter et outils réutilisables dans tout l’établissement.</p>
-        ${launches.map((l,n)=>`<button class="btn ${n===0?"pri ":""}self-start wrap" data-launch="${DATA.indexOf(l.c)}:${l.i}">${ico.proj} ${esc(l.lab)}</button>`).join("")}
-        <button class="btn self-start" data-go="activites">Toutes les activités</button>
-        <button class="btn self-start" data-go="cadre">Pourquoi les CPS à l’école&#8239;?</button>
+        <div class="launch">${[main && [main,"pri "], again && [again,""]].filter(Boolean).map(([l,k])=>`<button class="btn ${k}self-start wrap" data-launch="${DATA.indexOf(l.c)}:${l.i}">${ico.proj} ${esc(l.lab)}</button>`).join("")}</div>
+        <div class="more-links"><button class="btn" data-go="activites">Toutes les activités</button>
+        <button class="btn" data-go="cadre">Pourquoi les CPS à l’école&#8239;?</button></div>
       </div>
     </div>
     <div class="sec-h"><h2>L’année</h2><span class="hint">de septembre à juin, une compétence par mois</span></div>
@@ -557,8 +572,7 @@ function renderComp(c, tab){
     <section class="panel chero ${c.img?"":"noimg"}" style="--c:var(${c.hue})">
       ${c.img?`<img src="${c.img}" alt="" width="1600" height="900">`:""}
       <div class="txt">
-        <span class="m">${c.mois}</span>
-        <h1>${esc(c.nom)}</h1>
+        <h1><span class="m">${c.mois}</span>${esc(c.nom)}</h1>
         ${c.sous?`<p class="sub">${esc(c.sous)}</p>`:""}
         <p class="obj"><b>Objectif</b>${esc(objShort)}</p>
         <details class="outils"><summary>${objRest?"Objectif complet et outils":"Outils à réutiliser dans l’établissement"}</summary>
@@ -570,9 +584,9 @@ function renderComp(c, tab){
       <div class="tabrow"><div class="tabs" role="tablist" aria-label="Contenus de la compétence">${tabs.map((t,n)=>`${t[3]&&!tabs.slice(0,n).some(u=>u[3])?'<span class="tsep" aria-hidden="true">Pour l’équipe</span>':""}<button class="tab${t[3]?" team":""}" role="tab" id="tab-${t[0]}" aria-controls="tabBody" aria-selected="${t[0]===curTab}" tabindex="${t[0]===curTab?0:-1}" data-tab="${t[0]}">${t[1]}${t[2]?`<span class="n">${t[2]}</span>`:""}</button>`).join("")}</div></div>
       <div class="filtslot" id="filtSlot"></div>
       <div id="tabBody" role="tabpanel" aria-labelledby="tab-${curTab}" tabindex="0"></div>`
-    : `<section class="panel prose" style="grid-template-columns:1fr">
+    : `<section class="panel prose todo" style="grid-template-columns:1fr">
          <section><h2>Idées d’activités du programme</h2><ul>${c.idees.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
-         <p class="mt-m"><b>À construire.</b> Les activités de ce mois ne sont pas encore rédigées. Elles seront ajoutées prochainement.</p>${(()=>{const r=DATA.find((d,n)=>n>i&&ready(d))||[...DATA].slice(0,i).reverse().find(ready); return r?`<p><button class="btn wrap" data-go="${r.id}">Voir les activités de ${r.mois}&#8239;: ${esc(r.nom)}</button></p>`:""})()}</section>
+         <p class="mt-m"><span class="tag">À construire</span> Les activités de ce mois ne sont pas encore rédigées. Elles seront ajoutées prochainement.</p>${(()=>{const r=DATA.find((d,n)=>n>i&&ready(d))||[...DATA].slice(0,i).reverse().find(ready); return r?`<p><button class="btn wrap" data-go="${r.id}">Voir les activités de ${r.mois}&#8239;: ${esc(r.nom)}</button></p>`:""})()}</section>
        </section>`}
   </div>`;
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
@@ -590,6 +604,7 @@ function renderComp(c, tab){
 
 const durTxt = a => a.guide==="breath" ? "1 à 1,5 min" : a.duree;
 function actCard(a, k, from){
+  const H = from ? "h2" : "h3"; /* « Toutes les activités » : h1 puis h2, sans saut de niveau */
   const infos = [
     a.principes ? `Principe${a.principes.length>1?"s":""} ${esc(a.principes)}` : "",
     a.source==="doc" ? "Document enseignant (hors supports)" : "",
@@ -599,16 +614,16 @@ function actCard(a, k, from){
     ${a.img?`<button class="thumb" data-proj="${k}" tabindex="-1" aria-hidden="true"><img src="${a.img}" alt="" loading="lazy" width="1600" height="900"></button>`:""}
     <div class="inner">
       ${from?`<button class="from" data-go="${from.id}" aria-label="Ouvrir la compétence : ${esc(from.nom)}, ${from.mois}"><span>${from.mois} · ${esc(from.nom)}</span></button>`:""}
-      <div class="head"><h3>${esc(a.titre)}</h3><span class="dur">${ico.time}${esc(durTxt(a))}</span></div>
+      <div class="head"><${H}>${esc(a.titre)}</${H}><span class="dur">${ico.time}${esc(durTxt(a))}</span></div>
       ${a.modalites?.length?`<div class="tags" aria-label="Modalité">${a.modalites.map(m=>`<span class="tag">${MODAL[m]||esc(m)}</span>`).join("")}</div>`:""}
+      ${a.materiel?`<p class="mat">${ico.box}<span><span class="sr">Matériel\u202f: </span>${esc(a.materiel)}</span></p>`:""}
+      ${a.flag?'<span class="flag">Déroulé reconstitué depuis les supports, à valider</span>':""}
       <div class="row"><button class="btn pri" data-proj="${k}"${from?` data-c="${from.id}"`:""}>${ico.proj} Projeter</button></div>
       <p class="cons">${esc(a.consigne)}</p>
       <details class="more"><summary>Objectif et détails</summary>
         <p><b>Objectif&#8239;:</b> ${esc(a.objectif)}</p>
-        ${a.flag?'<span class="flag">Déroulé reconstitué depuis les supports, à valider</span>':""}
         ${infos[0]?`<span class="lbl">Principe</span><p>${infos[0]}</p>`:""}
         ${infos[1]?`<p>${infos[1]}</p>`:""}
-        ${a.materiel?`<span class="lbl">Matériel</span><p>${infos[2]}</p>`:""}
         ${a.exemples?`<span class="lbl">Exemples</span><ul>${a.exemples.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
         ${a.variante?`<span class="lbl">Variante</span><p>${esc(a.variante)}</p>`:""}
         ${a.reflexion?.length?`<span class="lbl">Moment de réflexion</span><ul>${a.reflexion.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
@@ -658,17 +673,23 @@ const LAST_KEY = "plcps-last";
 const lastProj = () => { try{ const v = JSON.parse(localStorage.getItem(LAST_KEY)||"null"); const c = v && DATA.find(d=>d.id===v.id); const a = c && actsOf(c)[v.i]; return a ? {c, i:v.i, a} : null; }catch(e){ return null; } };
 const khHidden = () => { try{ return localStorage.getItem("plcps-kh")==="1"; }catch(e){ return false; } };
 const CYMS = 16000; /* un cycle de respiration : 4 côtés × 4 s */
+const zsGet = () => { try{ return Math.min(2, Math.max(0, +localStorage.getItem("plcps-zs")||0)); }catch(e){ return 0; } };
 let P = {c:null, i:0, left:0, total:0, run:false, tick:null, br:null, bt:0, guide:false, cy:4, opener:null};
 function fmt(s){ s=Math.max(0,Math.round(s)); return Math.floor(s/60)+":"+String(s%60).padStart(2,"0"); }
 function fmtLong(s){ const m=Math.floor(s/60), r=s%60; return m+" min"+(r?" "+String(r).padStart(2,"0")+" s":""); }
+const khHtml = () => `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquer ou afficher · <kbd>F</kbd> plein écran · <kbd>+</kbd> <kbd>−</kbd> texte · <kbd>?</kbd> rappel</span><button class="btn" id="khx">Masquer ce rappel</button></p>`;
+function bindKh(){ $("#khx")?.addEventListener("click", () => { try{ localStorage.setItem("plcps-kh","1"); }catch(e){} $("#kh")?.remove(); $("#tGo")?.focus(); }); }
+function toggleKh(){ const k = $("#kh"); try{ localStorage.setItem("plcps-kh", k ? "1" : "0"); }catch(e){} if(k) k.remove(); else { $("#proj").insertAdjacentHTML("beforeend", khHtml()); bindKh(); } }
 function openProj(c, i, img){
   const el = $("#proj");
   if(el.hidden) P.opener = document.activeElement;
   P.c = c; P.i = i; stopTimer();
   const acts = actsOf(c), a = acts[i];
-  if(a){ try{ localStorage.setItem(LAST_KEY, JSON.stringify({id:c.id, i})); }catch(e){} }
-  el.style.setProperty("--c", `var(${c.hue})`);
+  if(a){ try{ localStorage.setItem(LAST_KEY, JSON.stringify({id:c.id, i})); }catch(e){}
+    if(location.hash.split("?")[0].split("/")[0]==="#"+c.id) history.replaceState(null, "", "#"+c.id+"/"+slug(a.titre)); } /* lien direct vers l’activité */
+  el.style.setProperty("--c", `var(${c.hue})`); el.dataset.zs = zsGet();
   const nav = (extra="") => `<div class="pnav">${extra}
+      <button class="pi az" id="pZs" aria-label="Agrandir le texte" title="Texte plus grand (touches + et −)">A<small>+</small></button>
       <button class="pi" id="pFs" aria-label="Plein écran" title="Plein écran (touche F)">${ico.fs}</button>
       <button class="pi" id="pClose" aria-label="Fermer la vue projetée" title="Fermer (Échap)">${ico.x}</button></div>`;
   const zoomable = (src, alt) => `<button class="zoomb" id="pZoomBtn" data-src="${src}" aria-label="Afficher le support seul sur tout l’écran" title="Support seul sur tout l’écran"><img src="${src}" alt="${esc(alt||"")}" width="1600" height="900"></button>`;
@@ -710,7 +731,7 @@ function openProj(c, i, img){
           <p class="end" id="tEnd" role="status"></p>
         </div>
       </div>
-      ${khHidden() ? "" : `<p class="kh" id="kh"><span><kbd>Espace</kbd> démarrer · <kbd>←</kbd> <kbd>→</kbd> activités · <kbd>C</kbd> <kbd>E</kbd> <kbd>R</kbd> <kbd>T</kbd> masquer ou afficher · <kbd>F</kbd> plein écran</span><button class="btn" id="khx">Masquer ce rappel</button></p>`}`;
+      ${khHidden() ? "" : khHtml()}`;
     el.querySelectorAll("[data-hide]").forEach(x => x.onclick = () => toggleShow(x.dataset.hide, true));
     $("#gGo")?.addEventListener("click", toggleTimer);
     $("#tGo").onclick = toggleTimer; $("#tReset").onclick = resetTimer;
@@ -726,13 +747,14 @@ function openProj(c, i, img){
       $("#bImg").onclick = () => { stopTimer(); P.guide = false; P.total = P.left = Math.round((a.min||5)*60); $("#stage").innerHTML = zoomable(a.img, "Support de l’activité\u202f: "+a.titre); bindZoom(); $("#tFill").classList.remove("nt"); resetTimer(); };
     }
     paintTimer(); syncGo(); applyShow();
-    $("#khx")?.addEventListener("click", () => { try{ localStorage.setItem("plcps-kh","1"); }catch(e){} $("#kh")?.remove(); $("#tGo")?.focus(); });
+    bindKh();
     document.title = `${a.titre} · PL-CPS’`;
   }
-  $("#pClose").onclick = closeProj; bindZoom();
+  $("#pClose").onclick = closeProj; bindZoom(); $("#pZs").onclick = () => setZs((zsGet()+1)%3);
   $("#pFs").onclick = () => { const r = document.fullscreenElement ? document.exitFullscreen() : el.requestFullscreen?.(); r?.catch?.(()=>{}); };
   el.hidden = false; document.body.style.overflow = "hidden"; $("#pClose").focus(); requestAnimationFrame(() => { syncMore(); setTimeout(syncMore, 250); }); document.fonts?.ready.then(syncMore);
 }
+function setZs(n){ n = Math.min(2, Math.max(0, n)); try{ localStorage.setItem("plcps-zs", n); }catch(e){} $("#proj").dataset.zs = n; syncMore(); }
 /* support seul : l’image occupe tout l’écran (vrai plein écran quand le navigateur le permet) ; un clic ou Échap revient */
 function bindZoom(){ const b = $("#pZoomBtn"); if(b) b.onclick = () => openZoom(b.dataset.src); }
 function openZoom(src){
@@ -752,6 +774,7 @@ document.addEventListener("fullscreenchange", () => { if(!document.fullscreenEle
 function closeProj(){
   const el = $("#proj"), wasOpen = !el.hidden; $("#pZoom")?.remove(); P.zoomFs = false;
   stopTimer(); el.hidden = true; document.body.style.overflow = "";
+  if(wasOpen && P.c && location.hash.startsWith("#"+P.c.id+"/")) history.replaceState(null, "", "#"+P.c.id);
   if(document.fullscreenElement) document.exitFullscreen().catch(()=>{});
   if(wasOpen){ setTitle(); P.opener?.focus?.(); P.opener = null; }
 }
@@ -844,6 +867,9 @@ document.addEventListener("keydown", e => {
   else if(e.key===" " && !e.target.closest?.("summary")){ e.preventDefault(); toggleTimer(); } // Espace pilote toujours le minuteur
   else if(e.ctrlKey || e.metaKey || e.altKey) return;
   else if(e.key.toLowerCase()==="f") $("#pFs")?.click();
+  else if(e.key==="?") toggleKh();
+  else if(e.key==="+" || e.key==="=") setZs(zsGet()+1);
+  else if(e.key==="-" || e.key==="−") setZs(zsGet()-1);
   else if({c:"cons",e:"ex",r:"ref",t:"chr"}[e.key.toLowerCase()]) toggleShow({c:"cons",e:"ex",r:"ref",t:"chr"}[e.key.toLowerCase()]);
 });
 document.addEventListener("keyup", e => { if(e.key===" " && !$("#proj").hidden && !e.target.closest?.("summary")) e.preventDefault(); });
@@ -931,6 +957,7 @@ addEventListener("error", e => {
 /* ============ navigation (#id) ============ */
 function go(id){ if(("#"+id)!==location.hash){ location.hash = id; } else route(); }
 const norm = t => String(t||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const slug = t => norm(t).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 /* ============ toutes les activités (sans le filtre des mois) ============ */
 let allQ = "", allM = "all", allT = "all";
 function renderAll(params){
@@ -978,10 +1005,11 @@ function renderNotFound(){
   document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
 }
 function route(){
-  const [id, qs] = location.hash.slice(1).split("?"); const c = DATA.find(d=>d.id===id);
+  const [path, qs] = location.hash.slice(1).split("?"); const [id, actSlug] = path.split("/"); const c = DATA.find(d=>d.id===id);
   const t1 = $(".t1"); if(c || id==="cadre" || id==="activites"){ t1.removeAttribute("role"); t1.removeAttribute("aria-level"); } else { t1.setAttribute("role","heading"); t1.setAttribute("aria-level","1"); }
   if(id && id!=="cadre" && id!=="activites" && !c){ closeProj(); renderNotFound(); setTitle("Page introuvable"); window.scrollTo(0,0); return; }
   closeProj(); id==="activites" ? (renderAll(new URLSearchParams(qs||"")), setTitle("Toutes les activités")) : id==="cadre" ? (renderCadre(), setTitle("Pourquoi les CPS à l’école ?")) : c ? renderComp(c, "acts") : (renderYear(), setTitle()); window.scrollTo(0,0);
+  if(c && actSlug && ready(c)){ const n = actsOf(c).findIndex(a => slug(a.titre)===actSlug); if(n>=0) openProj(c, n); }
 }
 addEventListener("hashchange", route);
 
