@@ -269,7 +269,7 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:var(--s3);flex-w
 /* chrono sous le support, blocs de texte sur toute la hauteur de la colonne de droite */
 .proj-body{display:grid;gap:var(--s3) clamp(20px,3vw,48px);min-height:0;grid-template-columns:minmax(0,1.3fr) minmax(360px,1fr);grid-template-rows:auto minmax(0,1fr);grid-template-areas:"stage exp" "chr exp"}
 .proj-body>.stage{grid-area:stage}
-.expw{grid-area:exp;display:flex;flex-direction:column;gap:8px;min-height:0}
+.expw{grid-area:exp;display:flex;flex-direction:column;gap:2px;min-height:0}
 .expw .exp{flex:1 1 auto}
 .chrono{grid-area:chr;align-self:start}
 .proj-body.no-chr{grid-template-rows:minmax(0,1fr);grid-template-areas:"stage exp"}
@@ -314,6 +314,9 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:var(--s3);flex-w
 .sc{flex:none;align-self:center;display:flex;justify-content:center;padding:0;margin:0;border:0;background:none;cursor:pointer;color:var(--ink);font:700 1rem var(--ui)}
 .sc span{display:inline-flex;align-items:center;gap:6px;min-height:48px;padding:6px 20px;border-radius:999px;border:var(--trait) solid var(--ink);background:var(--bg)}
 .sc[hidden]{display:none}
+/* le bas de la zone qui défile s’estompe quand il reste du texte (classe .more posée par syncMore) : la coupe n’est plus brutale et « Suite », collé dessous, se lit comme la suite de ce texte. Rien ne le recouvre. */
+.exp.more{-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 48px),transparent);mask-image:linear-gradient(to bottom,#000 calc(100% - 48px),transparent)}
+.expw .sc{margin-top:0}
 .sc svg{width:18px;height:18px;transform:rotate(-90deg)}
 /* chrono : un bloc qui se remplit de gauche à droite (comportement de production), angles droits, trait vert de 6 px */
 .chrono{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:6px;padding:14px 18px 16px 22px;background:var(--surface);border:0;border-left:var(--trait-l) solid var(--accent);border-radius:0}
@@ -390,6 +393,11 @@ footer.about{font-size:1rem;color:var(--ink-2);display:flex;gap:var(--s3);flex-w
   .ibl{display:none}
   .ib,.ib.lab{padding:0}
   .frise{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s5) var(--s3)}
+  /* frise mobile : traits un peu plus fins (5 px ; 4 px pour « à construire »), stations inchangées et recentrées sur le trait */
+  .fr{border-top-width:5px}
+  .fr.soon{border-top-width:4px}
+  .fr::before{top:-14px}
+  .fr.cur::before{top:-18px}
   .fr{min-height:0}
   /* titre et commandes ne se superposent plus : le titre prend toute la largeur, les commandes passent dessous */
   .proj-top{flex-direction:column;align-items:stretch;gap:var(--s2)}
