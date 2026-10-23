@@ -41,9 +41,9 @@ Le bouton **Projeter** ouvre l'activité en grand pour le beamer. La vue projet�
 
 **Support seul.** Un clic sur le support l'affiche seul, sur fond noir, sur tout l'écran (vrai plein écran quand le navigateur le permet ; sur iPhone, il couvre la fenêtre). Un clic ou `Échap` revient à la vue projetée.
 
-**En-tête.** Il ne porte que le titre et cinq boutons : activité précédente, activité suivante, « A+ » (texte plus grand), plein écran, fermer. Les boutons de la vue projetée, y compris ceux qui masquent un bloc, font 44 px de haut.
+**En-tête.** Il ne porte que le titre et cinq boutons : activité précédente, activité suivante, « A+ » (texte plus grand), plein écran, fermer. Les libellés « Texte », « Plein écran » et « Fermer » sont écrits à côté des icônes au-delà de 1280 px de large ; entre 900 et 1280 px seul « Fermer » reste écrit ; en dessous de 900 px, il n’y a que les icônes. Les boutons de la vue projetée, y compris ceux qui masquent un bloc, font 44 px de haut.
 
-**Consigne longue.** Quand les blocs de texte dépassent la hauteur de l’écran, ils défilent à l’intérieur de leur colonne et un bouton « Suite » avec un fondu en bas l’indique. Il disparaît une fois le bas atteint. Avec « réduire les animations », le défilement est instantané.
+**Consigne longue.** Quand les blocs de texte dépassent la hauteur de l’écran, ils défilent à l’intérieur de leur colonne et un bouton « Suite », placé sous la zone de texte (jamais sur le texte), l’indique. Il disparaît une fois le bas atteint. Avec « réduire les animations », le défilement est instantané.
 
 Si le chrono est masqué pendant qu'il tourne, il réapparaît à la fin du temps. Il affiche alors un court message calme, sans son.
 
@@ -51,13 +51,17 @@ Pour la respiration carrée, on choisit 4, 5 ou 6 cycles et un seul bouton lance
 
 Raccourcis en projection : `←` `→` activité précédente ou suivante, `Espace` démarrer ou mettre en pause le chrono (quel que soit le bouton sélectionné), `C` consigne, `E` exemples, `R` réflexion, `T` chrono (masquer ou afficher), `F` plein écran, `+` et `−` taille du texte (trois crans, gardés dans le navigateur), `?` affiche ou masque le rappel des raccourcis, `Échap` fermer. Un rappel de ces raccourcis s’affiche en bas de l'écran sur ordinateur et se masque avec le bouton « Masquer ce rappel » (le choix est gardé dans le navigateur). Le focus clavier reste dans la projection et revient sur le bouton « Projeter » à la fermeture.
 
-Sur les cartes d'activité, la consigne est dans un encadré bleu, la couleur « consigne » de la vue projetée.
+Sur les cartes d'activité, l’extrait de consigne est marqué d’un trait bleu, la couleur « consigne » de la vue projetée.
+
+**Taille du texte.** Le texte des blocs est 20 % plus grand que dans la version précédente, et 45 % plus grand quand l’activité n’a pas de support ; « A+ » l’agrandit encore. Sans support, la consigne et la réflexion sont à gauche, le chrono à droite.
+
+**Clavier et lecteurs d’écran.** Pendant la projection, le reste de la page est inerte (le focus ne peut pas aller derrière) ; à la fermeture, le focus revient au bouton « Projeter » d’origine, ou à la carte de l’activité si l’on est arrivé par un lien direct.
 
 **Lien direct.** Quand une activité est projetée, l’adresse devient `#stress/respiration-carree` (compétence, puis titre de l’activité sans accents). Ouvrir cette adresse rouvre directement la projection ; la fermer remet l’adresse du mois.
 
 ## Lisibilité
 
-Tout le texte courant fait 18 px au minimum. Seule exception assumée : la liste des références APA, à 16 px. Les mois sans activités sont rangés dans la rangée « Bientôt » de la vue de l’année, avec leur objectif et leurs outils sur la page du mois.
+Tout le texte courant fait 18 px au minimum (taille de base de 112,5 % : elle suit le réglage de taille du texte du navigateur). Seule exception assumée : la liste des références APA, à 16 px. Les mois sans activités sont rangés dans la rangée « Bientôt » de la vue de l’année, avec leur objectif et leurs outils sur la page du mois.
 
 ## Trouver une activité
 
